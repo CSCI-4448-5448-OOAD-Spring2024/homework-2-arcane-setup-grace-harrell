@@ -2,8 +2,8 @@
 
 Team Members:
 
-1.
-2.
+1. Grace Harrell
+2. Lindy Zhang
 
 Java Version:
 
