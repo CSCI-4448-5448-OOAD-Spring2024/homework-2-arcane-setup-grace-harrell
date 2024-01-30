@@ -2,7 +2,10 @@ package arcane;
 import java.util.*;
 
 public class Cave {
-    private List<Room> caveRooms;
+    private final List<Room> caveRooms; // list of the rooms in the cave
+    private Adventurer adventurer;
+    private Creature creature;
+
     public Cave() {
 
         // creating the 4 rooms
@@ -25,6 +28,13 @@ public class Cave {
         caveRooms = new ArrayList<>(Arrays.asList(nw, ne, sw, se));
         getRandomRoom().setCreaturePresence(true);
         getRandomRoom().setAdventurerPresence(true);
+
+        // creates creature in the cave
+        creature = new Creature();
+
+        // creates an adventurer in the cave
+        // WILL REQUIRE  USER INPUT FOR NAME
+        adventurer = new Adventurer();
     }
     public Room getRandomRoom(){
 
@@ -37,7 +47,30 @@ public class Cave {
         return caveRooms.get(rand.nextInt(caveRooms.size()));
     }
 
-    public List<Room> getCaveRooms(){
-        return caveRooms;
+    // prints the current status of the cave, including locations of characters.
+    // returns a bool that is true when the characters are in the same room
+    public boolean caveStatus() {
+        boolean charactersTogehter = false;
+        for (Room caveRoom : caveRooms) {
+            System.out.println(caveRoom.getRoomName() + ":");
+
+            // prints if adventurer is present in this room
+            if (caveRoom.adventurerHere()) {
+                System.out.println("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") is here");
+            }
+
+            // prints if creature is present in this room
+            if (caveRoom.creatureHere()) {
+                System.out.println("\tCreature " + creature.getName() + "(health: " + creature.getHealth() + ") is here");
+            }
+            if (caveRoom.creatureHere() && caveRoom.adventurerHere()){
+                charactersTogehter = true;
+            }
+        }
+        return charactersTogehter;
     }
+
+        public List<Room> getCaveRooms () {
+            return caveRooms;
+        }
 }
