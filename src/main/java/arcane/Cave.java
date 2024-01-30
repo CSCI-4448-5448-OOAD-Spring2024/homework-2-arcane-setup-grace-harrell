@@ -2,7 +2,7 @@ package arcane;
 import java.util.*;
 
 public class Cave {
-    private List<Room> cave;
+    private List<Room> caveRooms;
     public Cave() {
 
         // creating the 4 rooms
@@ -22,21 +22,22 @@ public class Cave {
         se.addNeighbor(sw);
 
         // randomly choosing a room to put the creature and adventurer into
-        cave = new ArrayList<>(Arrays.asList(nw, ne, sw, se));
+        caveRooms = new ArrayList<>(Arrays.asList(nw, ne, sw, se));
         getRandomRoom().setCreaturePresence(true);
         getRandomRoom().setAdventurerPresence(true);
     }
     public Room getRandomRoom(){
 
         // if the rooms haven't been created, throw an error
-        if (cave.isEmpty()){
+        if (caveRooms.isEmpty()){
             throw new IllegalStateException("Cave is empty");
         }
         // find a random value by getting a random index
         Random rand = new Random();
-        return cave.get(rand.nextInt(cave.size()));
+        return caveRooms.get(rand.nextInt(caveRooms.size()));
     }
-    public List<Room> getCave(){
-        return cave;
+
+    public List<Room> getCaveRooms(){
+        return caveRooms;
     }
 }

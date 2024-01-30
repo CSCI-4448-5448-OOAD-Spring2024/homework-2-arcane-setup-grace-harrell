@@ -11,7 +11,7 @@ class CaveTest {
     public void testCaveSize(){
         Cave cave = new Cave();
 
-        List<Room> cave_rooms = cave.getCave();
+        List<Room> cave_rooms = cave.getCaveRooms();
         assert(cave_rooms.size() == 4);
     }
 
@@ -20,7 +20,7 @@ class CaveTest {
         Cave cave = new Cave();
         int count = 0;
 
-        List<Room> cave_rooms = cave.getCave();
+        List<Room> cave_rooms = cave.getCaveRooms();
 
         for (Room caveRoom : cave_rooms) {
             assert (caveRoom.getNeighbor().size() == 2);
@@ -38,7 +38,7 @@ class CaveTest {
     public void testNumNeighbors(){
         Cave cave = new Cave();
 
-        List<Room> cave_rooms = cave.getCave();
+        List<Room> cave_rooms = cave.getCaveRooms();
 
         for (Room caveRoom : cave_rooms) {
             assert (caveRoom.getNeighbor().size() == 2);
