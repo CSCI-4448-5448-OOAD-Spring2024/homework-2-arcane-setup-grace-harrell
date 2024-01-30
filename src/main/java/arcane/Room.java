@@ -1,8 +1,9 @@
 package arcane;
 import java.util.*;
 
+
 public class Room {
-    private List<String> neighbors = new ArrayList<>();
+    private List<Room> neighbors = new ArrayList<>();
     private String room_name;
     private boolean creature = false;
     private boolean adventurer = false;
@@ -19,12 +20,12 @@ public class Room {
         room_name = new_room_name;
     }
 
-    public List<String> getNeighbor() {
+    public List<Room> getNeighbor() {
         return neighbors;
     }
 
-    public void addNeighbor(String neighbor_name) {
-        neighbors.add(neighbor_name);
+    public void addNeighbor(Room new_neighbor) {
+        neighbors.add(new_neighbor);
     }
 
     public boolean creatureHere() {
