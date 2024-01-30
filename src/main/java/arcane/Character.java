@@ -3,8 +3,6 @@ package arcane;
 public class Character {
     private int health = 5;
     private String name;
-    public Character(){
-    }
     public void setName(String _name){
         this.name = _name;
     }
