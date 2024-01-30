@@ -55,11 +55,26 @@ class CaveTest {
     }
 
     @Test
-    public void testCaveStatus(){
+    public void testPrintCaveStatus(){
         // gives an input string to the System for the adventurer name
         provideInput("Testy");
-        // creature new cave
         Cave cave = new Cave();
-        boolean together = cave.caveStatus();
+        cave.printCaveStatus();
+    }
+
+    @Test
+    public void testCreatureAdventurerRooms(){
+        provideInput("Test");
+        Cave cave = new Cave();
+        cave.printCaveStatus();
+
+        Room adventurerRoom = cave.getAdventurerRoom();
+        Room creatureRoom = cave.getCreatureRoom();
+
+        System.out.println(adventurerRoom.getRoomName());
+        System.out.println(creatureRoom.getRoomName());
+
+        assertNotNull(adventurerRoom);
+        assertNotNull(creatureRoom);
     }
 }
