@@ -8,12 +8,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CaveTest {
     @Test
-    public void testCave(){
+    public void testCaveSize(){
+        Cave cave = new Cave();
+
+        List<Room> cave_rooms = cave.getCave();
+        assert(cave_rooms.size() == 4);
+    }
+
+    @Test
+    public void testRandomCharacters(){
         Cave cave = new Cave();
         int count = 0;
 
         List<Room> cave_rooms = cave.getCave();
-        assert(cave_rooms.size() == 4);
 
         for (Room caveRoom : cave_rooms) {
             assert (caveRoom.getNeighbor().size() == 2);
@@ -24,7 +31,17 @@ class CaveTest {
                 count += 1;
             }
         }
-
         assert(count == 2);
+    }
+
+    @Test
+    public void testNumNeighbors(){
+        Cave cave = new Cave();
+
+        List<Room> cave_rooms = cave.getCave();
+
+        for (Room caveRoom : cave_rooms) {
+            assert (caveRoom.getNeighbor().size() == 2);
+        }
     }
 }
