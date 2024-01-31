@@ -8,6 +8,6 @@ public class Dice {
     }
     public int rollDie(){
         Random rand = new Random();
-        return rand.nextInt(num_sides);
+        return 1 + rand.nextInt(num_sides);
     }
 }

@@ -90,4 +90,23 @@ class CaveTest {
         assertNotNull(adventurerRoom);
         assertNotNull(creatureRoom);
     }
+    @Test
+    public void testFindAdventurer(){
+        Creature creature = new Creature();
+        provideInput("Testy");
+        Adventurer adventurer = new Adventurer();
+        Cave cave = new Cave(creature, adventurer);
+        Room adventurer_here = cave.getAdventurerRoom();
+        assert(adventurer_here.adventurerHere());
+    }
+    @Test
+    public void testFindCreature(){
+        Creature creature = new Creature();
+        provideInput("Testy");
+        Adventurer adventurer = new Adventurer();
+        Cave cave = new Cave(creature, adventurer);
+        Room creature_here = cave.getCreatureRoom();
+        assert(creature_here.creatureHere());
+    }
+
 }
