@@ -2,11 +2,11 @@ package arcane;
 import java.util.*;
 
 public class Cave {
-    private final List<Room> caveRooms; // list of the rooms in the cave
+    private List<Room> caveRooms; // list of the rooms in the cave
     private Adventurer adventurer;
     private Creature creature;
 
-    public Cave() {
+    public Cave(Creature _creature, Adventurer _adventurer) {
 
         // creating the 4 rooms
         Room nw = new Room("Northwest");
@@ -30,11 +30,11 @@ public class Cave {
         getRandomRoom().setAdventurerPresence(true);
 
         // creates creature in the cave
-        creature = new Creature();
+        creature = _creature;
 
         // creates an adventurer in the cave
         // WILL REQUIRE  USER INPUT FOR NAME
-        adventurer = new Adventurer();
+        adventurer = _adventurer;
     }
     public Room getRandomRoom(){
 
@@ -63,7 +63,6 @@ public class Cave {
                 System.out.println("\tCreature " + creature.getName() + "(health: " + creature.getHealth() + ") is here");
             }
         }
-        return;
     }
 
     // returns the room in the cave with the adventurer in it
