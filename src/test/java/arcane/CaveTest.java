@@ -8,14 +8,16 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CaveTest {
-    void provideInput(String testName) {
+    public void provideInput(String testName) {
         ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
         System.setIn(testInput);
     }
     @Test
     public void testCaveSize(){
         provideInput("Testy");
-        Cave cave = new Cave();
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
 
         List<Room> cave_rooms = cave.getCaveRooms();
         assert(cave_rooms.size() == 4);
@@ -24,7 +26,9 @@ class CaveTest {
     @Test
     public void testRandomCharacters(){
         provideInput("Testy");
-        Cave cave = new Cave();
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
         int count = 0;
 
         List<Room> cave_rooms = cave.getCaveRooms();
@@ -45,7 +49,10 @@ class CaveTest {
     public void testNumNeighbors(){
         provideInput("Testy");
 
-        Cave cave = new Cave();
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+
+        Cave cave = new Cave(creature, adventurer);
 
         List<Room> cave_rooms = cave.getCaveRooms();
 
@@ -55,11 +62,32 @@ class CaveTest {
     }
 
     @Test
-    public void testCaveStatus(){
+    public void testPrintCaveStatus(){
         // gives an input string to the System for the adventurer name
         provideInput("Testy");
-        // creature new cave
-        Cave cave = new Cave();
-        boolean together = cave.caveStatus();
+
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
+        cave.printCaveStatus();
+    }
+
+    @Test
+    public void testCreatureAdventurerRooms(){
+        provideInput("Testy");
+
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
+        cave.printCaveStatus();
+
+        Room adventurerRoom = cave.getAdventurerRoom();
+        Room creatureRoom = cave.getCreatureRoom();
+
+        System.out.println(adventurerRoom.getRoomName());
+        System.out.println(creatureRoom.getRoomName());
+
+        assertNotNull(adventurerRoom);
+        assertNotNull(creatureRoom);
     }
 }

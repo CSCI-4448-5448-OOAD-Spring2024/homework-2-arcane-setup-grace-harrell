@@ -23,6 +23,15 @@ public class Room {
     public List<Room> getNeighbor() {
         return neighbors;
     }
+    public Room getRandomNeighbor(){
+        // if the rooms haven't been created, throw an error
+        if (neighbors.isEmpty()){
+            throw new IllegalStateException("Room has no neighbors");
+        }
+        // find a random value by getting a random index
+        Random rand = new Random();
+        return neighbors.get(rand.nextInt(neighbors.size()));
+    };
 
     public void addNeighbor(Room new_neighbor) {
         neighbors.add(new_neighbor);
