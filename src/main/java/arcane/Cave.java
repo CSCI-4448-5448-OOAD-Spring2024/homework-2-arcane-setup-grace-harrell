@@ -2,17 +2,17 @@ package arcane;
 import java.util.*;
 
 public class Cave {
-    private List<Room> caveRooms; // list of the rooms in the cave
+    private List<Room> caveRooms = new ArrayList<>(); // list of the rooms in the cave
     private Adventurer adventurer;
     private Creature creature;
 
     public Cave(Creature _creature, Adventurer _adventurer) {
 
         // creating the 4 rooms
-        Room nw = new Room("Northwest");
-        Room ne = new Room("Northeast");
-        Room sw = new Room("Southwest");
-        Room se = new Room("Southeast");
+        Room nw = addRooms("Northwest");
+        Room ne = addRooms("Northeast");
+        Room sw = addRooms("Southwest");
+        Room se = addRooms("Southeast");
 
         // adding in the two neighbors of each room
         nw.addNeighbor(ne);
@@ -25,7 +25,7 @@ public class Cave {
         se.addNeighbor(sw);
 
         // randomly choosing a room to put the creature and adventurer into
-        caveRooms = new ArrayList<>(Arrays.asList(nw, ne, sw, se));
+
         getRandomRoom().setCreaturePresence(true);
         getRandomRoom().setAdventurerPresence(true);
 
@@ -35,6 +35,12 @@ public class Cave {
         // creates an adventurer in the cave
         // WILL REQUIRE  USER INPUT FOR NAME
         adventurer = _adventurer;
+    }
+
+    public Room addRooms(String caveName){
+        Room newRoom = new Room(caveName);
+        caveRooms.add(newRoom);
+        return newRoom;
     }
     public Room getRandomRoom(){
 
