@@ -10,6 +10,8 @@ public class CharacterTest {
         character.setName(test);
         String testResult = character.getName();
         assert testResult.equals(test);
+        character.setName("new_name");
+        assert character.getName().equals("new_name");
     }
 
     @Test
