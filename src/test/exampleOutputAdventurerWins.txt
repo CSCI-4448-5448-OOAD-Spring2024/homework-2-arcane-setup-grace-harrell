@@ -1,0 +1,19 @@
+Hello Adventurer! Please enter your name:       // Mock input provided for test
+Starting play...
+ARCANE Maze: turn 1
+Northwest:
+Northeast:
+Southwest:
+	Adventurer Testy(health: 5) is here
+	Creature Ogre(health: 5) is here
+Southeast:
+
+ARCANE Maze: turn 2
+Northwest:
+Northeast:
+Southwest:
+	Adventurer Testy(health: 5) is here
+	Creature Ogre(health: 0) is here
+Southeast:
+
+Yay, Adventurer Testy wins.

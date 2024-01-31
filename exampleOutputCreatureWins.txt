@@ -1,0 +1,59 @@
+Hello Adventurer! Please enter your name:           // Mock input provided by system
+Starting play...
+ARCANE Maze: turn 1
+Northwest:
+	Creature Ghoul(health: 5) is here
+Northeast:
+Southwest:
+	Adventurer Testy(health: 5) is here
+Southeast:
+
+ARCANE Maze: turn 2
+Northwest:
+	Adventurer Testy(health: 5) is here
+	Creature Ghoul(health: 5) is here
+Northeast:
+Southwest:
+Southeast:
+
+ARCANE Maze: turn 3
+Northwest:
+	Adventurer Testy(health: 5) is here
+	Creature Ghoul(health: 4) is here
+Northeast:
+Southwest:
+Southeast:
+
+ARCANE Maze: turn 4
+Northwest:
+	Adventurer Testy(health: 2) is here
+	Creature Ghoul(health: 4) is here
+Northeast:
+Southwest:
+Southeast:
+
+ARCANE Maze: turn 5
+Northwest:
+	Adventurer Testy(health: 1) is here
+	Creature Ghoul(health: 4) is here
+Northeast:
+Southwest:
+Southeast:
+
+ARCANE Maze: turn 6
+Northwest:
+	Adventurer Testy(health: 1) is here
+	Creature Ghoul(health: 4) is here
+Northeast:
+Southwest:
+Southeast:
+
+ARCANE Maze: turn 7
+Northwest:
+	Adventurer Testy(health: 0) is here
+	Creature Ghoul(health: 4) is here
+Northeast:
+Southwest:
+Southeast:
+
+Boo, the Ghoul wins.
