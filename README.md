@@ -16,6 +16,10 @@ Debugger stopped in main code (showing breakpoint in class file).
 
 Debugger stopped in main code (showing breakpoint in test file).  
 
+![image](https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/bb3b8a9f-8d7a-4c4e-a077-1238c0a49f46)  
+
+Debugger stopped.  
+
 ![image](https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/b5c6bae7-46ad-4cf9-b6b7-e3c4f6b1e13b)
 
 Code coverage.
