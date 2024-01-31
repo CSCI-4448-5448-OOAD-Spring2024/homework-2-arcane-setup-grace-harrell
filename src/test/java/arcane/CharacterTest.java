@@ -20,15 +20,29 @@ public class CharacterTest {
         assert character.getHealth() == 5;
         character.decreaseHealth(1);
         assert character.getHealth() == 4;
+        character.decreaseHealth(1);
+        assert character.getHealth() == 3;
     }
 
     @Test
     public void checkIsAlive(){
         Character character = new Character();
         assert character.isAlive();
+        assert character.getHealth() == 5;
+        character.decreaseHealth(1);
+        assert character.getHealth() == 4;
         while (character.getHealth() > 0){
             character.decreaseHealth(1);
         }
         assert !character.isAlive();
+    }
+    @Test
+    public void setAndTestIsAlive(){
+        Character character = new Character();
+        assert character.isAlive();
+        character.setIsAlive(false);
+        assert !character.isAlive();
+        character.setIsAlive(true);
+        assert character.isAlive();
     }
 }

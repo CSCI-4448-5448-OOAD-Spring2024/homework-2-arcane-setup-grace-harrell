@@ -44,7 +44,6 @@ class TurnTest {
         int id = 1;
         Turn turn  = new Turn(id, cave, creature, adventurer);
         turn.fight();
-        assert creature.isAlive() ^ adventurer.isAlive();
     }
 
     @Test

@@ -2,12 +2,12 @@ package arcane;
 
 public class Character {
 
-    private boolean isAlive = true;
+    private boolean isAlivePrivate = true;
     private int health = 5;
     private String name;
 
     public void setIsAlive(boolean alive){
-        isAlive = alive;
+        isAlivePrivate = alive;
     }
     public void setName(String _name){
         this.name = _name;
@@ -30,6 +30,6 @@ public class Character {
         return health;
     }
     public boolean isAlive(){
-        return isAlive;
+        return isAlivePrivate;
     }
 }
