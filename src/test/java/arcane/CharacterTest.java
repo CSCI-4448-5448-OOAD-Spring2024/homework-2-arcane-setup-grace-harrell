@@ -19,4 +19,14 @@ public class CharacterTest {
         character.decreaseHealth();
         assert character.getHealth() == 4;
     }
+
+    @Test
+    public void checkIsAlive(){
+        Character character = new Character();
+        assert character.isAlive();
+        while (character.getHealth() > 0){
+            character.decreaseHealth();
+        }
+        assert !character.isAlive();
+    }
 }
