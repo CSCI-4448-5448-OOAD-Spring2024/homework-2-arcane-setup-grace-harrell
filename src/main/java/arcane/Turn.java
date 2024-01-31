@@ -28,10 +28,10 @@ public class Turn {
             int adventurerRoll = dice.rollDie();
 
             if (creatureRoll > adventurerRoll){
-                adventurer.decreaseHealth();
+                adventurer.decreaseHealth(creatureRoll - adventurerRoll);
             }
             else if (adventurerRoll > creatureRoll) {
-                creature.decreaseHealth();
+                creature.decreaseHealth(adventurerRoll - creatureRoll);
             }
         }
     }

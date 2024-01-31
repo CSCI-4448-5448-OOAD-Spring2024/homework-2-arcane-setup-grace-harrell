@@ -16,7 +16,7 @@ public class CharacterTest {
     public void testDecreaseHealth(){
         Character character = new Character();
         assert character.getHealth() == 5;
-        character.decreaseHealth();
+        character.decreaseHealth(1);
         assert character.getHealth() == 4;
     }
 
@@ -25,7 +25,7 @@ public class CharacterTest {
         Character character = new Character();
         assert character.isAlive();
         while (character.getHealth() > 0){
-            character.decreaseHealth();
+            character.decreaseHealth(1);
         }
         assert !character.isAlive();
     }

@@ -13,8 +13,8 @@ public class Character {
         this.name = _name;
     }
 
-    public void decreaseHealth(){
-        health -= 1;
+    public void decreaseHealth(int decreaseBy){
+        health -= decreaseBy;
         if (health <= 0){
             health = 0;
             setIsAlive(false);
