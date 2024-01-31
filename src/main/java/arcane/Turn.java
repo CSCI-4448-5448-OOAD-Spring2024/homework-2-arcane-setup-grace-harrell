@@ -23,7 +23,7 @@ public class Turn {
     }
     public void fight(){
         Dice dice = new Dice();
-        while(creature.getHealth() > 0 && adventurer.getHealth() > 0){
+        if(creature.getHealth() > 0 && adventurer.getHealth() > 0){
             int creatureRoll = dice.rollDie();
             int adventurerRoll = dice.rollDie();
 
@@ -36,7 +36,24 @@ public class Turn {
         }
     }
     // implement method to see if characters are in the same room
+    public boolean inSameRoom(){
+        return cave.getCreatureRoom() == cave.getAdventurerRoom();
+    }
     // implement method to see if characters should fight or move
+    public void fightOrMove(){
+        if (inSameRoom())
+            fight();
+        else
+            moveAdventurer();
+    }
     // implement method to print the actions of this turn and the current status of the cave
-
+    public void printTurn(){
+        System.out.println("ARCANE Maze: turn " + turnID);
+        cave.printCaveStatus();
+        System.out.println();
+    }
+    public void takeTurn(){
+        fightOrMove();
+        printTurn();
+    }
 }

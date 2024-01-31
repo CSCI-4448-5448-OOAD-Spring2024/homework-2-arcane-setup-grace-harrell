@@ -47,5 +47,31 @@ class TurnTest {
         assert creature.isAlive() ^ adventurer.isAlive();
     }
 
+    @Test
+    public void testPrintTurn(){
+        provideInput("Testy");
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
+        int id = 1;
+        Turn turn  = new Turn(id, cave, creature, adventurer);
+        turn.printTurn();
+    }
+
+    @Test
+    public void testFightOrMove() {
+        provideInput("Testy");
+        Adventurer adventurer = new Adventurer();
+        Creature creature = new Creature();
+        Cave cave = new Cave(creature, adventurer);
+        int id = 0;
+
+
+        while (adventurer.isAlive() && creature.isAlive()) {
+            id += 1;
+            Turn turn = new Turn(id, cave, creature, adventurer);
+            turn.takeTurn();
+        }
+    }
 
 }
