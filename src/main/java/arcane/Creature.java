@@ -2,7 +2,7 @@ package arcane;
 
 import java.util.Random;
 
-public class Creature extends Character{
+public class Creature extends Entity{
     // selects creature name randomly from an array of potential names
     public Creature(){
         String [] creatureTypes = new String[4];

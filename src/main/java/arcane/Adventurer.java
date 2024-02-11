@@ -2,7 +2,7 @@ package arcane;
 
 import java.util.Scanner;
 
-public class Adventurer extends Character{
+public class Adventurer extends Entity{
     public Adventurer(){
 
         Scanner scan = new Scanner(System.in);
