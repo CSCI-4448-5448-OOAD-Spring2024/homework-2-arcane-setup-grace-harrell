@@ -20,7 +20,12 @@ class CaveTest {
         Cave cave = new Cave(creature, adventurer);
 
         List<Room> cave_rooms = cave.getCaveRooms();
+        int count_foods = 0;
+        for (Room caveRoom : cave_rooms) {
+            count_foods += caveRoom.getFoodsPresent().size();
+        }
         assert(cave_rooms.size() == 4);
+        assert(count_foods == 10);
     }
 
     @Test
