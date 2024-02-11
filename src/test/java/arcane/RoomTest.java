@@ -56,4 +56,16 @@ class RoomTest {
         Room random_neighbor = room.getRandomNeighbor();
         assert(random_neighbor.equals(neighbor_1) || random_neighbor.equals(neighbor_2));
     }
+    @Test
+    public void testAddFood(){
+        Room room = new Room("test room");
+        Food food = new Food();
+        room.addFoodPresent(food);
+        assert(room.getFoodsPresent().size() == 1);
+        Food food1 = new Food();
+        Food food2 = new Food();
+        room.addFoodPresent(food1);
+        room.addFoodPresent(food2);
+        assert(room.getFoodsPresent().size() == 3);
+    }
 }
