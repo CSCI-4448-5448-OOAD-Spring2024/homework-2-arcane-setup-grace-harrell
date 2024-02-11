@@ -7,6 +7,7 @@ public class Room {
     private String room_name;
     private boolean creature = false;
     private boolean adventurer = false;
+    private List<Food> foods_present = new ArrayList<>();
 
     public Room(String name) {
         room_name = name;
@@ -51,5 +52,13 @@ public class Room {
 
     public void setAdventurerPresence(Boolean adventurer_presence) {
         adventurer = adventurer_presence;
+    }
+
+    public List<Food> getFoodsPresent(){
+        return foods_present;
+    }
+
+    public void addFoodPresent(Food new_food) {
+        foods_present.add(new_food);
     }
 }

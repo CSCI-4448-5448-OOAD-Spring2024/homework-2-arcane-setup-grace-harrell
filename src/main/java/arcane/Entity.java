@@ -1,6 +1,6 @@
 package arcane;
 
-public class Character {
+public class Entity {
 
     private boolean isAlivePrivate = true;
     private int health = 5;
