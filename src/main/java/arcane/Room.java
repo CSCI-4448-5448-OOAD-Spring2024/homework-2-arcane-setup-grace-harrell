@@ -5,8 +5,8 @@ import java.util.*;
 public class Room {
     private List<Room> neighbors = new ArrayList<>();
     private String room_name;
-    private boolean creature = false;
-    private boolean adventurer = false;
+    private List<Creature> creaturesPresent;
+    private List<Adventurer> adventurersPresent;
     private List<Food> foods_present = new ArrayList<>();
 
     public Room(String name) {
@@ -38,20 +38,28 @@ public class Room {
         neighbors.add(new_neighbor);
     }
 
-    public boolean creatureHere() {
-        return creature;
+    public List<Creature> getCreaturesPresent() {
+        return creaturesPresent;
     }
 
-    public void setCreaturePresence(Boolean creature_presence) {
-        creature = creature_presence;
+    public void addCreaturePresence(Creature creature ) {
+        creaturesPresent.add(creature);
     }
 
-    public boolean adventurerHere() {
-        return adventurer;
+    public boolean noCreaturesHere(){
+        return creaturesPresent.isEmpty();
     }
 
-    public void setAdventurerPresence(Boolean adventurer_presence) {
-        adventurer = adventurer_presence;
+    public List<Adventurer> getAdventurersPresent() {
+        return adventurersPresent;
+    }
+
+    public void addAdventurerPresence(Adventurer adventurer) {
+        adventurersPresent.add(adventurer);
+    }
+
+    public boolean noAdventurersHere(){
+        return adventurersPresent.isEmpty();
     }
 
     public List<Food> getFoodsPresent(){

@@ -8,26 +8,10 @@ public class Cave {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(Cave.class));
     private List<Room> caveRooms = new ArrayList<>(); // list of the rooms in the cave
-    private Adventurer adventurer;
-    private Creature creature;
+    private List<Adventurer> adventurers;
+    private List<Creature> creatures;
 
-    public Cave(Creature _creature, Adventurer _adventurer,  List<Room> _rooms) { // add dependacy injection list of rooms
-
-        // creating the 4 rooms
-//        Room nw = addRooms("Northwest");
-//        Room ne = addRooms("Northeast");
-//        Room sw = addRooms("Southwest");
-//        Room se = addRooms("Southeast");
-
-        // adding in the two neighbors of each room
-//        nw.addNeighbor(ne);
-//        nw.addNeighbor(sw);
-//        ne.addNeighbor(nw);
-//        ne.addNeighbor(se);
-//        sw.addNeighbor(nw);
-//        sw.addNeighbor(se);
-//        se.addNeighbor(ne);
-//        se.addNeighbor(sw);
+    public Cave(List<Creature> _creatures, List<Adventurer> _adventurers,  List<Room> _rooms) { // add dependacy injection list of rooms
 
 
         caveRooms = _rooms;
@@ -41,11 +25,11 @@ public class Cave {
             getRandomRoom().addFoodPresent(addFood);
         }
         // creates creature in the cave
-        creature = _creature;
+        creatures = _creature;
 
         // creates an adventurer in the cave
         // WILL REQUIRE  USER INPUT FOR NAME
-        adventurer = _adventurer;
+        adventurers = _adventurer;
     }
 
 //    public Room addRooms(String caveName){
@@ -86,7 +70,7 @@ public class Cave {
     // returns the room in the cave with the adventurer in it
     public Room getAdventurerRoom(){
         for(Room caveRoom : caveRooms){
-            if (caveRoom.adventurerHere()){
+            if (!caveRoom.noAdventurersHere()){
                 return caveRoom;
             }
         }
@@ -94,7 +78,7 @@ public class Cave {
     }
     public Room getCreatureRoom(){
         for(Room caveRoom : caveRooms){
-            if (caveRoom.creatureHere()){
+            if (!caveRoom.noCreaturesHere()){
                 return caveRoom;
             }
         }
@@ -104,4 +88,11 @@ public class Cave {
         public List<Room> getCaveRooms () {
             return caveRooms;
         }
+
+        public List<Adventurer> getAllAdventurers(){
+            return adventurers;
+        }
+    public List<Creature> getAllCreatures(){
+        return creatures;
+    }
 }
