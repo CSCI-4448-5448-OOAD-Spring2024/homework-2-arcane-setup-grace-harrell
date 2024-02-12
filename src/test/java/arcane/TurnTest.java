@@ -3,6 +3,8 @@ package arcane;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 class TurnTest {
 
@@ -13,6 +15,32 @@ class TurnTest {
     }
 
 
+    public  List<Room> createFourRooms(){
+        // creating the 4 rooms
+        Room nw = new Room("Northwest");
+        Room ne =  new Room("Northeast");
+        Room sw = new Room("Southwest");
+        Room se = new Room ("Southeast");
+
+        //adding in the two neighbors of each room
+        nw.addNeighbor(ne);
+        nw.addNeighbor(sw);
+        ne.addNeighbor(nw);
+        ne.addNeighbor(se);
+        sw.addNeighbor(nw);
+        sw.addNeighbor(se);
+        se.addNeighbor(ne);
+        se.addNeighbor(sw);
+
+        List<Room> rooms = new ArrayList<>();
+        rooms.add(nw);
+        rooms.add(ne);
+        rooms.add(sw);
+        rooms.add(se);
+
+        return rooms;
+
+    }
 
     @Test
     public void testMoveAdventurer(){
@@ -20,7 +48,9 @@ class TurnTest {
 
         Adventurer adventurer = new Adventurer();
         Creature creature = new Creature();
-        Cave cave  = new Cave(creature, adventurer);
+        List<Room> rooms = createFourRooms();
+
+        Cave cave  = new Cave(creature, adventurer, rooms);
         Turn turn  = new Turn(1, cave, creature, adventurer);
 
         cave.printCaveStatus();
@@ -40,7 +70,8 @@ class TurnTest {
         provideInput("Testy");
         Adventurer adventurer = new Adventurer();
         Creature creature = new Creature();
-        Cave cave = new Cave(creature, adventurer);
+        List<Room> rooms = createFourRooms();
+        Cave cave = new Cave(creature, adventurer, rooms);
         int id = 1;
         Turn turn  = new Turn(id, cave, creature, adventurer);
         turn.fight();
@@ -51,7 +82,8 @@ class TurnTest {
         provideInput("Testy");
         Adventurer adventurer = new Adventurer();
         Creature creature = new Creature();
-        Cave cave = new Cave(creature, adventurer);
+        List<Room> rooms = createFourRooms();
+        Cave cave = new Cave(creature, adventurer, rooms);
         int id = 1;
         Turn turn  = new Turn(id, cave, creature, adventurer);
         turn.printTurn();
@@ -62,7 +94,8 @@ class TurnTest {
         provideInput("Testy");
         Adventurer adventurer = new Adventurer();
         Creature creature = new Creature();
-        Cave cave = new Cave(creature, adventurer);
+        List<Room> rooms = createFourRooms();
+        Cave cave = new Cave(creature, adventurer, rooms);
         int id = 0;
 
 

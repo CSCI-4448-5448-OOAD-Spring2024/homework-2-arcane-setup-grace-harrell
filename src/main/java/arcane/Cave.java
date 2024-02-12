@@ -11,23 +11,26 @@ public class Cave {
     private Adventurer adventurer;
     private Creature creature;
 
-    public Cave(Creature _creature, Adventurer _adventurer) {
+    public Cave(Creature _creature, Adventurer _adventurer,  List<Room> _rooms) { // add dependacy injection list of rooms
 
         // creating the 4 rooms
-        Room nw = addRooms("Northwest");
-        Room ne = addRooms("Northeast");
-        Room sw = addRooms("Southwest");
-        Room se = addRooms("Southeast");
+//        Room nw = addRooms("Northwest");
+//        Room ne = addRooms("Northeast");
+//        Room sw = addRooms("Southwest");
+//        Room se = addRooms("Southeast");
 
         // adding in the two neighbors of each room
-        nw.addNeighbor(ne);
-        nw.addNeighbor(sw);
-        ne.addNeighbor(nw);
-        ne.addNeighbor(se);
-        sw.addNeighbor(nw);
-        sw.addNeighbor(se);
-        se.addNeighbor(ne);
-        se.addNeighbor(sw);
+//        nw.addNeighbor(ne);
+//        nw.addNeighbor(sw);
+//        ne.addNeighbor(nw);
+//        ne.addNeighbor(se);
+//        sw.addNeighbor(nw);
+//        sw.addNeighbor(se);
+//        se.addNeighbor(ne);
+//        se.addNeighbor(sw);
+
+
+        caveRooms = _rooms;
 
         // randomly choosing a room to put the creature and adventurer into
 
@@ -45,11 +48,11 @@ public class Cave {
         adventurer = _adventurer;
     }
 
-    public Room addRooms(String caveName){
-        Room newRoom = new Room(caveName);
-        caveRooms.add(newRoom);
-        return newRoom;
-    }
+//    public Room addRooms(String caveName){
+//        Room newRoom = new Room(caveName);
+//        caveRooms.add(newRoom);
+//        return newRoom;
+//    }
     public Room getRandomRoom(){
 
         // if the rooms haven't been created, throw an error

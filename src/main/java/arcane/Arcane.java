@@ -2,6 +2,8 @@ package arcane;
 
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class Arcane {
@@ -20,7 +22,35 @@ public class Arcane {
 
         Adventurer adventurer = new Adventurer();
         Creature creature = new Creature();
-        Cave cave = new Cave(creature,adventurer);
+
+        //Create all the rooms
+        //Add all the neighbors to the rooms
+        //put them in a list
+
+        // DELETE THIS LATER
+        Room nw = new Room("Northwest");
+        Room ne =  new Room("Northeast");
+        Room sw = new Room("Southwest");
+        Room se = new Room ("Southeast");
+
+        //adding in the two neighbors of each room
+        nw.addNeighbor(ne);
+        nw.addNeighbor(sw);
+        ne.addNeighbor(nw);
+        ne.addNeighbor(se);
+        sw.addNeighbor(nw);
+        sw.addNeighbor(se);
+        se.addNeighbor(ne);
+        se.addNeighbor(sw);
+
+        List<Room> rooms = new ArrayList<>();
+        rooms.add(nw);
+        rooms.add(ne);
+        rooms.add(sw);
+        rooms.add(se);
+
+
+        Cave cave = new Cave(creature,adventurer, rooms);
 
         logger.info("Starting play...");
         while (adventurer.isAlive() && creature.isAlive()){
