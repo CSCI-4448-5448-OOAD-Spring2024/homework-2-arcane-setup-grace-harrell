@@ -1,6 +1,11 @@
 package arcane;
 
+import org.slf4j.LoggerFactory;
+
+import java.util.logging.Logger;
+
 public class Turn {
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(Turn.class);
     int turnID;
     Cave cave;
     Creature creature;
@@ -48,7 +53,7 @@ public class Turn {
     }
     // implement method to print the actions of this turn and the current status of the cave
     public void printTurn(){
-        System.out.println("ARCANE Maze: turn " + turnID);
+        logger.info("ARCANE Maze: turn " + turnID);
         cave.printCaveStatus();
         System.out.println();
     }
