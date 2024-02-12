@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArcaneTest {
@@ -15,6 +16,7 @@ public class ArcaneTest {
     public void testPlay(){
         provideInput("Testy");
         Arcane arcane = new Arcane();
-        arcane.play();
+        assertNotNull(arcane.play());
+
     }
 }

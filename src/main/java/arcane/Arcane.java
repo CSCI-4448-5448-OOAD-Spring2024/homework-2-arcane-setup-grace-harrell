@@ -9,8 +9,8 @@ public class Arcane {
             System.out.println("Boo, the " + creature.getName() + " wins.");
         }
     }
-    public void play() {
-        Boolean adventurer_won = false;
+    public boolean play() {
+        boolean adventurer_won = false;
         int turn_id = 0;
 
         Adventurer adventurer = new Adventurer();
@@ -25,6 +25,7 @@ public class Arcane {
         }
         adventurer_won = adventurer.isAlive();
         gameOver(adventurer_won, adventurer, creature);
+        return adventurer_won;
     }
     // ctrl b goes to the class definition
 }
