@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
+import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CaveTest {
+    private static final Logger logger = Logger.getLogger(String.valueOf(CaveTest.class));
     public void provideInput(String testName) {
         ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
         System.setIn(testInput);
@@ -89,8 +91,8 @@ class CaveTest {
         Room adventurerRoom = cave.getAdventurerRoom();
         Room creatureRoom = cave.getCreatureRoom();
 
-        System.out.println(adventurerRoom.getRoomName());
-        System.out.println(creatureRoom.getRoomName());
+        logger.info(adventurerRoom.getRoomName());
+        logger.info(creatureRoom.getRoomName());
 
         assertNotNull(adventurerRoom);
         assertNotNull(creatureRoom);

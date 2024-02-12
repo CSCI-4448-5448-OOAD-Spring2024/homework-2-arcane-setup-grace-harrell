@@ -3,8 +3,10 @@ package arcane;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.logging.Logger;
 
 class AdventurerTest {
+    private static final Logger logger = Logger.getLogger(AdventurerTest.class.getName());
     @Test
     public void testAdventurerName() {
 
@@ -15,7 +17,7 @@ class AdventurerTest {
 
         // creates a new adventurer
         Adventurer adventurer = new Adventurer();
-        System.out.println("\nHello " + adventurer.getName());
+        logger.info("\nHello " + adventurer.getName());
         assert adventurer.getName().equals("Test Name");
 
     }

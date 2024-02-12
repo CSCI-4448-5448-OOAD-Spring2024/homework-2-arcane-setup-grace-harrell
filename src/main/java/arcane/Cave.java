@@ -1,7 +1,12 @@
 package arcane;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
+import java.util.logging.Logger;
 
 public class Cave {
+
+    private static final Logger logger = Logger.getLogger(String.valueOf(Cave.class));
     private List<Room> caveRooms = new ArrayList<>(); // list of the rooms in the cave
     private Adventurer adventurer;
     private Creature creature;
@@ -59,17 +64,18 @@ public class Cave {
     // prints the current status of the cave, including locations of characters.
     // returns a bool that is true when the characters are in the same room
     public void printCaveStatus() {
+
         for (Room caveRoom : caveRooms) {
-            System.out.println(caveRoom.getRoomName() + ":");
+            logger.info(caveRoom.getRoomName() + ":");
 
             // prints if adventurer is present in this room
             if (caveRoom.adventurerHere()) {
-                System.out.println("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") is here");
+                logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") is here");
             }
 
             // prints if creature is present in this room
             if (caveRoom.creatureHere()) {
-                System.out.println("\tCreature " + creature.getName() + "(health: " + creature.getHealth() + ") is here");
+                logger.info("\tCreature " + creature.getName() + "(health: " + creature.getHealth() + ") is here");
             }
         }
     }
