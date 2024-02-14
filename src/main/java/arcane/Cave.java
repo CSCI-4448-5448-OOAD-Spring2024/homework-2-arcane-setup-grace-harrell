@@ -1,11 +1,13 @@
 package arcane;
 
 import java.util.*;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class Cave {
 
-    private static final Logger logger = Logger.getLogger(String.valueOf(Cave.class));
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private List<Room> caveRooms; // list of the rooms in the cave
     private List<Adventurer> adventurers;
     private List<Creature> creatures;
@@ -29,11 +31,6 @@ public class Cave {
         adventurers = lstAdventurers;
     }
 
-    //    public Room addRooms(String caveName){
-//        Room newRoom = new Room(caveName);
-//        caveRooms.add(newRoom);
-//        return newRoom;
-//    }
     public Room getRandomRoom(){
 
         // if the rooms haven't been created, throw an error
@@ -73,10 +70,19 @@ public class Cave {
     }
 
     // returns the room in the cave with the adventurer in it
-    public Room getAdventurerRoom(){
-        for(Room caveRoom : caveRooms){
-            if (!caveRoom.noAdventurersHere()){
-                return caveRoom;
+//    public Room getAdventurerRoom(){
+//        for(Room caveRoom : caveRooms){
+//            if (!caveRoom.noAdventurersHere()){
+//                return caveRoom;
+//            }
+//        }
+//        return null;
+//    }
+    public Room getAdventurerRoom(Adventurer adventurer){
+        for (Room room: getCaveRooms()){
+            List<Adventurer> lstAdventurers = room.getAdventurersPresent();
+            if (lstAdventurers.contains(adventurer)){
+                return room;
             }
         }
         return null;
@@ -114,14 +120,6 @@ public class Cave {
     public boolean allCreaturesDefeated(){
         return creatures.isEmpty();
     }
-    public Room getAdventurerRoom(Adventurer adventurer){
-        for (Room room: getCaveRooms()){
-            List<Adventurer> lstAdventurers = room.getAdventurersPresent();
-            if (lstAdventurers.contains(adventurer)){
-                return room;
-            }
-        }
-        return null;
-    }
+
 
 }

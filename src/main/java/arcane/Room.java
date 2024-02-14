@@ -39,13 +39,13 @@ public class Room {
     }
 
     public List<Creature> getCreaturesPresent() {
-        creaturesPresent.sort(Comparator.comparingInt(Creature::getHealth).reversed());
+        creaturesPresent.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
         return creaturesPresent;
     }
 
     public void addCreaturePresence(Creature creature ) {
         creaturesPresent.add(creature);
-        creaturesPresent.sort(Comparator.comparingInt(Creature::getHealth).reversed());
+        creaturesPresent.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
     }
 
     public void removeCreaturePresence(Creature creature ) {
@@ -57,13 +57,13 @@ public class Room {
     }
 
     public List<Adventurer> getAdventurersPresent() {
-        adventurersPresent.sort(Comparator.comparingInt(Adventurer::getHealth).reversed());
+        adventurersPresent.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
         return adventurersPresent;
     }
 
     public void addAdventurerPresence(Adventurer adventurer) {
         adventurersPresent.add(adventurer);
-        adventurersPresent.sort(Comparator.comparingInt(Adventurer::getHealth).reversed());
+        adventurersPresent.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
     }
 
     public void removeAdventurerPresence(Adventurer adventurer) {

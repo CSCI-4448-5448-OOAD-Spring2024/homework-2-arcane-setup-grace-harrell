@@ -1,11 +1,12 @@
 package arcane;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.LoggerFactory;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
 
 public class CreatureTest {
-    private static final Logger logger = Logger.getLogger(CreatureTest.class.getName());
+    private static final Logger logger = (Logger) LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
 
     @Test
     public  void testCreatureName() {

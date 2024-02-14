@@ -1,10 +1,11 @@
 package arcane;
 
 import java.util.Random;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Food extends Entity{
-    private static final Logger logger = Logger.getLogger(Food.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Food");
 
     // when food is "alive", it is still present in the room and is uneaten
     public Food(){

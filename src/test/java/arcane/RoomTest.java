@@ -73,5 +73,7 @@ class RoomTest {
         room.addFoodPresent(food1);
         room.addFoodPresent(food2);
         assert(room.getFoodsPresent().size() == 3);
+        room.removeFoodPresence(food1);
+        assert(room.getFoodsPresent().size() == 2);
     }
 }

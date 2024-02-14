@@ -41,8 +41,14 @@ public class EntityTest{
         Entity entity = new Entity();
         assert entity.isAlive();
         entity.setIsAlive(false);
-        assert !entity.isAlive();
-        entity.setIsAlive(true);
-        assert entity.isAlive();
+    }
+
+    @Test
+    public void testEatFood(){
+        Food food = new Food();
+        Entity entity = new Entity();
+        assert(entity.getHealth() == 5);
+        entity.eatFood(food);
+        assert(entity.getHealth() == 6);
     }
 }

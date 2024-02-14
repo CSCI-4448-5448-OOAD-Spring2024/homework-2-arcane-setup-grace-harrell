@@ -3,7 +3,7 @@ package arcane;
 public class Entity {
 
     private boolean isAlivePrivate = true;
-    private int health = 5;
+    private double health = 5;
     private String name;
 
     public void setIsAlive(boolean alive){
@@ -13,7 +13,7 @@ public class Entity {
         this.name = name;
     }
 
-    public void decreaseHealth(int decreaseBy){
+    public void decreaseHealth(double decreaseBy){
         health -= decreaseBy;
         if (health <= 0){
             health = 0;
@@ -21,7 +21,7 @@ public class Entity {
         }
     }
 
-    public void setHealth(int setHealthTo){
+    public void setHealth(double setHealthTo){
         health = setHealthTo;
     }
 
@@ -30,10 +30,13 @@ public class Entity {
     public String getName(){
         return name;
     }
-    public int getHealth(){
+    public double getHealth(){
         return health;
     }
     public boolean isAlive(){
-        return isAlivePrivate;
+        return (health > 0);
+    }
+    public void eatFood(Food food){
+        health += food.getHealth();
     }
 }

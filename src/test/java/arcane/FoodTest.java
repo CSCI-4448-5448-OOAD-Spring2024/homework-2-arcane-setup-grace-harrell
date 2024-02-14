@@ -8,8 +8,8 @@ class FoodTest {
     public void testFoodCreation(){
         Food food = new Food();
         String foodName = food.getName();
-        int foodHealthBenefit = food.getHealth();
-        assert(food.getHealth() == 1);
+        double foodHealthBenefit = food.getHealth();
+        assert(foodHealthBenefit == 1);
     }
 
 }

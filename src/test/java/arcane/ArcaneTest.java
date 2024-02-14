@@ -100,14 +100,17 @@ public class ArcaneTest {
         c.addNeighbor(w);
 
         lst_rooms.add(nw);
-        lst_rooms.add(ne);
-        lst_rooms.add(sw);
-        lst_rooms.add(se);
         lst_rooms.add(n);
+        lst_rooms.add(ne);
+
         lst_rooms.add(e);
-        lst_rooms.add(s);
-        lst_rooms.add(w);
         lst_rooms.add(c);
+        lst_rooms.add(w);
+
+        lst_rooms.add(sw);
+        lst_rooms.add(s);
+        lst_rooms.add(se);
+
         for (int i = 0; i < 10; i++){
             Food addFood = new Food();
             getRandomRoom(lst_rooms).addFoodPresent(addFood);
@@ -140,13 +143,47 @@ public class ArcaneTest {
         // provideInput("Testy");
         List<Room> lst_rooms = createRoomsThree();
         List<Adventurer> lst_adventurers = createAdventurers(2);
-        //System.out.println("Adventurer size: " + lst_adventurers.size());
         List<Creature> lst_creatures = createCreatures(5);
-        //System.out.println("Creature size: " + lst_creatures.size());
         Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
         Dice dice = createDice(6);
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
 
+    }
+
+    @Test
+    public void testOrderFight(){
+        List<Room> lst_rooms = createRoomsTwo();
+        List<Adventurer> lst_adventurers = createAdventurers(1);
+        List<Creature> lst_creatures = createCreatures(6);
+        int health = 8;
+        for (Creature creature: lst_creatures){
+            creature.setHealth(health);
+            health -= 1;
+        }
+        Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        arcane.play();
+    }
+    @Test
+    public void testMoveAdventurers(){
+        List<Room> lst_rooms = createRoomsThree();
+        List<Adventurer> lst_adventurers = createAdventurers(8);
+        List<Creature> lst_creatures = createCreatures(3);
+        int healthCreatures = 4;
+        for (Creature creature: lst_creatures){
+            creature.setHealth(healthCreatures);
+            healthCreatures -= 1;
+        }
+        int healthAdventurers = 10;
+        for (Adventurer adventurer: lst_adventurers){
+            adventurer.setHealth(healthAdventurers);
+            healthAdventurers -= 1;
+        }
+        Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        arcane.play();
     }
 }

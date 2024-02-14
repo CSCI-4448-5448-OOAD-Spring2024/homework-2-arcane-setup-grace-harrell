@@ -6,12 +6,13 @@ import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CaveTest {
-    private static final Logger logger = Logger.getLogger(String.valueOf(CaveTest.class));
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
 //    public void provideInput(String testName) {
 //        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
 //        System.setIn(testInput);
@@ -184,7 +185,7 @@ public List<Adventurer> createAdventurers(int num_adventurers){
         int turnId = 0;
         cave.printCaveStatus(turnId);
 
-        Room adventurerRoom = cave.getAdventurerRoom();
+        Room adventurerRoom = cave.getAdventurerRoom(lstAdventurers.get(0));
         Room creatureRoom = cave.getCreatureRoom();
 
         logger.info(adventurerRoom.getRoomName());
@@ -199,7 +200,7 @@ public List<Adventurer> createAdventurers(int num_adventurers){
         List<Adventurer> lstAdventurers = createAdventurers(1);
         List<Creature> lstCreatures = createCreatures(1);
         Cave cave = createCave(lstAdventurers,lstCreatures,lstRooms);
-        Room adventurerHere = cave.getAdventurerRoom();
+        Room adventurerHere = cave.getAdventurerRoom(lstAdventurers.get(0));
         List<Adventurer> allAdventurers = adventurerHere.getAdventurersPresent();
         assert(allAdventurers.size() == 1);
     }

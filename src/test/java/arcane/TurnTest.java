@@ -1,13 +1,15 @@
 package arcane;
 import org.junit.jupiter.api.Test;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+
 
 
 
 class TurnTest {
-    private static final Logger logger = Logger.getLogger(TurnTest.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     public List<Adventurer> createAdventurers(int num_adventurers){
         List<Adventurer> lst_adventurers = new ArrayList<>();
         for (int i = 0; i < num_adventurers; i++){
@@ -143,11 +145,11 @@ class TurnTest {
         Turn turn  = new Turn(turnId, cave,creature.get(0), adventurer.get(0), dice);
 
         cave.printCaveStatus(turnId);
-        Room firstRoom = cave.getAdventurerRoom();
+        Room firstRoom = cave.getAdventurerRoom(adventurer.get(0));
         turn.moveAdventurer();
         turnId += 1;
         cave.printCaveStatus(turnId);
-        Room newRoom = cave.getAdventurerRoom();
+        Room newRoom = cave.getAdventurerRoom(adventurer.get(0));
 
         assert (firstRoom != newRoom);
 
@@ -185,6 +187,7 @@ class TurnTest {
         }
         List<Creature> creaturesPresent = cave.getAllCreatures();
         cave.printCaveStatus(id);
+        //logger.info(String.valueOf(creaturesPresent.size()));
         assert(creaturesPresent.size() == 5);
     }
 
