@@ -1,34 +1,41 @@
 package arcane;
 
-import org.slf4j.LoggerFactory;
-
+import java.util.*;
+import java.util.function.Supplier;
 import java.util.logging.Logger;
 
 public class Turn {
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(Turn.class);
-    int turnID;
-    Cave cave;
-    Creature creature;
-    Adventurer adventurer;
 
-    public Turn(int _turnID, Cave _cave, Creature _creature, Adventurer _adventurer) {
+    private static final Logger logger = Logger.getLogger(Turn.class.getName());
+    public int turnID;
+    private Cave cave;
+    private Creature creature;
+    private Adventurer adventurer;
+
+    private Dice dice;
+
+    public Turn(int _turnID, Cave _cave, Creature _creature, Adventurer _adventurer, Dice _dice) {
         turnID = _turnID;
         cave = _cave;
         creature = _creature;
         adventurer = _adventurer;
-
+        dice = _dice;
     }
     public void moveAdventurer(){
-        Room currentRoom = cave.getAdventurerRoom();
-        Room newRoom = currentRoom.getRandomNeighbor();
-
-        currentRoom.setAdventurerPresence(false);
-        newRoom.setAdventurerPresence(true);
+        for (Room room: cave.getCaveRooms()) {
+            List<Adventurer> adventurersPresent = room.getAdventurersPresent();
+            if (adventurersPresent.contains(adventurer)) {
+                Room currentRoom = cave.getAdventurerRoom();
+                Room newRoom = currentRoom.getRandomNeighbor();
+                currentRoom.removeAdventurerPresence(adventurer);
+                newRoom.addAdventurerPresence(adventurer);
+                return;
+            }
+        }
 
     }
     public void fight(){
-        Dice dice = new Dice();
-        if(creature.getHealth() > 0 && adventurer.getHealth() > 0){
+        if(creature.isAlive() && adventurer.isAlive()){
             int creatureRoll = dice.rollDie();
             int adventurerRoll = dice.rollDie();
 
@@ -38,27 +45,39 @@ public class Turn {
             else if (adventurerRoll > creatureRoll) {
                 creature.decreaseHealth(adventurerRoll - creatureRoll);
             }
+            return;
+        }
+        if (!creature.isAlive()){
+            cave.removeDefeatedCreature(creature);
+
+        }
+        if (!adventurer.isAlive()){
+            cave.removeDefeatedAdventurer(adventurer);
         }
     }
     // implement method to see if characters are in the same room
-    public boolean inSameRoom(){
-        return cave.getCreatureRoom() == cave.getAdventurerRoom();
+    public List<Creature> inSameRoomAs(){
+        for (Room room: cave.getCaveRooms()){
+            List<Adventurer> adventurersPresent= room.getAdventurersPresent();
+            if (adventurersPresent.contains(adventurer)){
+                return room.getCreaturesPresent();
+            }
+        }
+        return null;
     }
     // implement method to see if characters should fight or move
-    public void fightOrMove(){
-        if (inSameRoom())
+    public void takeTurn(){
+        List<Creature> creaturesInRoom = inSameRoomAs();
+        if (!creaturesInRoom.isEmpty()){
+            creature = creaturesInRoom.get(0);
             fight();
+        }
         else
             moveAdventurer();
     }
     // implement method to print the actions of this turn and the current status of the cave
-    public void printTurn(){
-        logger.info("ARCANE Maze: turn " + turnID);
-        cave.printCaveStatus();
-        System.out.println();
-    }
-    public void takeTurn(){
-        fightOrMove();
-        printTurn();
-    }
+//    public void printTurn(){
+//        logger.info("ARCANE Maze: turn " + turnID);
+//        cave.printCaveStatus();
+//    }
 }

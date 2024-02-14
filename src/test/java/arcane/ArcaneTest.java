@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -51,7 +52,16 @@ public class ArcaneTest {
 
         return lst_rooms;
     }
+    public Room getRandomRoom(List<Room> lstRooms){
 
+        // if the rooms haven't been created, throw an error
+        if (lstRooms.isEmpty()){
+            throw new IllegalStateException("Cave is empty");
+        }
+        // find a random value by getting a random index
+        Random rand = new Random();
+        return lstRooms.get(rand.nextInt(lstRooms.size()));
+    }
     public List<Room> createRoomsThree(){
         List<Room> lst_rooms = new ArrayList<>();
         Room nw = new Room("Northwest");
@@ -98,12 +108,17 @@ public class ArcaneTest {
         lst_rooms.add(s);
         lst_rooms.add(w);
         lst_rooms.add(c);
-
+        for (int i = 0; i < 10; i++){
+            Food addFood = new Food();
+            getRandomRoom(lst_rooms).addFoodPresent(addFood);
+        }
         return lst_rooms;
     }
     public Cave createCave(List<Adventurer> lst_adventurers, List<Creature> lst_creatures, List<Room> lst_rooms){
-        Cave cave = new Cave(lst_creatures,lst_adventurers,lst_rooms);
-        return cave;
+        return new Cave(lst_creatures,lst_adventurers,lst_rooms);
+    }
+    public Dice createDice(int numSides){
+        return new Dice();
     }
 //    public void provideInput(String testName) {
 //        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
@@ -116,7 +131,8 @@ public class ArcaneTest {
         List<Adventurer> lst_adventurers = createAdventurers(1);
         List<Creature> lst_creatures = createCreatures(1);
         Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
-        Arcane arcane = new Arcane(cave);
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
     }
     @Test
@@ -124,9 +140,12 @@ public class ArcaneTest {
         // provideInput("Testy");
         List<Room> lst_rooms = createRoomsTwo();
         List<Adventurer> lst_adventurers = createAdventurers(2);
+        System.out.println("Adventurer size: " + lst_adventurers.size());
         List<Creature> lst_creatures = createCreatures(5);
+        System.out.println("Creature size: " + lst_creatures.size());
         Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
-        Arcane arcane = new Arcane(cave);
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
 
     }

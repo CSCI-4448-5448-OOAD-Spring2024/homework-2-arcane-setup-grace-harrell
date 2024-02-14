@@ -1,7 +1,7 @@
 package arcane;
 
 import org.junit.jupiter.api.Test;
-
+import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RoomTest {
@@ -37,14 +37,20 @@ class RoomTest {
     @Test
     public void testAddingCharacters(){
         Room room = new Room("test room");
-        room.setAdventurerPresence(true);
-        room.setCreaturePresence(true);
-        assert(room.adventurerHere());
-        assert(room.creatureHere());
-        room.setAdventurerPresence(false);
-        room.setCreaturePresence(false);
-        assert(!room.adventurerHere());
-        assert(!room.creatureHere());
+        Adventurer adventurerFirst = new Adventurer();
+        Creature creatureFirst = new Creature();
+        room.addAdventurerPresence(adventurerFirst);
+        room.addCreaturePresence(creatureFirst);
+        List<Adventurer> currentAdventurers = room.getAdventurersPresent();
+        List<Creature> currentCreatures = room.getCreaturesPresent();
+        assert(currentAdventurers.size() == 1);
+        assert(currentCreatures.size() == 1);
+        room.removeAdventurerPresence(adventurerFirst);
+        room.removeCreaturePresence(creatureFirst);
+        List<Adventurer> updatedAdventurers = room.getAdventurersPresent();
+        List<Creature> updatedCreatures = room.getCreaturesPresent();
+        assert(updatedCreatures.isEmpty());
+        assert(updatedAdventurers.isEmpty());
     }
     @Test
     public void testGetRandomNeighbor(){

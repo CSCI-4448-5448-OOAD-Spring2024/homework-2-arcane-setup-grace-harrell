@@ -2,12 +2,12 @@ package arcane;
 import java.util.*;
 
 public class Dice {
-    private int num_sides;
+    private int numSides;
     public Dice(){
-        num_sides = 6;
+        numSides = 6;
     }
     public int rollDie(){
         Random rand = new Random();
-        return 1 + rand.nextInt(num_sides);
+        return 1 + rand.nextInt(numSides);
     }
 }

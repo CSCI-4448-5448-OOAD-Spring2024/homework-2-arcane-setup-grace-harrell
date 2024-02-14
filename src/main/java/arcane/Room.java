@@ -4,21 +4,21 @@ import java.util.*;
 
 public class Room {
     private List<Room> neighbors = new ArrayList<>();
-    private String room_name;
-    private boolean creature = false;
-    private boolean adventurer = false;
-    private List<Food> foods_present = new ArrayList<>();
+    private String roomName;
+    private List<Creature> creaturesPresent = new ArrayList<>();
+    private List<Adventurer> adventurersPresent = new ArrayList<>();
+    private List<Food> foodsPresent = new ArrayList<>();
 
     public Room(String name) {
-        room_name = name;
+        roomName = name;
     }
 
     public String getRoomName() {
-        return room_name;
+        return roomName;
     }
 
-    public void setRoomName(String new_room_name) {
-        room_name = new_room_name;
+    public void setRoomName(String newRoomName) {
+        roomName = newRoomName;
     }
 
     public List<Room> getNeighbor() {
@@ -34,31 +34,57 @@ public class Room {
         return neighbors.get(rand.nextInt(neighbors.size()));
     };
 
-    public void addNeighbor(Room new_neighbor) {
-        neighbors.add(new_neighbor);
+    public void addNeighbor(Room newNeighbor) {
+        neighbors.add(newNeighbor);
     }
 
-    public boolean creatureHere() {
-        return creature;
+    public List<Creature> getCreaturesPresent() {
+        creaturesPresent.sort(Comparator.comparingInt(Creature::getHealth).reversed());
+        return creaturesPresent;
     }
 
-    public void setCreaturePresence(Boolean creature_presence) {
-        creature = creature_presence;
+    public void addCreaturePresence(Creature creature ) {
+        creaturesPresent.add(creature);
+        creaturesPresent.sort(Comparator.comparingInt(Creature::getHealth).reversed());
     }
 
-    public boolean adventurerHere() {
-        return adventurer;
+    public void removeCreaturePresence(Creature creature ) {
+        creaturesPresent.remove(creature);
     }
 
-    public void setAdventurerPresence(Boolean adventurer_presence) {
-        adventurer = adventurer_presence;
+    public boolean noCreaturesHere(){
+        return creaturesPresent.isEmpty();
+    }
+
+    public List<Adventurer> getAdventurersPresent() {
+        adventurersPresent.sort(Comparator.comparingInt(Adventurer::getHealth).reversed());
+        return adventurersPresent;
+    }
+
+    public void addAdventurerPresence(Adventurer adventurer) {
+        adventurersPresent.add(adventurer);
+        adventurersPresent.sort(Comparator.comparingInt(Adventurer::getHealth).reversed());
+    }
+
+    public void removeAdventurerPresence(Adventurer adventurer) {
+        adventurersPresent.remove(adventurer);
+    }
+
+    public boolean noAdventurersHere(){
+        return adventurersPresent.isEmpty();
     }
 
     public List<Food> getFoodsPresent(){
-        return foods_present;
+        return foodsPresent;
     }
 
-    public void addFoodPresent(Food new_food) {
-        foods_present.add(new_food);
+    public void addFoodPresent(Food newFood) {
+        foodsPresent.add(newFood);
+    }
+    public boolean noFoodsPresent(){
+        return foodsPresent.isEmpty();
+    }
+    public void removeFoodPresence(Food food){
+        foodsPresent.remove(food);
     }
 }

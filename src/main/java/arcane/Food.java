@@ -29,7 +29,7 @@ public class Food extends Entity{
         int idx = ran.nextInt(11);
         setName(foodTypes[idx]);
 
-        decreaseHealth(4);
+        setHealth(1);
         logger.info("Created a " + getName() + " that will increase health by " + getHealth());
     }
 }

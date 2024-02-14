@@ -1,36 +1,51 @@
 package arcane;
 
-import org.slf4j.LoggerFactory;
 
+import java.util.*;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class Arcane {
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(Arcane.class);
-    public void gameOver(Boolean over, Adventurer adventurer, Creature creature) {
+    private static final Logger logger = Logger.getLogger(Arcane.class.getName());
+    private Cave cave;
+    private Dice dice;
+    public Arcane(Cave cavePlay, Dice dicePlay){
+        cave = cavePlay;
+        dice = dicePlay;
+    }
+    public Cave getCave(){
+        return cave;
+    }
+    public void gameOver(Boolean over) {
         if (over){
-            System.out.println("Yay, Adventurer " + adventurer.getName() + " wins.");
+            logger.info("Yay, the Adventurers won.");
         }
         else{
-            System.out.println("Boo, the " + creature.getName() + " wins.");
+            logger.info("Boo, the creatures won.");
         }
     }
+    public void takeTurnPlay(int turnId, Creature creature, Adventurer adventurer, Dice dice){
+        Turn turn = new Turn(turnId, cave, creature, adventurer, this.dice);
+        turn.takeTurn();
+    }
     public boolean play() {
-        boolean adventurer_won = false;
-        int turn_id = 0;
-
-        Adventurer adventurer = new Adventurer();
-        Creature creature = new Creature();
-        Cave cave = new Cave(creature,adventurer);
+        boolean adventurerWon = false;
+        int turnId = 0;
 
         logger.info("Starting play...");
-        while (adventurer.isAlive() && creature.isAlive()){
-            turn_id += 1;
-            Turn turn = new Turn(turn_id, cave, creature, adventurer);
-            turn.takeTurn();
+        while (!cave.allCreaturesDefeated() && !cave.allAdventurersDefeated()){ // while a player or creature is still alive
+            List<Adventurer> currAdventurers = cave.getAllAdventurers();
+            List<Adventurer> aliveAdventurers = currAdventurers.stream().collect(Collectors.toList());
+            for (Adventurer adventurerCurrent: aliveAdventurers){
+                takeTurnPlay(turnId, null, adventurerCurrent, dice);
+            }
+            cave.printCaveStatus(turnId);
+            turnId += 1;
+            logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));
         }
-        adventurer_won = adventurer.isAlive();
-        gameOver(adventurer_won, adventurer, creature);
-        return adventurer_won;
+        adventurerWon = !cave.allAdventurersDefeated();
+        gameOver(adventurerWon);
+        return adventurerWon;
     }
     // ctrl b goes to the class definition
 }

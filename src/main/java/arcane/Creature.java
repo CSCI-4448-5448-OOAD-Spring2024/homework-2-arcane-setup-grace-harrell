@@ -15,6 +15,7 @@ public class Creature extends Entity{
         Random ran = new Random();
         int idx = ran.nextInt(3);
         setName(creatureTypes[idx]);
+        setHealth(3);
     }
 
 }

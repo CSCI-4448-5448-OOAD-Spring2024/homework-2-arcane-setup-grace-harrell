@@ -9,8 +9,8 @@ public class Entity {
     public void setIsAlive(boolean alive){
         isAlivePrivate = alive;
     }
-    public void setName(String _name){
-        this.name = _name;
+    public void setName(String name){
+        this.name = name;
     }
 
     public void decreaseHealth(int decreaseBy){
@@ -19,6 +19,10 @@ public class Entity {
             health = 0;
             setIsAlive(false);
         }
+    }
+
+    public void setHealth(int setHealthTo){
+        health = setHealthTo;
     }
 
 
