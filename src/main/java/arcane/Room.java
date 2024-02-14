@@ -81,7 +81,7 @@ public class Room {
     public void addFoodPresent(Food newFood) {
         foodsPresent.add(newFood);
     }
-    public boolean noFoodsPresent(){
+    public boolean noFoodsHere(){
         return foodsPresent.isEmpty();
     }
     public void removeFoodPresence(Food food){

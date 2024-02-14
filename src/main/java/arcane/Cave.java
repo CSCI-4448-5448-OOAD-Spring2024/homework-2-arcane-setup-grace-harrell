@@ -64,9 +64,9 @@ public class Cave {
                     logger.info("\tCreature " + creatures.getName() + "(health: " + creatures.getHealth() + ") is here");
                 }
             }
-            if (!caveRoom.noFoodsPresent()){
+            if (!caveRoom.noFoodsHere()){
                 for (Food food: caveRoom.getFoodsPresent()){
-                    logger.info("\tCreature " + food.getName() + "(health: " + food.getHealth() + ") is here");
+                    logger.info("\tFood " + food.getName() + "(health: " + food.getHealth() + ") is here");
                 }
             }
         }
@@ -114,4 +114,14 @@ public class Cave {
     public boolean allCreaturesDefeated(){
         return creatures.isEmpty();
     }
+    public Room getAdventurerRoom(Adventurer adventurer){
+        for (Room room: getCaveRooms()){
+            List<Adventurer> lstAdventurers = room.getAdventurersPresent();
+            if (lstAdventurers.contains(adventurer)){
+                return room;
+            }
+        }
+        return null;
+    }
+
 }

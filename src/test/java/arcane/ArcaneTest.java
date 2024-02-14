@@ -138,11 +138,11 @@ public class ArcaneTest {
     @Test
     public void testPlayThree(){
         // provideInput("Testy");
-        List<Room> lst_rooms = createRoomsTwo();
+        List<Room> lst_rooms = createRoomsThree();
         List<Adventurer> lst_adventurers = createAdventurers(2);
-        System.out.println("Adventurer size: " + lst_adventurers.size());
+        //System.out.println("Adventurer size: " + lst_adventurers.size());
         List<Creature> lst_creatures = createCreatures(5);
-        System.out.println("Creature size: " + lst_creatures.size());
+        //System.out.println("Creature size: " + lst_creatures.size());
         Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
         Dice dice = createDice(6);
         Arcane arcane = new Arcane(cave, dice);

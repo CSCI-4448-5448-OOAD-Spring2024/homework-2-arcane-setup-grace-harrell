@@ -13,9 +13,9 @@ public class Arcane {
         cave = cavePlay;
         dice = dicePlay;
     }
-    public Cave getCave(){
-        return cave;
-    }
+//    public Cave getCave(){
+//        return cave;
+//    }
     public void gameOver(Boolean over) {
         if (over){
             logger.info("Yay, the Adventurers won.");
@@ -41,7 +41,7 @@ public class Arcane {
             }
             cave.printCaveStatus(turnId);
             turnId += 1;
-            logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));
+            //logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));
         }
         adventurerWon = !cave.allAdventurersDefeated();
         gameOver(adventurerWon);

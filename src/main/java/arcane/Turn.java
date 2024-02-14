@@ -22,18 +22,12 @@ public class Turn {
         dice = _dice;
     }
     public void moveAdventurer(){
-        for (Room room: cave.getCaveRooms()) {
-            List<Adventurer> adventurersPresent = room.getAdventurersPresent();
-            if (adventurersPresent.contains(adventurer)) {
-                Room currentRoom = cave.getAdventurerRoom();
-                Room newRoom = currentRoom.getRandomNeighbor();
-                currentRoom.removeAdventurerPresence(adventurer);
-                newRoom.addAdventurerPresence(adventurer);
-                return;
-            }
-        }
-
+        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+        Room newRoom = adventurerRoom.getRandomNeighbor();
+        adventurerRoom.removeAdventurerPresence(adventurer);
+        newRoom.addAdventurerPresence(adventurer);
     }
+
     public void fight(){
         if(creature.isAlive() && adventurer.isAlive()){
             int creatureRoll = dice.rollDie();
@@ -49,7 +43,7 @@ public class Turn {
         }
         if (!creature.isAlive()){
             cave.removeDefeatedCreature(creature);
-
+            moveAdventurer();
         }
         if (!adventurer.isAlive()){
             cave.removeDefeatedAdventurer(adventurer);
@@ -57,13 +51,8 @@ public class Turn {
     }
     // implement method to see if characters are in the same room
     public List<Creature> inSameRoomAs(){
-        for (Room room: cave.getCaveRooms()){
-            List<Adventurer> adventurersPresent= room.getAdventurersPresent();
-            if (adventurersPresent.contains(adventurer)){
-                return room.getCreaturesPresent();
-            }
-        }
-        return null;
+        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+        return adventurerRoom.getCreaturesPresent();
     }
     // implement method to see if characters should fight or move
     public void takeTurn(){
