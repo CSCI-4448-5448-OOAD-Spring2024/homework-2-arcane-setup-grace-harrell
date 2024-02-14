@@ -35,7 +35,7 @@ public class Turn {
         Room newRoom = adventurerRoom.getRandomNeighbor();
         adventurerRoom.removeAdventurerPresence(adventurer);
         newRoom.addAdventurerPresence(adventurer);
-        logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has moved from " + adventurerRoom.getRoomName() + " to " + newRoom.getRoomName());
+        logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has moved from " + adventurerRoom.getRoomName() + " to " + newRoom.getRoomName());
     }
 
     public void fight(){
@@ -44,28 +44,28 @@ public class Turn {
         if(creature.isAlive() && adventurer.isAlive()){
             int creatureRoll = dice.rollDie();
             int adventurerRoll = dice.rollDie();
-            logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") fought " + creature.getName() + "(health: " + creature.getHealth() + ")");
+            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") fought " + creature.getName() + "(health: " + creature.getHealth() + ")");
             if (creatureRoll > adventurerRoll){
                 adventurer.decreaseHealth(creatureRoll - adventurerRoll);
-                logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")");
             }
             else if (adventurerRoll > creatureRoll) {
                 creature.decreaseHealth(adventurerRoll - creatureRoll);
-                logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")");
             }
             else{
-                logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") drew against " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") drew against " + creature.getName() + "(health: " + creature.getHealth() + ")");
             }
             return;
         }
         if (!creature.isAlive()){
             cave.removeDefeatedCreature(creature);
-            logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has defeated " + creature.getName());
+            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has defeated " + creature.getName());
             moveAdventurer();
         }
         if (!adventurer.isAlive()){
             cave.removeDefeatedAdventurer(adventurer);
-            logger.info("\tAdventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed.");
+            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed.");
         }
     }
     // implement method to see if characters are in the same room

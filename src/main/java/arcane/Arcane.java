@@ -44,7 +44,9 @@ public class Arcane {
         int turnId = 0;
         logger.info("Starting play...");
         while (!cave.allCreaturesDefeated() && !cave.allAdventurersDefeated()){ // while a player or creature is still alive
+            logger.info("\n");
             cave.printCaveStatus(turnId);
+
             List<Adventurer> currAdventurers = cave.getAllAdventurers();
             List<Adventurer> aliveAdventurers = currAdventurers.stream().toList();
             for (Adventurer adventurerCurrent: aliveAdventurers){
