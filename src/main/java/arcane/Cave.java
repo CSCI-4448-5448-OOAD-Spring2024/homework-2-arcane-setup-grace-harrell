@@ -50,23 +50,35 @@ public class Cave {
             logger.info(caveRoom.getRoomName() + ":");
 
             // prints if adventurer is present in this room
+            logger.info("\tAdventurers: ");
             if (!caveRoom.noAdventurersHere()) {
+                String nameAdventurers = "";
                 for (Adventurer adventurers: caveRoom.getAdventurersPresent()){
-                    logger.info("\tAdventurer " + adventurers.getName() + "(health: " + adventurers.getHealth() + ") is here");
+                    nameAdventurers += adventurers.getName() +  "(health: " + adventurers.getHealth() + "), ";
                 }
+                logger.info("\t\t" + nameAdventurers.substring(0,(nameAdventurers.length() - 2)));
             }
             // prints if creature is present in this room
+            logger.info("\tCreatures:  ");
             if (!caveRoom.noCreaturesHere()) {
+                String nameCreatures = "";
                 for (Creature creatures: caveRoom.getCreaturesPresent()){
-                    logger.info("\tCreature " + creatures.getName() + "(health: " + creatures.getHealth() + ") is here");
+                    nameCreatures += creatures.getName() +  "(health: " + creatures.getHealth() + "), ";
                 }
+                logger.info("\t\t" + nameCreatures.substring(0,(nameCreatures.length() - 2)));
             }
+            logger.info("\tFood:  ");
             if (!caveRoom.noFoodsHere()){
-                for (Food food: caveRoom.getFoodsPresent()){
-                    logger.info("\tFood " + food.getName() + "(health: " + food.getHealth() + ") is here");
+                List<Food> lstFoods = caveRoom.getFoodsPresent();
+                String nameFoods = "";
+                for (Food food: lstFoods){
+                    nameFoods += food.getName() + ", ";
                 }
+                logger.info("\t\t" + nameFoods.substring(0,(nameFoods.length() - 2)));
             }
         }
+
+        logger.info("Actions: ");
     }
 
     // returns the room in the cave with the adventurer in it

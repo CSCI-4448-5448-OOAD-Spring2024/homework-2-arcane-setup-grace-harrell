@@ -11,21 +11,27 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArcaneTest {
-    public List<Adventurer> createAdventurers(int num_adventurers){
-        List<Adventurer> lst_adventurers = new ArrayList<>();
-        for (int i = 0; i < num_adventurers; i++){
-            Adventurer new_adventurer = new Adventurer();
-            lst_adventurers.add(new_adventurer);
+    public List<Adventurer> createAdventurers(int numAdventurers){
+        List<Adventurer> lstAdventurers = new ArrayList<>();
+        List<String> lstNamesAdventurers = new ArrayList<>();
+        int numAdventurersCreated = 0;
+        while (numAdventurersCreated < numAdventurers){
+            Adventurer newAdventurer = new Adventurer();
+            if (!lstNamesAdventurers.contains(newAdventurer.getName())){
+                lstAdventurers.add(newAdventurer);
+                lstNamesAdventurers.add(newAdventurer.getName());
+                numAdventurersCreated += 1;
+            }
         }
-        return lst_adventurers;
+        return lstAdventurers;
     }
-    public List<Creature> createCreatures(int num_creatures){
-        List<Creature> lst_creatures = new ArrayList<>();
-        for (int i = 0; i < num_creatures; i++){
+    public List<Creature> createCreatures(int numCreatures){
+        List<Creature> lstCreatures = new ArrayList<>();
+        for (int i = 0; i < numCreatures; i++){
             Creature new_creature = new Creature();
-            lst_creatures.add(new_creature);
+            lstCreatures.add(new_creature);
         }
-        return lst_creatures;
+        return lstCreatures;
     }
 
     public List<Room> createRoomsTwo(){
@@ -170,7 +176,7 @@ public class ArcaneTest {
     public void testMoveAdventurers(){
         List<Room> lst_rooms = createRoomsThree();
         List<Adventurer> lst_adventurers = createAdventurers(8);
-        List<Creature> lst_creatures = createCreatures(3);
+        List<Creature> lst_creatures = createCreatures(6);
         int healthCreatures = 4;
         for (Creature creature: lst_creatures){
             creature.setHealth(healthCreatures);

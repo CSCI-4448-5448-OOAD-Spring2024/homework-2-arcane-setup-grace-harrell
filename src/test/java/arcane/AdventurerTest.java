@@ -3,6 +3,8 @@ package arcane;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,7 +17,5 @@ class AdventurerTest {
         Adventurer adventurer = new Adventurer();
         logger.info("\nHello " + adventurer.getName());
         assert adventurer.getHealth() == 5;
-
     }
-
 }
