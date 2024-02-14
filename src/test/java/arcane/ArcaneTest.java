@@ -176,7 +176,7 @@ public class ArcaneTest {
     public void testMoveAdventurers(){
         List<Room> lst_rooms = createRoomsThree();
         List<Adventurer> lst_adventurers = createAdventurers(8);
-        List<Creature> lst_creatures = createCreatures(3);
+        List<Creature> lst_creatures = createCreatures(6);
         int healthCreatures = 4;
         for (Creature creature: lst_creatures){
             creature.setHealth(healthCreatures);

@@ -31,12 +31,6 @@ public class Arcane {
         turn.takeTurn();
     }
 
-//    public void moveExtraAdventurers(int turnId, List<Adventurer> moveAdventurers, Dice dice){
-//        for (Adventurer move: moveAdventurers){
-//            Turn turn = new Turn(turnId,cave,null, move,dice);
-//        }
-//    }
-
     // need to add in functionality that adventurer with most health fights and rest of them move.
 
     public boolean play() {
@@ -50,13 +44,9 @@ public class Arcane {
             List<Adventurer> currAdventurers = cave.getAllAdventurers();
             List<Adventurer> aliveAdventurers = currAdventurers.stream().toList();
             for (Adventurer adventurerCurrent: aliveAdventurers){
+                Room currentRoom = cave.getAdventurerRoom(adventurerCurrent);
+                currentRoom.moveExtraAdventurers(adventurerCurrent);
                 takeTurnPlay(turnId, null, adventurerCurrent, dice);
-//                Room adventurerRoom = cave.getAdventurerRoom(adventurerCurrent);
-//                List<Adventurer> allAdventurersInRoom= adventurerRoom.getAdventurersPresent();
-//                if (allAdventurersInRoom.size() > 1){
-//                    allAdventurersInRoom.remove(adventurerCurrent);
-//                    moveExtraAdventurers(turnId, allAdventurersInRoom, dice);
-//                }
             }
             turnId += 1;
             //logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));

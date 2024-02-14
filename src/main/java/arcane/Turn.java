@@ -77,6 +77,7 @@ public class Turn {
     public void takeTurn(){
         List<Creature> creaturesInRoom = inSameRoomAs();
         Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+
         if (!creaturesInRoom.isEmpty()){
             creature = creaturesInRoom.get(0);
             fight();
