@@ -1,0 +1,1378 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+Starting play...
+
+
+ARCANE Maze: turn 0
+Northwest:
+	Adventurers:
+		Alex(health: 5.0)
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+		Cookie, Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Liam(health: 5.0)
+	Creatures:
+	Food:
+		Cookie, Cookie
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 6.0) just ate Cookie
+Adventurer Alex(health: 5.0) has moved from Northwest to West
+
+
+ARCANE Maze: turn 1
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+		Cookie, Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Liam(health: 6.0)
+	Creatures:
+	Food:
+		Cookie
+West:
+	Adventurers:
+		Alex(health: 5.0)
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 7.0) just ate Cookie
+Adventurer Alex(health: 4.5) fought Ogre(health: 2.5)
+Adventurer Alex(health: 4.5) beat Ogre(health: 0.0)
+
+
+ARCANE Maze: turn 2
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+		Cookie, Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Liam(health: 7.0)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+		Alex(health: 4.5)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 7.0) has moved from Center to South
+Adventurer Alex(health: 4.0) has defeated Ogre
+Adventurer Alex(health: 4.0) has moved from West to Northwest
+
+
+ARCANE Maze: turn 3
+Northwest:
+	Adventurers:
+		Alex(health: 4.0)
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+		Cookie, Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+		Liam(health: 7.0)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 6.5) fought Goblin(health: 2.5)
+Adventurer Liam(health: 5.5) lost to Goblin(health: 2.5)
+Adventurer Alex(health: 4.0) has moved from Northwest to North
+
+
+ARCANE Maze: turn 4
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 4.0)
+	Creatures:
+	Food:
+		Cookie, Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+		Liam(health: 5.5)
+	Creatures:
+		Goblin(health: 2.5)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 5.0) fought Goblin(health: 2.0)
+Adventurer Liam(health: 5.0) beat Goblin(health: 0.0)
+Adventurer Alex(health: 5.0) just ate Cookie
+
+
+ARCANE Maze: turn 5
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 5.0)
+	Creatures:
+	Food:
+		Banana
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+		Liam(health: 5.0)
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.5) has defeated Goblin
+Adventurer Liam(health: 4.5) has moved from South to Center
+Adventurer Alex(health: 6.0) just ate Banana
+
+
+ARCANE Maze: turn 6
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 6.0)
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Liam(health: 4.5)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.5) has moved from Center to West
+Adventurer Alex(health: 6.0) has moved from North to Northwest
+
+
+ARCANE Maze: turn 7
+Northwest:
+	Adventurers:
+		Alex(health: 6.0)
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+		Liam(health: 4.5)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.0) has defeated Ogre
+Adventurer Liam(health: 4.0) has moved from West to Center
+Adventurer Alex(health: 6.0) has moved from Northwest to West
+
+
+ARCANE Maze: turn 8
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Liam(health: 4.0)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+		Alex(health: 6.0)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.0) has moved from Center to West
+Adventurer Liam(health: 4.0) has moved from West to Northwest
+Adventurer Alex(health: 5.5) has defeated Ogre
+Adventurer Alex(health: 5.5) has moved from West to Northwest
+
+
+ARCANE Maze: turn 9
+Northwest:
+	Adventurers:
+		Alex(health: 5.5), Liam(health: 4.0)
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.0) has moved from Northwest to North
+Adventurer Alex(health: 5.5) has moved from Northwest to North
+
+
+ARCANE Maze: turn 10
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 5.5), Liam(health: 4.0)
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 4.0) has moved from North to Northeast
+Adventurer Alex(health: 5.5) has moved from North to Center
+
+
+ARCANE Maze: turn 11
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 4.0)
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+		Alex(health: 5.5)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 3.5) fought Ghoul(health: 2.5)
+Adventurer Liam(health: 2.5) lost to Ghoul(health: 2.5)
+Adventurer Alex(health: 5.5) has moved from Center to North
+
+
+ARCANE Maze: turn 12
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 5.5)
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 2.5)
+	Creatures:
+		Ghoul(health: 2.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Liam(health: 2.0) fought Ghoul(health: 2.0)
+Adventurer Liam(health: 0.0) lost to Ghoul(health: 2.0)
+Adventurer Alex(health: 5.5) has moved from North to Northeast
+
+
+ARCANE Maze: turn 13
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Alex(health: 5.5), Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 2.0)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 5.5) has moved from Northeast to East
+Adventurer Liam(health: 0.0) DEAD was killed.
+Adventurer Alex(health: 5.0) fought Goblin(health: 2.5)
+Adventurer Alex(health: 4.0) lost to Goblin(health: 2.5)
+
+
+ARCANE Maze: turn 14
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+		Alex(health: 4.0)
+	Creatures:
+		Goblin(health: 2.5)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 3.5) fought Goblin(health: 2.0)
+Adventurer Alex(health: 3.5) beat Goblin(health: 0.0)
+
+
+ARCANE Maze: turn 15
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+		Alex(health: 3.5)
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 3.0) has defeated Goblin
+Adventurer Alex(health: 3.0) has moved from East to Center
+
+
+ARCANE Maze: turn 16
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+		Alex(health: 3.0)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 3.0) has moved from Center to North
+
+
+ARCANE Maze: turn 17
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+		Alex(health: 3.0)
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 3.0) has moved from North to Northwest
+
+
+ARCANE Maze: turn 18
+Northwest:
+	Adventurers:
+		Alex(health: 3.0)
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 3.0) has moved from Northwest to West
+
+
+ARCANE Maze: turn 19
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+		Alex(health: 3.0)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 2.5) has defeated Ogre
+Adventurer Alex(health: 2.5) has moved from West to Southwest
+
+
+ARCANE Maze: turn 20
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+		Alex(health: 2.5)
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 2.0) fought Ogre(health: 2.5)
+Adventurer Alex(health: 2.0) beat Ogre(health: 0.0)
+
+
+ARCANE Maze: turn 21
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+		Alex(health: 2.0)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 1.5) has defeated Ogre
+Adventurer Alex(health: 1.5) has moved from Southwest to South
+
+
+ARCANE Maze: turn 22
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+		Alex(health: 1.5)
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 1.0) has defeated Goblin
+Adventurer Alex(health: 1.0) has moved from South to Center
+
+
+ARCANE Maze: turn 23
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+		Alex(health: 1.0)
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 1.0) has moved from Center to South
+
+
+ARCANE Maze: turn 24
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+		Alex(health: 1.0)
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 0.5) has defeated Goblin
+Adventurer Alex(health: 0.5) has moved from South to Southwest
+
+
+ARCANE Maze: turn 25
+Northwest:
+	Adventurers:
+	Creatures:
+	Food:
+North:
+	Adventurers:
+	Creatures:
+	Food:
+Northeast:
+	Adventurers:
+		Liam(health: 0.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+East:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Center:
+	Adventurers:
+	Creatures:
+	Food:
+West:
+	Adventurers:
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Pancake
+Southwest:
+	Adventurers:
+		Alex(health: 0.5)
+	Creatures:
+		Ogre(health: 0.0)
+	Food:
+		Salad, Cake, Cookie, Fries
+South:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.0)
+	Food:
+Southeast:
+	Adventurers:
+	Creatures:
+	Food:
+		Steak
+Actions:
+Adventurer Alex(health: 0.0) has defeated Ogre
+Adventurer Alex(health: 0.0) has moved from Southwest to South
+Adventurer Alex(health: 0.0) DEAD was killed.
+Boo, the creatures won.
+> Task :test
+BUILD SUCCESSFUL in 443ms
+4 actionable tasks: 1 executed, 3 up-to-date
+4:14:06 PM: Execution finished ':test --tests "arcane.ArcaneTest.testPlayThree"'.

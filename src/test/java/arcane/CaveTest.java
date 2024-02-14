@@ -13,10 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CaveTest {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
-//    public void provideInput(String testName) {
-//        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
-//        System.setIn(testInput);
-//    }
+
 public List<Adventurer> createAdventurers(int num_adventurers){
     List<Adventurer> lst_adventurers = new ArrayList<>();
     for (int i = 0; i < num_adventurers; i++){

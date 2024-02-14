@@ -31,6 +31,5 @@ public class Food extends Entity{
         setName(foodTypes[idx]);
 
         setHealth(1);
-        logger.info("Created a " + getName() + " that will increase health by " + getHealth());
     }
 }

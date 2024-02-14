@@ -129,10 +129,6 @@ public class ArcaneTest {
     public Dice createDice(int numSides){
         return new Dice();
     }
-//    public void provideInput(String testName) {
-//        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
-//        System.setIn(testInput);
-//    }
     @Test
     public void testPlayTwo(){
         // provideInput("Testy");

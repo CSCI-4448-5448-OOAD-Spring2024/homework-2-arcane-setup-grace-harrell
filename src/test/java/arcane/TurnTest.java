@@ -123,12 +123,6 @@ class TurnTest {
         return new Dice();
     }
 
-    // function to allow for mock user input
-//    public void provideInput(String testName) {
-//        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
-//        System.setIn(testInput);
-//    }
-
 
 
     @Test
