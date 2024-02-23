@@ -4,7 +4,7 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Food extends Entity{
+public abstract class Food extends Entity{
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Food");
 
     // when food is "alive", it is still present in the room and is uneaten
