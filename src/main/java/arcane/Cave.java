@@ -6,13 +6,45 @@ import org.slf4j.LoggerFactory;
 
 
 public class Cave {
-
-    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
-    private List<Room> caveRooms; // list of the rooms in the cave
+    private List<Room> caveRooms;
     private List<Adventurer> adventurers;
     private List<Creature> creatures;
 
-    public Cave(List<Creature> lstCreatures, List<Adventurer> lstAdventurers,  List<Room> lstRooms) { // add dependacy injection list of rooms
+
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
+
+    public static class Builder {
+        AdventurerFactory adventurerFactory;
+        CreatureFactory creatureFactory;
+        FoodFactory foodFactory;
+        private Cave cave;
+
+        public Builder(AdventurerFactory adventurerFactory_, CreatureFactory creatureFactory_, FoodFactory foodFactory_) {
+            adventurerFactory = adventurerFactory_;
+            creatureFactory = creatureFactory_;
+            foodFactory = foodFactory_;
+        }
+
+        public Cave build() {
+           cave = new Cave();
+//            cave.caveRooms = this.caveRooms;
+//            cave.adventurers = this.adventurers;
+//            cave.creatures = this.creatures;
+            //cave.caveRooms = ;
+            return cave;
+        }
+
+        public Room getRandomRoom(){
+            if (cave.caveRooms.isEmpty()){
+                throw new IllegalStateException("Cave is empty");
+            }
+            Random rand = new Random();
+            return cave.caveRooms.get(rand.nextInt(cave.caveRooms.size()));
+        }
+
+        //public Builder
+    }
+    public Cave(List<Creature> lstCreatures, List<Adventurer> lstAdventurers,  List<Room> lstRooms) {  //add dependacy injection list of rooms
 
         caveRooms = lstRooms;
 
@@ -82,14 +114,14 @@ public class Cave {
     }
 
     // returns the room in the cave with the adventurer in it
-//    public Room getAdventurerRoom(){
-//        for(Room caveRoom : caveRooms){
-//            if (!caveRoom.noAdventurersHere()){
-//                return caveRoom;
-//            }
-//        }
-//        return null;
-//    }
+    public Room getAdventurerRoom(){
+        for(Room caveRoom : caveRooms){
+            if (!caveRoom.noAdventurersHere()){
+                return caveRoom;
+            }
+        }
+        return null;
+    }
     public Room getAdventurerRoom(Adventurer adventurer){
         for (Room room: getCaveRooms()){
             List<Adventurer> lstAdventurers = room.getAdventurersPresent();

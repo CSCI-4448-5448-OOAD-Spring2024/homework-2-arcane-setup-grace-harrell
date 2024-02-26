@@ -1,7 +1,6 @@
 package arcane;
 
 public class Entity {
-
     private boolean isAlivePrivate = true;
     private double health = 5;
     private String name;

@@ -15,4 +15,5 @@ public class Adventurer extends Entity{
         setName(nameUsed);
     }
 
+
 }
