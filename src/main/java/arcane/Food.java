@@ -12,10 +12,6 @@ public class Food extends Entity{
     private List<String> lstFoodNames = new ArrayList<>(Arrays.asList("Steak","Cookie","Salad","Banana","Fries","Cake","Pasta","Chicken","Pancake","Tomato","Ice Cream","Egg"));
     // when food is "alive", it is still present in the room and is uneaten
     public Food(){
-        Random ran = new Random();
-        int idx = ran.nextInt(lstFoodNames.size());
-        String nameUsed = lstFoodNames.get(idx);
-        setName(nameUsed);
         setHealth(1);
     }
 

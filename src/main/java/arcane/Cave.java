@@ -17,7 +17,7 @@ public class Cave {
         AdventurerFactory adventurerFactory;
         CreatureFactory creatureFactory;
         FoodFactory foodFactory;
-        private Cave cave;
+        private Cave cave = new Cave(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
         public Builder(AdventurerFactory adventurerFactory_, CreatureFactory creatureFactory_, FoodFactory foodFactory_) {
             adventurerFactory = adventurerFactory_;
@@ -26,23 +26,103 @@ public class Cave {
         }
 
         public Cave build() {
-           cave = new Cave();
-//            cave.caveRooms = this.caveRooms;
-//            cave.adventurers = this.adventurers;
-//            cave.creatures = this.creatures;
-            //cave.caveRooms = ;
             return cave;
         }
 
         public Room getRandomRoom(){
-            if (cave.caveRooms.isEmpty()){
+            if (cave.getCaveRooms().isEmpty()){
                 throw new IllegalStateException("Cave is empty");
             }
             Random rand = new Random();
-            return cave.caveRooms.get(rand.nextInt(cave.caveRooms.size()));
+            return cave.getCaveRooms().get(rand.nextInt(cave.caveRooms.size()));
         }
 
-        //public Builder
+        public Builder createRoom(String builderRoomName){
+            Room newRoom = new Room(builderRoomName);
+            cave.addRoomToCave(newRoom);
+            return this;
+        }
+
+        public Builder create2x2Grid(){
+            List<Room> lst_rooms = new ArrayList<>();
+            Room nw = new Room("Northwest");
+            Room ne = new Room("Northeast");
+            Room sw = new Room("Southwest");
+            Room se = new Room("Southeast");
+
+            // adding in the two neighbors of each room
+            nw.addNeighbor(ne);
+            nw.addNeighbor(sw);
+            ne.addNeighbor(nw);
+            ne.addNeighbor(se);
+            sw.addNeighbor(nw);
+            sw.addNeighbor(se);
+            se.addNeighbor(ne);
+            se.addNeighbor(sw);
+
+            lst_rooms.add(nw);
+            lst_rooms.add(ne);
+            lst_rooms.add(sw);
+            lst_rooms.add(se);
+
+            cave.caveRooms = lst_rooms;
+            return this;
+        }
+
+        public Builder create3x3Grid(){
+            List<Room> lst_rooms = new ArrayList<>();
+            Room nw = new Room("Northwest");
+            Room ne = new Room("Northeast");
+            Room sw = new Room("Southwest");
+            Room se = new Room("Southeast");
+            Room n = new Room("North");
+            Room s = new Room("South");
+            Room w = new Room("West");
+            Room e = new Room("East");
+            Room c = new Room("Center");
+            // adding in the two neighbors of each room
+            nw.addNeighbor(n);
+            nw.addNeighbor(w);
+            n.addNeighbor(nw);
+            n.addNeighbor(ne);
+            n.addNeighbor(c);
+            ne.addNeighbor(n);
+            ne.addNeighbor(e);
+            e.addNeighbor(ne);
+            e.addNeighbor(c);
+            e.addNeighbor(se);
+            se.addNeighbor(e);
+            se.addNeighbor(s);
+            s.addNeighbor(c);
+            s.addNeighbor(sw);
+            s.addNeighbor(se);
+            sw.addNeighbor(s);
+            sw.addNeighbor(w);
+            w.addNeighbor(nw);
+            w.addNeighbor(sw);
+            w.addNeighbor(c);
+            c.addNeighbor(n);
+            c.addNeighbor(e);
+            c.addNeighbor(s);
+            c.addNeighbor(w);
+
+            lst_rooms.add(nw);
+            lst_rooms.add(n);
+            lst_rooms.add(ne);
+
+            lst_rooms.add(e);
+            lst_rooms.add(c);
+            lst_rooms.add(w);
+
+            lst_rooms.add(sw);
+            lst_rooms.add(s);
+            lst_rooms.add(se);
+
+            cave.caveRooms = lst_rooms;
+            return this;
+        }
+
+
     }
     public Cave(List<Creature> lstCreatures, List<Adventurer> lstAdventurers,  List<Room> lstRooms) {  //add dependacy injection list of rooms
 
@@ -61,6 +141,10 @@ public class Cave {
         // creates an adventurer in the cave
         // WILL REQUIRE  USER INPUT FOR NAME
         adventurers = lstAdventurers;
+    }
+
+    public void addRoomToCave(Room roomToAdd){
+        caveRooms.add(roomToAdd);
     }
 
     public Room getRandomRoom(){
@@ -140,7 +224,7 @@ public class Cave {
         return null;
     }
 
-    public List<Room> getCaveRooms () {
+    public List<Room> getCaveRooms() {
         return caveRooms;
     }
 
