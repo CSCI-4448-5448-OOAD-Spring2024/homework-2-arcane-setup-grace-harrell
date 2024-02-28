@@ -1,0 +1,1054 @@
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :compileTestJava
+> Task :processTestResources NO-SOURCE
+> Task :testClasses
+Starting play...
+
+
+ARCANE Maze: turn 0
+Room 1:
+	Adventurers:
+		Aiden(health: 5.0), Alex(health: 5.0), Cowering Carl(health: 5.0)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Sir Lancelot(health: 8.0), Aiden(health: 5.0)
+	Creatures:
+		Satan(health: 15.0), Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Benjamin(health: 5.0)
+	Creatures:
+		Goblin(health: 3.0), Goblin(health: 3.0)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 3.0)
+	Creatures:
+		Wraith(health: 3.0), Ghoul(health: 3.0)
+	Food:
+		Apple, Tomato, Ice Cream, Salad
+Room 5:
+	Adventurers:
+	Creatures:
+		Wraith(health: 3.0)
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 5.0)
+	Creatures:
+	Food:
+		Pancake, Cake
+Room 7:
+	Adventurers:
+		Liam(health: 5.0)
+	Creatures:
+		Ogre(health: 3.0)
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer rolled a 5
+Creature rolled a 6
+Adventurer Sir Lancelot(health: 7.5) fought Satan(health: 14.5)
+Adventurer Sir Lancelot(health: 6.5) lost to Satan(health: 14.5)
+Adventurer Cowering Carl(health: 4.5) has moved from Room 1 to Room 3
+Adventurer Anxious Andy(health: 6.0) just ate Pancake
+Adventurer Chubs(health: 4.0) just ate Apple
+Adventurer Alex(health: 5.0) has moved from Room 1 to Room 7
+Adventurer rolled a 5
+Creature rolled a 5
+Adventurer Aiden(health: 4.5) fought Goblin(health: 2.5)
+Adventurer Aiden(health: 4.5) drew against Goblin(health: 2.5)
+Adventurer rolled a 5
+Creature rolled a 1
+Adventurer Aiden(health: 4.5) fought Satan(health: 14.0)
+Adventurer Aiden(health: 4.5) beat Satan(health: 10.0)
+Adventurer Alex(health: 5.0) has moved from Room 7 to Room 5
+Adventurer rolled a 1
+Creature rolled a 2
+Adventurer Liam(health: 4.5) fought Ogre(health: 2.5)
+Adventurer Liam(health: 3.5) lost to Ogre(health: 2.5)
+Adventurer rolled a 3
+Creature rolled a 2
+Adventurer Alex(health: 4.5) fought Wraith(health: 2.5)
+Adventurer Alex(health: 4.5) beat Wraith(health: 1.5)
+Adventurer Cowering Carl(health: 4.5) has moved from Room 3 to Room 5
+Adventurer rolled a 4
+Creature rolled a 6
+Adventurer Benjamin(health: 4.5) fought Goblin(health: 2.5)
+Adventurer Benjamin(health: 2.5) lost to Goblin(health: 2.5)
+
+
+ARCANE Maze: turn 1
+Room 1:
+	Adventurers:
+		Aiden(health: 4.5)
+	Creatures:
+		Goblin(health: 2.5)
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Sir Lancelot(health: 6.5), Aiden(health: 4.5)
+	Creatures:
+		Satan(health: 10.0), Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Benjamin(health: 2.5)
+	Creatures:
+		Goblin(health: 3.0), Goblin(health: 2.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 4.0)
+	Creatures:
+		Wraith(health: 3.0), Ghoul(health: 3.0)
+	Food:
+		Tomato, Ice Cream, Salad
+Room 5:
+	Adventurers:
+		Alex(health: 4.5), Cowering Carl(health: 4.5)
+	Creatures:
+		Wraith(health: 1.5)
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 6.0)
+	Creatures:
+	Food:
+		Cake
+Room 7:
+	Adventurers:
+		Liam(health: 3.5)
+	Creatures:
+		Ogre(health: 2.5)
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer rolled a 2
+Creature rolled a 2
+Adventurer Sir Lancelot(health: 6.0) fought Satan(health: 9.5)
+Adventurer Sir Lancelot(health: 6.0) drew against Satan(health: 9.5)
+Adventurer Anxious Andy(health: 7.0) just ate Cake
+Adventurer Cowering Carl(health: 4.0) has moved from Room 5 to Room 7
+Adventurer Chubs(health: 5.0) just ate Tomato
+Adventurer rolled a 6
+Creature rolled a 3
+Adventurer Aiden(health: 4.0) fought Goblin(health: 2.0)
+Adventurer Aiden(health: 4.0) beat Goblin(health: 0.0)
+Adventurer rolled a 1
+Creature rolled a 6
+Adventurer Aiden(health: 4.0) fought Satan(health: 9.0)
+Adventurer Aiden(health: 0.0) lost to Satan(health: 9.0)
+Adventurer rolled a 4
+Creature rolled a 6
+Adventurer Alex(health: 4.0) fought Wraith(health: 1.0)
+Adventurer Alex(health: 2.0) lost to Wraith(health: 1.0)
+Adventurer Cowering Carl(health: 4.0) has moved from Room 7 to Room 1
+Adventurer rolled a 2
+Creature rolled a 4
+Adventurer Liam(health: 3.0) fought Ogre(health: 2.0)
+Adventurer Liam(health: 1.0) lost to Ogre(health: 2.0)
+Adventurer rolled a 3
+Creature rolled a 1
+Adventurer Benjamin(health: 2.0) fought Goblin(health: 2.5)
+Adventurer Benjamin(health: 2.0) beat Goblin(health: 0.5)
+
+
+ARCANE Maze: turn 2
+Room 1:
+	Adventurers:
+		Aiden(health: 4.0), Cowering Carl(health: 4.0)
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Sir Lancelot(health: 6.0)
+	Creatures:
+		Satan(health: 9.0), Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Benjamin(health: 2.0)
+	Creatures:
+		Goblin(health: 2.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 5.0)
+	Creatures:
+		Wraith(health: 3.0), Ghoul(health: 3.0)
+	Food:
+		Ice Cream, Salad
+Room 5:
+	Adventurers:
+		Alex(health: 2.0)
+	Creatures:
+		Wraith(health: 1.0)
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 7.0)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Liam(health: 1.0)
+	Creatures:
+		Ogre(health: 2.0)
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer rolled a 5
+Creature rolled a 3
+Adventurer Sir Lancelot(health: 5.5) fought Satan(health: 8.5)
+Adventurer Sir Lancelot(health: 5.5) beat Satan(health: 6.5)
+Adventurer Anxious Andy(health: 7.0) has moved from Room 6 to Room 3
+Adventurer Cowering Carl(health: 3.5) has moved from Room 1 to Room 3
+Adventurer Chubs(health: 6.0) just ate Ice Cream
+Adventurer Aiden(health: 3.5) has defeated Goblin
+Adventurer Aiden(health: 3.5) has moved from Room 1 to Room 6
+Adventurer rolled a 6
+Creature rolled a 3
+Adventurer Alex(health: 1.5) fought Wraith(health: 0.5)
+Adventurer Alex(health: 1.5) beat Wraith(health: 0.0)
+Adventurer Anxious Andy(health: 7.0) has moved from Room 3 to Room 5
+Adventurer Cowering Carl(health: 3.5) has moved from Room 3 to Room 5
+Adventurer rolled a 2
+Creature rolled a 5
+Adventurer Benjamin(health: 1.5) fought Goblin(health: 2.0)
+Adventurer Benjamin(health: 0.0) lost to Goblin(health: 2.0)
+Adventurer rolled a 6
+Creature rolled a 3
+Adventurer Liam(health: 0.5) fought Ogre(health: 1.5)
+Adventurer Liam(health: 0.5) beat Ogre(health: 0.0)
+Adventurer Aiden(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 3
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Sir Lancelot(health: 5.5)
+	Creatures:
+		Satan(health: 6.0), Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 2.0), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 6.0)
+	Creatures:
+		Wraith(health: 3.0), Ghoul(health: 3.0)
+	Food:
+		Salad
+Room 5:
+	Adventurers:
+		Anxious Andy(health: 7.0), Cowering Carl(health: 3.5), Alex(health: 1.5)
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Aiden(health: 3.5)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Liam(health: 0.5)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer rolled a 3
+Creature rolled a 5
+Adventurer Sir Lancelot(health: 5.0) fought Satan(health: 5.5)
+Adventurer Sir Lancelot(health: 3.0) lost to Satan(health: 5.5)
+Adventurer Anxious Andy(health: 6.5) has moved from Room 5 to Room 4
+Adventurer Cowering Carl(health: 3.0) has moved from Room 5 to Room 4
+Adventurer Chubs(health: 7.0) just ate Salad
+Adventurer Aiden(health: 3.5) has moved from Room 6 to Room 7
+Adventurer Alex(health: 1.0) has defeated Wraith
+Adventurer Alex(health: 1.0) has moved from Room 5 to Room 3
+Adventurer Aiden(health: 3.5) has moved from Room 7 to Room 2
+Adventurer Liam(health: 0.0) has defeated Ogre
+Adventurer Liam(health: 0.0) has moved from Room 7 to Room 5
+Adventurer Liam(health: 0.0) DEAD was killed.
+Adventurer Alex(health: 1.0) has moved from Room 3 to Room 2
+Adventurer Benjamin(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 4
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Aiden(health: 3.5), Sir Lancelot(health: 3.0), Alex(health: 1.0)
+	Creatures:
+		Satan(health: 5.5), Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 7.0), Anxious Andy(health: 6.5), Cowering Carl(health: 3.0)
+	Creatures:
+		Wraith(health: 3.0), Ghoul(health: 3.0)
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer rolled a 1
+Creature rolled a 5
+Adventurer Sir Lancelot(health: 2.5) fought Satan(health: 5.0)
+Adventurer Sir Lancelot(health: 0.0) lost to Satan(health: 5.0)
+Adventurer Anxious Andy(health: 6.0) has moved from Room 4 to Room 2
+Adventurer Cowering Carl(health: 2.5) has moved from Room 4 to Room 2
+Adventurer rolled a 3
+Creature rolled a 5
+Adventurer Chubs(health: 6.5) fought Wraith(health: 2.5)
+Adventurer Chubs(health: 4.5) lost to Wraith(health: 2.5)
+Adventurer rolled a 5
+Creature rolled a 4
+Adventurer Aiden(health: 3.0) fought Satan(health: 4.5)
+Adventurer Aiden(health: 3.0) beat Satan(health: 3.5)
+Adventurer rolled a 6
+Creature rolled a 4
+Adventurer Alex(health: 0.5) fought Satan(health: 3.0)
+Adventurer Alex(health: 0.5) beat Satan(health: 1.0)
+
+
+ARCANE Maze: turn 5
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+		Anxious Andy(health: 6.0), Aiden(health: 3.0), Cowering Carl(health: 2.5), Alex(health: 0.5)
+	Creatures:
+		Ghoul(health: 3.0), Satan(health: 1.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 4.5)
+	Creatures:
+		Ghoul(health: 3.0), Wraith(health: 2.5)
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Sir Lancelot(health: 0.0) DEAD was killed.
+Adventurer Anxious Andy(health: 5.5) has defeated Satan
+Adventurer Anxious Andy(health: 5.5) has moved from Room 2 to Room 1
+Adventurer Cowering Carl(health: 2.0) has defeated Satan
+Adventurer Cowering Carl(health: 2.0) has moved from Room 2 to Room 7
+Adventurer rolled a 3
+Creature rolled a 1
+Adventurer Chubs(health: 4.0) fought Ghoul(health: 2.5)
+Adventurer Chubs(health: 4.0) beat Ghoul(health: 0.5)
+Adventurer Aiden(health: 2.5) has defeated Satan
+Adventurer Aiden(health: 2.5) has moved from Room 2 to Room 1
+Adventurer Alex(health: 0.0) has defeated Satan
+Adventurer Alex(health: 0.0) has moved from Room 2 to Room 3
+Adventurer Alex(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 6
+Room 1:
+	Adventurers:
+		Anxious Andy(health: 5.5), Aiden(health: 2.5)
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 4.0)
+	Creatures:
+		Wraith(health: 2.5), Ghoul(health: 0.5)
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Cowering Carl(health: 2.0)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 5.0) has moved from Room 1 to Room 5
+Adventurer Cowering Carl(health: 1.5) has moved from Room 7 to Room 3
+Adventurer rolled a 3
+Creature rolled a 4
+Adventurer Chubs(health: 3.5) fought Wraith(health: 2.0)
+Adventurer Chubs(health: 2.5) lost to Wraith(health: 2.0)
+Adventurer Aiden(health: 2.0) has defeated Goblin
+Adventurer Aiden(health: 2.0) has moved from Room 1 to Room 7
+
+
+ARCANE Maze: turn 7
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Cowering Carl(health: 1.5)
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 2.5)
+	Creatures:
+		Wraith(health: 2.0), Ghoul(health: 0.5)
+	Food:
+Room 5:
+	Adventurers:
+		Anxious Andy(health: 5.0)
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Aiden(health: 2.0)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 4.5) has moved from Room 5 to Room 3
+Adventurer Cowering Carl(health: 1.0) has moved from Room 3 to Room 1
+Adventurer rolled a 4
+Creature rolled a 4
+Adventurer Chubs(health: 2.0) fought Wraith(health: 1.5)
+Adventurer Chubs(health: 2.0) drew against Wraith(health: 1.5)
+Adventurer Aiden(health: 1.5) has defeated Ogre
+Adventurer Aiden(health: 1.5) has moved from Room 7 to Room 6
+
+
+ARCANE Maze: turn 8
+Room 1:
+	Adventurers:
+		Cowering Carl(health: 1.0)
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Anxious Andy(health: 4.5)
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 2.0)
+	Creatures:
+		Wraith(health: 1.5), Ghoul(health: 0.5)
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Aiden(health: 1.5)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 4.0) has moved from Room 3 to Room 7
+Adventurer Cowering Carl(health: 0.5) has moved from Room 1 to Room 6
+Adventurer rolled a 6
+Creature rolled a 3
+Adventurer Chubs(health: 1.5) fought Wraith(health: 1.0)
+Adventurer Chubs(health: 1.5) beat Wraith(health: 0.0)
+Adventurer Aiden(health: 1.5) has moved from Room 6 to Room 4
+
+
+ARCANE Maze: turn 9
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+		Chubs(health: 1.5), Aiden(health: 1.5)
+	Creatures:
+		Ghoul(health: 0.5)
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Cowering Carl(health: 0.5)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Anxious Andy(health: 4.0)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 3.5) has moved from Room 7 to Room 6
+Adventurer Cowering Carl(health: 0.5) has moved from Room 6 to Room 5
+Adventurer Chubs(health: 1.0) has defeated Ghoul
+Adventurer Chubs(health: 1.0) has moved from Room 4 to Room 3
+Adventurer Aiden(health: 1.0) has defeated Ghoul
+Adventurer Aiden(health: 1.0) has moved from Room 4 to Room 6
+
+
+ARCANE Maze: turn 10
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Chubs(health: 1.0)
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Banana, Salad
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+		Cowering Carl(health: 0.5)
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 3.5), Aiden(health: 1.0)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 3.5) has moved from Room 6 to Room 1
+Adventurer Cowering Carl(health: 0.0) has moved from Room 5 to Room 2
+Adventurer Cowering Carl(health: 0.0) DEAD was killed.
+Adventurer Chubs(health: 2.0) just ate Banana
+Adventurer Aiden(health: 1.0) has moved from Room 6 to Room 4
+
+
+ARCANE Maze: turn 11
+Room 1:
+	Adventurers:
+		Anxious Andy(health: 3.5)
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Chubs(health: 2.0)
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+		Salad
+Room 4:
+	Adventurers:
+		Aiden(health: 1.0)
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 3.0) has moved from Room 1 to Room 6
+Adventurer Chubs(health: 3.0) just ate Salad
+Adventurer Aiden(health: 0.5) has defeated Ghoul
+Adventurer Aiden(health: 0.5) has moved from Room 4 to Room 3
+
+
+ARCANE Maze: turn 12
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Chubs(health: 3.0), Aiden(health: 0.5)
+	Creatures:
+		Goblin(health: 1.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 3.0)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 3.0) has moved from Room 6 to Room 7
+Adventurer rolled a 1
+Creature rolled a 6
+Adventurer Chubs(health: 2.5) fought Goblin(health: 1.0)
+Adventurer Chubs(health: 0.0) lost to Goblin(health: 1.0)
+Adventurer Chubs(health: 0.0) has moved from Room 3 to Room 2
+Adventurer Benjamin(health: 0.0) has moved from Room 3 to Room 4
+Adventurer Alex(health: 0.0) has moved from Room 3 to Room 7
+Adventurer Aiden(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 13
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Anxious Andy(health: 3.0)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 2.5) has moved from Room 7 to Room 6
+Adventurer Chubs(health: 0.0) has defeated Satan
+Adventurer Chubs(health: 0.0) has moved from Room 2 to Room 5
+Adventurer Chubs(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 14
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+		Anxious Andy(health: 2.5)
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 2.5) has moved from Room 6 to Room 3
+
+
+ARCANE Maze: turn 15
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Anxious Andy(health: 2.5)
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 2.0) has moved from Room 3 to Room 1
+
+
+ARCANE Maze: turn 16
+Room 1:
+	Adventurers:
+		Anxious Andy(health: 2.0)
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 1.5) has moved from Room 1 to Room 3
+
+
+ARCANE Maze: turn 17
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+		Anxious Andy(health: 1.5)
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 1.0) has moved from Room 3 to Room 7
+
+
+ARCANE Maze: turn 18
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+		Anxious Andy(health: 1.0)
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 0.5) has moved from Room 7 to Room 5
+
+
+ARCANE Maze: turn 19
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Coffee, Steak, Steak, Pancake, Apple
+Room 2:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 3.0)
+	Food:
+		Fries, Salad, Chocolate, Coffee
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 0.5), Goblin(health: 0.5)
+	Food:
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+Room 5:
+	Adventurers:
+		Anxious Andy(health: 0.5)
+	Creatures:
+	Food:
+		Coffee, Chicken, Banana, Fries, Egg
+Room 6:
+	Adventurers:
+	Creatures:
+	Food:
+Room 7:
+	Adventurers:
+	Creatures:
+	Food:
+		Fries, Pasta, Cookie
+Actions:
+Adventurer Anxious Andy(health: 0.0) has moved from Room 5 to Room 2
+Adventurer Anxious Andy(health: 0.0) DEAD was killed.
+Boo, the creatures won.
+> Task :test
+BUILD SUCCESSFUL in 968ms
+4 actionable tasks: 3 executed, 1 up-to-date
+4:20:00 PM: Execution finished ':test --tests "arcane.ArcaneTest.testPlayGrid"'.

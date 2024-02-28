@@ -1,0 +1,891 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+Starting play...
+
+
+ARCANE Maze: turn 0
+Room 1:
+	Adventurers:
+		Sir Galahad(health: 8.0)
+	Creatures:
+		Ghoul(health: 3.0), Ogre(health: 3.0)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+		Aiden(health: 5.0), Snacking Sam(health: 3.0)
+	Creatures:
+	Food:
+		Cookie, Tomato, Apple, Salad, Pancake
+Room 3:
+	Adventurers:
+		Benjamin(health: 5.0)
+	Creatures:
+		Satan(health: 15.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Sir Gawain(health: 8.0)
+	Creatures:
+		Demon(health: 15.0)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Ava(health: 5.0)
+	Creatures:
+	Food:
+		Fries, Cake, Pasta
+Actions:
+Adventurer rolled a 5
+Creature rolled a 6
+Adventurer Sir Gawain(health: 7.5) fought Demon(health: 14.5)
+Adventurer Sir Gawain(health: 6.5) lost to Demon(health: 14.5)
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Sir Galahad(health: 7.5) fought Ghoul(health: 2.5)
+Adventurer Sir Galahad(health: 7.5) drew against Ghoul(health: 2.5)
+Adventurer Snacking Sam(health: 4.0) just ate Cookie
+Adventurer rolled a 3
+Creature rolled a 6
+Adventurer Benjamin(health: 4.5) fought Satan(health: 14.5)
+Adventurer Benjamin(health: 1.5) lost to Satan(health: 14.5)
+Adventurer Ava(health: 6.0) just ate Fries
+Adventurer Aiden(health: 6.0) just ate Tomato
+
+
+ARCANE Maze: turn 1
+Room 1:
+	Adventurers:
+		Sir Galahad(health: 7.5)
+	Creatures:
+		Ogre(health: 3.0), Ghoul(health: 2.5)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+		Aiden(health: 6.0), Snacking Sam(health: 4.0)
+	Creatures:
+	Food:
+		Apple, Salad, Pancake
+Room 3:
+	Adventurers:
+		Benjamin(health: 1.5)
+	Creatures:
+		Satan(health: 14.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Sir Gawain(health: 6.5)
+	Creatures:
+		Demon(health: 14.5)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Ava(health: 6.0)
+	Creatures:
+	Food:
+		Cake, Pasta
+Actions:
+Adventurer rolled a 6
+Creature rolled a 1
+Adventurer Sir Galahad(health: 7.0) fought Ogre(health: 2.5)
+Adventurer Sir Galahad(health: 7.0) beat Ogre(health: 0.0)
+Adventurer rolled a 2
+Creature rolled a 4
+Adventurer Sir Gawain(health: 6.0) fought Demon(health: 14.0)
+Adventurer Sir Gawain(health: 4.0) lost to Demon(health: 14.0)
+Adventurer Snacking Sam(health: 5.0) just ate Apple
+Adventurer Ava(health: 7.0) just ate Cake
+Adventurer Aiden(health: 7.0) just ate Salad
+Adventurer rolled a 1
+Creature rolled a 3
+Adventurer Benjamin(health: 1.0) fought Satan(health: 14.0)
+Adventurer Benjamin(health: 0.0) lost to Satan(health: 14.0)
+
+
+ARCANE Maze: turn 2
+Room 1:
+	Adventurers:
+		Sir Galahad(health: 7.0)
+	Creatures:
+		Ghoul(health: 2.5)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+		Aiden(health: 7.0), Snacking Sam(health: 5.0)
+	Creatures:
+	Food:
+		Pancake
+Room 3:
+	Adventurers:
+	Creatures:
+		Satan(health: 14.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Sir Gawain(health: 4.0)
+	Creatures:
+		Demon(health: 14.0)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Ava(health: 7.0)
+	Creatures:
+	Food:
+		Pasta
+Actions:
+Adventurer rolled a 1
+Creature rolled a 3
+Adventurer Sir Galahad(health: 6.5) fought Ghoul(health: 2.0)
+Adventurer Sir Galahad(health: 4.5) lost to Ghoul(health: 2.0)
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Sir Gawain(health: 3.5) fought Demon(health: 13.5)
+Adventurer Sir Gawain(health: 3.5) drew against Demon(health: 13.5)
+Adventurer Snacking Sam(health: 6.0) just ate Pancake
+Adventurer Ava(health: 8.0) just ate Pasta
+Adventurer Aiden(health: 7.0) has moved from Room 2 to Room 5
+Adventurer Benjamin(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 3
+Room 1:
+	Adventurers:
+		Sir Galahad(health: 4.5)
+	Creatures:
+		Ghoul(health: 2.0)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+		Snacking Sam(health: 6.0)
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Satan(health: 13.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Sir Gawain(health: 3.5)
+	Creatures:
+		Demon(health: 13.5)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Ava(health: 8.0), Aiden(health: 7.0)
+	Creatures:
+	Food:
+Actions:
+Adventurer rolled a 1
+Creature rolled a 5
+Adventurer Sir Galahad(health: 4.0) fought Ghoul(health: 1.5)
+Adventurer Sir Galahad(health: 0.0) lost to Ghoul(health: 1.5)
+Adventurer rolled a 2
+Creature rolled a 5
+Adventurer Sir Gawain(health: 3.0) fought Demon(health: 13.0)
+Adventurer Sir Gawain(health: 0.0) lost to Demon(health: 13.0)
+Adventurer Snacking Sam(health: 6.0) has moved from Room 2 to Room 1
+Adventurer Ava(health: 8.0) has moved from Room 5 to Room 3
+Adventurer Aiden(health: 7.0) has moved from Room 5 to Room 4
+
+
+ARCANE Maze: turn 4
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 6.0)
+	Creatures:
+		Ghoul(health: 1.5)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 8.0)
+	Creatures:
+		Satan(health: 13.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 7.0)
+	Creatures:
+		Demon(health: 13.0)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Sir Gawain(health: 0.0) DEAD was killed.
+Adventurer Snacking Sam(health: 6.0) has moved from Room 1 to Room 5
+Adventurer Sir Galahad(health: 0.0) DEAD was killed.
+Adventurer Snacking Sam(health: 6.0) has moved from Room 5 to Room 1
+Adventurer rolled a 1
+Creature rolled a 4
+Adventurer Ava(health: 7.5) fought Satan(health: 13.0)
+Adventurer Ava(health: 4.5) lost to Satan(health: 13.0)
+Adventurer rolled a 5
+Creature rolled a 1
+Adventurer Aiden(health: 6.5) fought Demon(health: 12.0)
+Adventurer Aiden(health: 6.5) beat Demon(health: 8.0)
+
+
+ARCANE Maze: turn 5
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 6.0)
+	Creatures:
+		Ghoul(health: 1.0)
+	Food:
+		Egg, Coffee
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 4.5)
+	Creatures:
+		Satan(health: 13.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 6.5)
+	Creatures:
+		Demon(health: 8.0)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 7.0) just ate Egg
+Adventurer rolled a 5
+Creature rolled a 4
+Adventurer Aiden(health: 6.0) fought Demon(health: 7.5)
+Adventurer Aiden(health: 6.0) beat Demon(health: 6.5)
+Adventurer rolled a 1
+Creature rolled a 1
+Adventurer Ava(health: 4.0) fought Satan(health: 12.5)
+Adventurer Ava(health: 4.0) drew against Satan(health: 12.5)
+
+
+ARCANE Maze: turn 6
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 7.0)
+	Creatures:
+		Ghoul(health: 1.0)
+	Food:
+		Coffee
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 4.0)
+	Creatures:
+		Satan(health: 12.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 6.0)
+	Creatures:
+		Demon(health: 6.5)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 8.0) just ate Coffee
+Adventurer rolled a 6
+Creature rolled a 4
+Adventurer Aiden(health: 5.5) fought Demon(health: 6.0)
+Adventurer Aiden(health: 5.5) beat Demon(health: 4.0)
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Ava(health: 3.5) fought Satan(health: 12.0)
+Adventurer Ava(health: 3.5) drew against Satan(health: 12.0)
+
+
+ARCANE Maze: turn 7
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 8.0)
+	Creatures:
+		Ghoul(health: 1.0)
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 3.5)
+	Creatures:
+		Satan(health: 12.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 5.5)
+	Creatures:
+		Demon(health: 4.0)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer rolled a 4
+Creature rolled a 5
+Adventurer Snacking Sam(health: 7.5) fought Ghoul(health: 0.5)
+Adventurer Snacking Sam(health: 6.5) lost to Ghoul(health: 0.5)
+Adventurer rolled a 5
+Creature rolled a 3
+Adventurer Aiden(health: 5.0) fought Demon(health: 3.5)
+Adventurer Aiden(health: 5.0) beat Demon(health: 1.5)
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Ava(health: 3.0) fought Satan(health: 11.5)
+Adventurer Ava(health: 3.0) drew against Satan(health: 11.5)
+
+
+ARCANE Maze: turn 8
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 6.5)
+	Creatures:
+		Ghoul(health: 0.5)
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 3.0)
+	Creatures:
+		Satan(health: 11.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 5.0)
+	Creatures:
+		Demon(health: 1.5)
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 6.0) has defeated Ghoul
+Adventurer Snacking Sam(health: 6.0) has moved from Room 1 to Room 4
+Adventurer rolled a 4
+Creature rolled a 1
+Adventurer Aiden(health: 4.5) fought Demon(health: 1.0)
+Adventurer Aiden(health: 4.5) beat Demon(health: 0.0)
+Adventurer rolled a 6
+Creature rolled a 2
+Adventurer Ava(health: 2.5) fought Satan(health: 11.0)
+Adventurer Ava(health: 2.5) beat Satan(health: 7.0)
+
+
+ARCANE Maze: turn 9
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 2.5)
+	Creatures:
+		Satan(health: 7.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Snacking Sam(health: 6.0), Aiden(health: 4.5)
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 5.5) has defeated Demon
+Adventurer Snacking Sam(health: 5.5) has moved from Room 4 to Room 5
+Adventurer Aiden(health: 4.0) has defeated Demon
+Adventurer Aiden(health: 4.0) has moved from Room 4 to Room 5
+Adventurer rolled a 3
+Creature rolled a 1
+Adventurer Ava(health: 2.0) fought Satan(health: 6.5)
+Adventurer Ava(health: 2.0) beat Satan(health: 4.5)
+
+
+ARCANE Maze: turn 10
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 2.0)
+	Creatures:
+		Satan(health: 4.5), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Snacking Sam(health: 5.5), Aiden(health: 4.0)
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 5.5) has moved from Room 5 to Room 3
+Adventurer Aiden(health: 4.0) has moved from Room 5 to Room 4
+Adventurer rolled a 2
+Creature rolled a 1
+Adventurer Ava(health: 1.5) fought Satan(health: 4.0)
+Adventurer Ava(health: 1.5) beat Satan(health: 3.0)
+
+
+ARCANE Maze: turn 11
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Snacking Sam(health: 5.5), Ava(health: 1.5)
+	Creatures:
+		Satan(health: 3.0), Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 4.0)
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer rolled a 6
+Creature rolled a 6
+Adventurer Snacking Sam(health: 5.0) fought Satan(health: 2.5)
+Adventurer Snacking Sam(health: 5.0) drew against Satan(health: 2.5)
+Adventurer Aiden(health: 3.5) has defeated Demon
+Adventurer Aiden(health: 3.5) has moved from Room 4 to Room 1
+Adventurer rolled a 4
+Creature rolled a 3
+Adventurer Ava(health: 1.0) fought Satan(health: 2.0)
+Adventurer Ava(health: 1.0) beat Satan(health: 1.0)
+
+
+ARCANE Maze: turn 12
+Room 1:
+	Adventurers:
+		Aiden(health: 3.5)
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Snacking Sam(health: 5.0), Ava(health: 1.0)
+	Creatures:
+		Goblin(health: 3.0), Satan(health: 1.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer rolled a 3
+Creature rolled a 6
+Adventurer Snacking Sam(health: 4.5) fought Satan(health: 0.5)
+Adventurer Snacking Sam(health: 1.5) lost to Satan(health: 0.5)
+Adventurer Sir Galahad(health: 0.0) has moved from Room 1 to Room 5
+Adventurer Aiden(health: 3.0) has defeated Ghoul
+Adventurer Aiden(health: 3.0) has moved from Room 1 to Room 2
+Adventurer Ava(health: 0.5) has defeated Satan
+Adventurer Ava(health: 0.5) has moved from Room 3 to Room 2
+
+
+ARCANE Maze: turn 13
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+		Aiden(health: 3.0), Ava(health: 0.5)
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Snacking Sam(health: 1.5)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 1.0) has defeated Satan
+Adventurer Snacking Sam(health: 1.0) has moved from Room 3 to Room 5
+Adventurer Aiden(health: 3.0) has moved from Room 2 to Room 1
+Adventurer Ava(health: 0.5) has moved from Room 2 to Room 3
+
+
+ARCANE Maze: turn 14
+Room 1:
+	Adventurers:
+		Aiden(health: 3.0)
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Ava(health: 0.5)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Snacking Sam(health: 1.0)
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 1.0) has moved from Room 5 to Room 2
+Adventurer Aiden(health: 2.5) has defeated Ghoul
+Adventurer Aiden(health: 2.5) has moved from Room 1 to Room 5
+Adventurer Ava(health: 0.0) has defeated Satan
+Adventurer Ava(health: 0.0) has moved from Room 3 to Room 4
+Adventurer Ava(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 15
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+		Snacking Sam(health: 1.0)
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Aiden(health: 2.5)
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 1.0) has moved from Room 2 to Room 5
+Adventurer Aiden(health: 2.5) has moved from Room 5 to Room 3
+
+
+ARCANE Maze: turn 16
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Aiden(health: 2.5)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Snacking Sam(health: 1.0)
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 1.0) has moved from Room 5 to Room 1
+Adventurer Aiden(health: 2.0) has defeated Satan
+Adventurer Aiden(health: 2.0) has moved from Room 3 to Room 2
+
+
+ARCANE Maze: turn 17
+Room 1:
+	Adventurers:
+		Snacking Sam(health: 1.0)
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+		Aiden(health: 2.0)
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 0.5) has defeated Ghoul
+Adventurer Snacking Sam(health: 0.5) has moved from Room 1 to Room 4
+Adventurer Aiden(health: 2.0) has moved from Room 2 to Room 5
+
+
+ARCANE Maze: turn 18
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Snacking Sam(health: 0.5)
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+		Aiden(health: 2.0)
+	Creatures:
+	Food:
+Actions:
+Adventurer Snacking Sam(health: 0.0) has defeated Demon
+Adventurer Snacking Sam(health: 0.0) has moved from Room 4 to Room 5
+Adventurer Snacking Sam(health: 0.0) DEAD was killed.
+Adventurer Aiden(health: 2.0) has moved from Room 5 to Room 4
+
+
+ARCANE Maze: turn 19
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 2.0)
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Aiden(health: 1.5) has defeated Demon
+Adventurer Aiden(health: 1.5) has moved from Room 4 to Room 1
+
+
+ARCANE Maze: turn 20
+Room 1:
+	Adventurers:
+		Aiden(health: 1.5)
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Aiden(health: 1.0) has defeated Ghoul
+Adventurer Aiden(health: 1.0) has moved from Room 1 to Room 4
+
+
+ARCANE Maze: turn 21
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+		Aiden(health: 1.0)
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Aiden(health: 0.5) has defeated Demon
+Adventurer Aiden(health: 0.5) has moved from Room 4 to Room 3
+
+
+ARCANE Maze: turn 22
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+Room 3:
+	Adventurers:
+		Aiden(health: 0.5)
+	Creatures:
+		Goblin(health: 3.0)
+	Food:
+		Banana, Steak
+Room 4:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Chocolate, Chicken
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+Actions:
+Adventurer Aiden(health: 0.0) has defeated Satan
+Adventurer Aiden(health: 0.0) has moved from Room 3 to Room 4
+Adventurer Aiden(health: 0.0) DEAD was killed.
+Boo, the creatures won.
+> Task :test
+BUILD SUCCESSFUL in 604ms
+4 actionable tasks: 1 executed, 3 up-to-date
+4:25:46 PM: Execution finished ':test --tests "arcane.ArcaneTest.testPlayFullyConnectedGrid"'.

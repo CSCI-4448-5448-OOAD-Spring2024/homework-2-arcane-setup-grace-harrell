@@ -60,14 +60,15 @@ public class ArcaneTest {
     }
 
     @Test
-    public void testPlay3x3Grid(){
-        Cave cave = new Cave.Builder().create3x3Grid()
+    public void testPlayFullyConnectedGrid(){
+        Cave cave = new Cave.Builder()
+                .createFullyConnectedRooms(5)
+                .sequentiallyDistributeAllEntities()
                 .createAndAddAdventurers(3)
-                .createAndAddCowards(2)
-                .createAndAddKnights(1)
+                .createAndAddKnights(2)
                 .createAndAddGluttons(1)
-                .createAndAddCreatures(4)
-                .createAndAddDemons(1)
+                .createAndAddCreatures(3)
+                .createAndAddDemons(2)
                 .createAndAddFood(15)
                 .build();
         Dice dice = createDice(6);
