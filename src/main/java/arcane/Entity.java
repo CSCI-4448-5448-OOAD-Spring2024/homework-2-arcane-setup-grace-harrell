@@ -1,7 +1,9 @@
 package arcane;
 
-public class Entity {
+import java.util.List;
+import java.util.Random;
 
+public class Entity {
     private boolean isAlivePrivate = true;
     private double health = 5;
     private String name;

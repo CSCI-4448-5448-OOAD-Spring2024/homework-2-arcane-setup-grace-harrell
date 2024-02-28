@@ -42,12 +42,42 @@ public class Arcane {
             cave.printCaveStatus(turnId);
 
             List<Adventurer> currAdventurers = cave.getAllAdventurers();
+            List<Adventurer> currKnights = cave.getAllKnights();
+            List<Adventurer> currCowards = cave.getAllCowards();
+            List<Adventurer> currGluttons = cave.getAllGluttons();
+
             List<Adventurer> aliveAdventurers = currAdventurers.stream().toList();
-            for (Adventurer adventurerCurrent: aliveAdventurers){
-                Room currentRoom = cave.getAdventurerRoom(adventurerCurrent);
-                currentRoom.moveExtraAdventurers(adventurerCurrent);
-                takeTurnPlay(turnId, null, adventurerCurrent, dice);
+            List<Adventurer> aliveKnights = currKnights.stream().toList();
+            List<Adventurer> aliveCowards = currCowards.stream().toList();
+            List<Adventurer> aliveGluttons = currGluttons.stream().toList();
+
+            for (Adventurer currentKnight: aliveKnights){
+                Room currentRoom = cave.getAdventurerRoom(currentKnight);
+                if (!cave.isDemonPresentInRoom(currentRoom)){
+                    currentRoom.moveExtraAdventurers(currentKnight);
+                }
+                takeTurnPlay(turnId, null, currentKnight,dice);
             }
+
+            for (Adventurer currentCoward: aliveCowards){
+                Room currentRoom = cave.getAdventurerRoom(currentCoward);
+                takeTurnPlay(turnId, null, currentCoward,dice);
+            }
+
+            for (Adventurer currentGlutton: aliveGluttons){
+                Room currentRoom = cave.getAdventurerRoom(currentGlutton);
+                takeTurnPlay(turnId, null, currentGlutton,dice);
+            }
+
+            for (Adventurer currentAdventurer: aliveAdventurers){
+                Room currentRoom = cave.getAdventurerRoom(currentAdventurer);
+                if (!cave.isDemonPresentInRoom(currentRoom)){
+                    currentRoom.moveExtraAdventurers(currentAdventurer);
+                }
+                takeTurnPlay(turnId, null, currentAdventurer,dice);
+            }
+
+
             turnId += 1;
             //logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));
         }
