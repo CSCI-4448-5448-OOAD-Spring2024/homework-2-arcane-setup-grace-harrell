@@ -57,10 +57,11 @@ public class Cave {
             adventurerFactory = af;
             creatureFactory = cf;
             foodFactory = ff;
+  
 
-            adventurers = adventurerFactory.getAdventurers();
-            creatures = creatureFactory.getCreatures();
-            foods = foodFactory.getFoods();
+            adventurers = adventurerFactory.getListOfAdventurers();
+            creatures = creatureFactory.getListOfCreatures();
+            foods = foodFactory.getListOfFoods();
         }
 
         public static Builder newBuilder() {
@@ -201,7 +202,7 @@ public class Cave {
                 room.addAdventurerPresence(newlyCreatedAdventurer);
             }
             logger.info("adventurers: " + adventurers);
-            return this;
+
         }
 
         public Builder createAndAddKnights(int numKnights){
