@@ -58,7 +58,7 @@ public class Cave {
             creatureFactory = cf;
             foodFactory = ff;
 
-            adventurers = adventurerFactory.getAdventurers();
+            adventurers = adventurerFactory.getListOfAdventurers();
             creatures = creatureFactory.getCreatures();
             foods = foodFactory.getFoods();
         }
