@@ -8,6 +8,9 @@ import java.util.Random;
 public class FoodFactory{
     private List<Food> foods = new ArrayList<>();
 
+    public FoodFactory(){
+        foods = new ArrayList<>();
+    }
     public FoodFactory(int numFood){
         for (int i = 0; i < numFood; i++){
             foods.add(createFood());

@@ -6,7 +6,9 @@ public class CreatureFactory{
 
     private List<Creature> creatures = new ArrayList<>();
 
-
+    public CreatureFactory(){
+        creatures = new ArrayList<>();
+    }
     // returns a list of creatures
     public CreatureFactory(int numCreatures, int numDemons){
         for (int i = 0; i < numCreatures; i++){

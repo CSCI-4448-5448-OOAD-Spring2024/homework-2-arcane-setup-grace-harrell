@@ -38,8 +38,8 @@ public class Room {
         return neighbors.get(rand.nextInt(neighbors.size()));
     };
 
-    public void addNeighbor(Room newNeighbor) {
-        neighbors.add(newNeighbor);
+    public void addNeighbor(List<Room> newNeighbors) {
+        neighbors.addAll(newNeighbors);
     }
 
     public List<Creature> getCreaturesPresent() {

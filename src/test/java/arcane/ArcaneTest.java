@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -42,14 +43,10 @@ public class ArcaneTest {
         Room se = new Room("Southeast");
 
         // adding in the two neighbors of each room
-        nw.addNeighbor(ne);
-        nw.addNeighbor(sw);
-        ne.addNeighbor(nw);
-        ne.addNeighbor(se);
-        sw.addNeighbor(nw);
-        sw.addNeighbor(se);
-        se.addNeighbor(ne);
-        se.addNeighbor(sw);
+        nw.addNeighbor(Arrays.asList(ne,sw));
+        ne.addNeighbor(Arrays.asList(se,nw));
+        sw.addNeighbor(Arrays.asList(nw,se));
+        se.addNeighbor(Arrays.asList(sw,ne));
 
         lst_rooms.add(nw);
         lst_rooms.add(ne);
@@ -80,30 +77,15 @@ public class ArcaneTest {
         Room e = new Room("East");
         Room c = new Room("Center");
         // adding in the two neighbors of each room
-        nw.addNeighbor(n);
-        nw.addNeighbor(w);
-        n.addNeighbor(nw);
-        n.addNeighbor(ne);
-        n.addNeighbor(c);
-        ne.addNeighbor(n);
-        ne.addNeighbor(e);
-        e.addNeighbor(ne);
-        e.addNeighbor(c);
-        e.addNeighbor(se);
-        se.addNeighbor(e);
-        se.addNeighbor(s);
-        s.addNeighbor(c);
-        s.addNeighbor(sw);
-        s.addNeighbor(se);
-        sw.addNeighbor(s);
-        sw.addNeighbor(w);
-        w.addNeighbor(nw);
-        w.addNeighbor(sw);
-        w.addNeighbor(c);
-        c.addNeighbor(n);
-        c.addNeighbor(e);
-        c.addNeighbor(s);
-        c.addNeighbor(w);
+        nw.addNeighbor(Arrays.asList(n,w));
+        n.addNeighbor(Arrays.asList(nw,ne,c));
+        ne.addNeighbor(Arrays.asList(n,e));
+        e.addNeighbor(Arrays.asList(se,c,ne));
+        se.addNeighbor(Arrays.asList(s,e));
+        s.addNeighbor(Arrays.asList(sw,c,se));
+        sw.addNeighbor(Arrays.asList(w,s));
+        w.addNeighbor(Arrays.asList(nw,sw,c));
+        c.addNeighbor(Arrays.asList(n,e,s,w));
 
         lst_rooms.add(nw);
         lst_rooms.add(n);
