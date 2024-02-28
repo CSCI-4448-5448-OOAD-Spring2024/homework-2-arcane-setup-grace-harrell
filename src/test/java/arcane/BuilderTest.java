@@ -10,12 +10,12 @@ public class BuilderTest {
     private static final Logger logger = (Logger) LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     @Test
     public void testAdventurerFactory(){
-        int numAdventurers = 1;
-        int numKnights = 1;
-        int numGluttons = 1;
-        int numCowards = 1;
-        List<Adventurer> adventurerList = AdventurerFactory.listOfAdventurers(1, 1, 1, 1);
-        logger.info(String.valueOf(adventurerList.size()));
-        assert(adventurerList.size() == 4);
-        logger.info(adventurerList.getLast().getName()); // should be a coward name
+
+        AdventurerFactory af = new AdventurerFactory(10);
+        assert(af.getListOfAdventurers().size() == 10);
+        Adventurer c = af.createCoward();
+        af.addAdventurers(c);
+        assert(af.getListOfAdventurers().size() == 11);
+        logger.info(af.getListOfAdventurers().getLast().getName()); // should be a coward name
     }}
+
