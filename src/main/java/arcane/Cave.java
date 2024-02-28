@@ -73,7 +73,7 @@ public class Cave {
             return this;
         }
 
-        public Builder randomlyDistribute(){
+        public Builder randomlyDistributeAllEntities(){
             for(Adventurer adventurer: adventurers){
                 Room room = getRandomRoom();
                 room.addAdventurerPresence(adventurer);
@@ -230,6 +230,39 @@ public class Cave {
                 foods.add(newlyCreatedFood);
                 Room room = getRandomRoom();
                 room.addFoodPresent(newlyCreatedFood);
+            }
+            return this;
+        }
+
+        public Room getRoomGivenName(String roomName){
+            for (Room room: caveRooms){
+                if (room.getRoomName().equals(roomName)){
+                    return room;
+                }
+            }
+            return null;
+        }
+
+        public Builder addToRoom(String roomName, Creature creatureToAdd){
+            Room roomToAddCreatureTo = getRoomGivenName(roomName);
+            if (roomToAddCreatureTo != null){
+                roomToAddCreatureTo.addCreaturePresence(creatureToAdd);
+            }
+            return this;
+        }
+
+        public Builder addToRoom(String roomName, Adventurer adventurerToAdd){
+            Room roomToAddAdventurerTo = getRoomGivenName(roomName);
+            if (roomToAddAdventurerTo != null){
+                roomToAddAdventurerTo.addAdventurerPresence(adventurerToAdd);
+            }
+            return this;
+        }
+
+        public Builder addToRoom(String roomName, Food foodToAdd){
+            Room roomToAddFoodTo = getRoomGivenName(roomName);
+            if (roomToAddFoodTo != null){
+                roomToAddFoodTo.addFoodPresent(foodToAdd);
             }
             return this;
         }
