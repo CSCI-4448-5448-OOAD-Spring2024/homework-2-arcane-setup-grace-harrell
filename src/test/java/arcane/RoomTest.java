@@ -22,30 +22,16 @@ class RoomTest {
         Room e = new Room("East");
         Room c = new Room("Center");
         // adding in the two neighbors of each room
-        nw.addNeighbor(n);
-        nw.addNeighbor(w);
-        n.addNeighbor(nw);
-        n.addNeighbor(ne);
-        n.addNeighbor(c);
-        ne.addNeighbor(n);
-        ne.addNeighbor(e);
-        e.addNeighbor(ne);
-        e.addNeighbor(c);
-        e.addNeighbor(se);
-        se.addNeighbor(e);
-        se.addNeighbor(s);
-        s.addNeighbor(c);
-        s.addNeighbor(sw);
-        s.addNeighbor(se);
-        sw.addNeighbor(s);
-        sw.addNeighbor(w);
-        w.addNeighbor(nw);
-        w.addNeighbor(sw);
-        w.addNeighbor(c);
-        c.addNeighbor(n);
-        c.addNeighbor(e);
-        c.addNeighbor(s);
-        c.addNeighbor(w);
+        nw.addNeighbor(Arrays.asList(n,w));
+        n.addNeighbor(Arrays.asList(nw,ne,c));
+        ne.addNeighbor(Arrays.asList(n,e));
+        e.addNeighbor(Arrays.asList(se,c,ne));
+        se.addNeighbor(Arrays.asList(s,e));
+        s.addNeighbor(Arrays.asList(sw,c,se));
+        sw.addNeighbor(Arrays.asList(w,s));
+        w.addNeighbor(Arrays.asList(nw,sw,c));
+        c.addNeighbor(Arrays.asList(n,e,s,w));
+
 
         lst_rooms.add(nw);
         lst_rooms.add(n);
@@ -80,7 +66,7 @@ class RoomTest {
     public void testGettingNeighbors(){
         Room room = new Room("test room");
         Room room_neighbor = new Room("neighbor_room");
-        room.addNeighbor(room_neighbor);
+        room.addNeighbor(List.of(room_neighbor));
         assert(room.getNeighbor().size() == 1);
     }
     @Test
@@ -89,8 +75,8 @@ class RoomTest {
         Room neighbor_room_1 = new Room("Neighbor 1");
         Room neighbor_room_2 = new Room("Neighbor 2");
         assert(room.getNeighbor().isEmpty());
-        room.addNeighbor(neighbor_room_1);
-        room.addNeighbor(neighbor_room_2);
+        room.addNeighbor(List.of(neighbor_room_1));
+        room.addNeighbor(List.of(neighbor_room_2));
         assert(room.getNeighbor().size() == 2);
     }
     @Test
@@ -116,8 +102,8 @@ class RoomTest {
         Room room = new Room("test room");
         Room neighbor_1 = new Room("neighbor 1");
         Room neighbor_2 = new Room("neighbor 2");
-        room.addNeighbor(neighbor_1);
-        room.addNeighbor(neighbor_2);
+        room.addNeighbor(List.of(neighbor_1));
+        room.addNeighbor(List.of(neighbor_2));
         Room random_neighbor = room.getRandomNeighbor();
         assert(random_neighbor.equals(neighbor_1) || random_neighbor.equals(neighbor_2));
     }

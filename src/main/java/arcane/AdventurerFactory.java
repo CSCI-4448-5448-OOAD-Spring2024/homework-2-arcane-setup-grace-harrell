@@ -7,7 +7,6 @@ public class AdventurerFactory{
 
     //default constructor --> No Args
     public AdventurerFactory(){};
-
    // Constructor with arguments
     public AdventurerFactory(int numAdventurers){
         for(int i = 0; i < numAdventurers; i++) adventurers.add(createAdventurer());
