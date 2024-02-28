@@ -11,11 +11,19 @@ public class BuilderTest {
     @Test
     public void testAdventurerFactory(){
 
+        AdventurerFactory af0 = new AdventurerFactory();
+        assert(af0.getListOfAdventurers().isEmpty());
+
         AdventurerFactory af = new AdventurerFactory(10);
         assert(af.getListOfAdventurers().size() == 10);
         Adventurer c = af.createCoward();
         af.addAdventurers(c);
         assert(af.getListOfAdventurers().size() == 11);
         logger.info(af.getListOfAdventurers().getLast().getName()); // should be a coward name
+        Adventurer k = af.createKnight();
+        af.addAdventurers(k);
+        Adventurer g = af.createGlutton();
+        af.addAdventurers(g);
+        assert(af.getListOfAdventurers().size() == 13);
     }}
 
