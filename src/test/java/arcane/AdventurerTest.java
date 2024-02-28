@@ -15,7 +15,6 @@ class AdventurerTest {
 
         // creates a new adventurer
         Adventurer adventurer = new Adventurer();
-        logger.info("\nHello " + adventurer.getName());
         assert adventurer.getHealth() == 5;
     }
 }

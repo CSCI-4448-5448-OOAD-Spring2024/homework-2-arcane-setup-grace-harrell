@@ -35,7 +35,7 @@ class CaveTest {
 
         Cave cave = new Cave.Builder(af,cf,ff)
                 .createFullyConnectedRooms(10)
-                .randomlyDistributeAllEntities()
+                .randomlyDistribute()
                 .build();
         cave.printCaveStatus(0);
     }
@@ -62,7 +62,7 @@ class CaveTest {
 
         Cave cave = new Cave.Builder(af,cf,ff)
                 .create2x2Grid()
-                .randomlyDistributeAllEntities()
+                .randomlyDistribute()
                 .createAndAddAdventurers(3)
                 .createAndAddGluttons(2)
                 .createAndAddDemons(2)
@@ -74,7 +74,7 @@ class CaveTest {
     public void testBuilder3x3Grid(){
         Cave cave = new Cave.Builder()
                 .create3x3Grid()
-                .randomlyDistributeAllEntities()
+                .randomlyDistribute()
                 .createAndAddAdventurers(3)
                 .createAndAddGluttons(2)
                 .createAndAddDemons(2)
@@ -89,7 +89,7 @@ class CaveTest {
         FoodFactory ff = new FoodFactory(10);
         Cave cave = new Cave.Builder(af, cf, ff)
                 .createFullyConnectedRooms(6)
-                .randomlyDistributeAllEntities()
+                .sequentiallyDistributeAllEntities()
                 .createAndAddAdventurers(3)
                 .createAndAddGluttons(2)
                 .createAndAddDemons(2)

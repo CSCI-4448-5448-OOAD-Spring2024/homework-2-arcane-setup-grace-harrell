@@ -18,12 +18,6 @@ public class CreatureFactory{
 
     public Creature createCreature() {
         Creature creature = new Creature();
-//        String randomName = "";
-//        while (creatureNames.contains(randomName)){
-//            randomName = getRandomCreatureName();
-//        }
-//        creature.setName(randomName);
-//        creatureNames.add(randomName);
         creature.setName(getRandomCreatureName());
         return creature;
     }

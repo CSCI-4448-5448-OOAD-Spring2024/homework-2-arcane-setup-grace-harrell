@@ -56,8 +56,8 @@ public class Cave {
 
 
             adventurers = af.getListOfAdventurers();
-            creatures = cf.getCreatures();
-            foods = ff.getFoods();
+            creatures = cf.getListOfCreatures();
+            foods = ff.getListOfFoods();
         }
 
 
@@ -75,21 +75,6 @@ public class Cave {
             return this;
         }
 
-        public Builder randomlyDistributeAllEntities(){
-            for(Adventurer adventurer: adventurers){
-                Room room = getRandomRoom();
-                room.addAdventurerPresence(adventurer);
-            }
-            for(Creature creature: creatures){
-                Room room = getRandomRoom();
-                room.addCreaturePresence(creature);
-            }
-            for(Food food: foods){
-                Room room = getRandomRoom();
-                room.addFoodPresent(food);
-            }
-            return this;
-        }
 
         public Builder create2x2Grid(){
             Room nw = new Room("Northwest");
@@ -416,6 +401,13 @@ public class Cave {
         logger.info("Actions: ");
     }
 
+    public Room getRandomRoom(){
+        if (caveRooms.isEmpty()){
+            throw new IllegalStateException("Cave is empty");
+        }
+        Random rand = new Random();
+        return caveRooms.get(rand.nextInt(caveRooms.size()));
+    }
     // returns the room in the cave with the adventurer in it
     public Room getAdventurerRoom(Adventurer adventurer){
         for (Room room: getCaveRooms()){

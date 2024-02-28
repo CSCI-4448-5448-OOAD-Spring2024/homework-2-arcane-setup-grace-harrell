@@ -1,9 +1,12 @@
 package arcane;
 import java.util.*;
-import java.util.logging.Logger;
-public class AdventurerFactory{
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+public class AdventurerFactory{
+    private static final Logger logger = (Logger) LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private static List<Adventurer> adventurers = new ArrayList<>();
+
 
     //default constructor --> No Args
     public AdventurerFactory(){};
@@ -60,9 +63,9 @@ public class AdventurerFactory{
         return nameList.get(random.nextInt(nameList.size()));
     }
 
-    public void addAdventurers(Adventurer adventurer){
-        adventurers.add(adventurer);
-    }
+//    public void addAdventurers(Adventurer adventurer){
+//        adventurers.add(adventurer);
+//    }
     public List<Adventurer> getListOfAdventurers(){
         return adventurers;
     }

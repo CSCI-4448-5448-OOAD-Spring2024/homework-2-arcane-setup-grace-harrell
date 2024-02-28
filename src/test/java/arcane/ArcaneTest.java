@@ -74,22 +74,41 @@ public class ArcaneTest {
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
     }
+    @Test
+    public void testPlayGrid(){
+        AdventurerFactory af = new AdventurerFactory(2);
+        CreatureFactory cf = new CreatureFactory(4);
+        FoodFactory ff = new FoodFactory(10);
+        Cave cave = new Cave.Builder(af, cf, ff)
+                .createFullyConnectedRooms(7)
+                .sequentiallyDistributeAllEntities()
+                .createAndAddAdventurers(3)
+                .createAndAddCowards(2)
+                .createAndAddKnights(1)
+                .createAndAddGluttons(1)
+                .createAndAddCreatures(4)
+                .createAndAddDemons(1)
+                .createAndAddFood(15)
+                .build();
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        assertNotNull(arcane.play());
+    }
 
-//    @Test
-//    public void testOrderFight(){
-//        List<Room> lst_rooms = createRoomsTwo();
-//        List<Adventurer> lst_adventurers = createAdventurers(1);
-//        List<Creature> lst_creatures = createCreatures(6);
-//        int health = 8;
-//        for (Creature creature: lst_creatures){
-//            creature.setHealth(health);
-//            health -= 1;
-//        }
-//        Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
-//        Dice dice = createDice(6);
-//        Arcane arcane = new Arcane(cave, dice);
-//        arcane.play();
-//    }
+
+    @Test
+    public void testOrderFight(){
+        Cave cave = new Cave.Builder().createFullyConnectedRooms(5)
+                .createAndAddAdventurers(2)
+                .createAndAddKnights(1)
+                .createAndAddCreatures(4)
+                .createAndAddDemons(1)
+                .createAndAddFood(7)
+                .build();
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        arcane.play();
+    }
 //    @Test
 //    public void testMoveAdventurers(){
 //        List<Room> lst_rooms = createRoomsThree();
