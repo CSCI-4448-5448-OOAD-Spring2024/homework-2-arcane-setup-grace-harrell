@@ -2,7 +2,7 @@ package arcane;
 import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-public abstract class CreatureFactory{
+public class CreatureFactory{
 
     private List<Creature> creatures = new ArrayList<>();
 

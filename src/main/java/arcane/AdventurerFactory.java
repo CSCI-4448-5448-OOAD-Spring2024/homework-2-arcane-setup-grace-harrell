@@ -1,13 +1,11 @@
 package arcane;
 import java.util.*;
 import java.util.logging.Logger;
-public abstract class AdventurerFactory{
-
-    private List<Adventurer> adventurers = new ArrayList<>();
-
+public class AdventurerFactory{
 
     // returns a list of creatures
-    public AdventurerFactory(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
+    public static List <Adventurer> listOfAdventurers(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
+        List<Adventurer> adventurers = new ArrayList<>();
         for (int i = 0; i < numAdventurers; i++) {
             adventurers.add(createAdventurer());
         }
@@ -20,56 +18,55 @@ public abstract class AdventurerFactory{
         for (int i = 0; i < numCowards; i++) {
             adventurers.add(createCoward());
         }
+        return adventurers;
     }
-    public Adventurer createAdventurer() {
+
+    public static Adventurer createAdventurer() {
         Adventurer adventurer = new Adventurer();
         adventurer.setName(getRandomAdventurerName());
         return adventurer;
     }
 
-    public Knight createKnight() {
+    public static Knight createKnight() {
         Knight knight = new Knight();
         knight.setName(getRandomKnightName());
         return knight;
     }
 
-    public Glutton createGlutton() {
+    public static Glutton createGlutton() {
         Glutton glutton = new Glutton();
         glutton.setName(getRandomGluttonName());
         return glutton;
     }
 
-    public Coward createCoward() {
+    public static Coward createCoward() {
         Coward coward = new Coward();
         coward.setName(getRandomCowardName());
         return coward;
     }
 
-    private String getRandomAdventurerName() {
+    private static String getRandomAdventurerName() {
         List<String> adventurerNames = Arrays.asList("Ethan", "Olivia", "Liam","Emma","Jackson","Sophia","Aiden","Ava","Lucas","Isabella","Noah","Benjamin","Harper","James","Alex");
         return getRandomName(adventurerNames);
     }
 
-    private String getRandomKnightName() {
+    private static String getRandomKnightName() {
         List<String> knightNames = Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival");
         return getRandomName(knightNames);
     }
 
-    private String getRandomGluttonName() {
+    private static String getRandomGluttonName() {
         List<String> gluttonNames = Arrays.asList("Greedy Gus","Chubs", "Devouring Dave", "Snacking Sam", "Gluttonous Gilbert");
         return getRandomName(gluttonNames);
     }
 
-    private String getRandomCowardName() {
+    private static String getRandomCowardName() {
         List<String> cowardNames = Arrays.asList("Trembling Tim","Shivering Sheila", "Cowering Carl", "Anxious Andy", "Frightened Freddy");
         return getRandomName(cowardNames);
     }
 
-    public String getRandomName(List<String> nameList) {
+    public static String getRandomName(List<String> nameList) {
         Random random = new Random();
         return nameList.get(random.nextInt(nameList.size()));
-    }
-    public List<Adventurer> getAdventurers(){
-        return adventurers;
     }
 }
