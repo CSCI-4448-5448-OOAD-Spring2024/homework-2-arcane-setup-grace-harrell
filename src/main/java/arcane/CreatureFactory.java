@@ -3,6 +3,19 @@ import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 public abstract class CreatureFactory{
+
+    private List<Creature> creatures = new ArrayList<>();
+
+
+    // returns a list of creatures
+    public CreatureFactory(int numCreatures, int numDemons){
+        for (int i = 0; i < numCreatures; i++){
+            creatures.add(createCreature());
+        }
+        for (int i = 0; i < numDemons; i++){
+            creatures.add(createCreature());
+        }
+    }
     public Creature createCreature() {
         Creature creature = new Creature();
         creature.setName(getRandomCreatureName());
@@ -27,5 +40,9 @@ public abstract class CreatureFactory{
     public String getRandomName(List<String> nameList) {
         Random random = new Random();
         return nameList.get(random.nextInt(nameList.size()));
+    }
+
+    public List<Creature> getCreatures(){
+        return creatures;
     }
 }
