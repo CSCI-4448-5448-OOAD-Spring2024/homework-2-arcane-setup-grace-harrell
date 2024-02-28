@@ -1,0 +1,537 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+Starting play...
+
+
+ARCANE Maze: turn 0
+Room 1:
+	Adventurers:
+		Sir Gawain(health: 8.0), Sophia(health: 5.0)
+	Creatures:
+		Wraith(health: 3.0)
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+	Creatures:
+		Demon(health: 15.0)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+		Harper(health: 5.0)
+	Creatures:
+		Ghoul(health: 3.0), Ogre(health: 3.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Sir Lancelot(health: 8.0), Aiden(health: 5.0), Gluttonous Gilbert(health: 3.0)
+	Creatures:
+		Satan(health: 15.0)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 3
+Creature rolled a 1
+Adventurer Sir Lancelot(health: 7.5) fought Satan(health: 14.5)
+Adventurer Sir Lancelot(health: 7.5) beat Satan(health: 12.5)
+Adventurer Sophia(health: 5.0) has moved from Room 1 to Room 3
+Adventurer rolled a 4
+Creature rolled a 6
+Adventurer Sir Gawain(health: 7.5) fought Wraith(health: 2.5)
+Adventurer Sir Gawain(health: 5.5) lost to Wraith(health: 2.5)
+Adventurer rolled a 3
+Creature rolled a 5
+Adventurer Gluttonous Gilbert(health: 2.5) fought Satan(health: 12.0)
+Adventurer Gluttonous Gilbert(health: 0.5) lost to Satan(health: 12.0)
+Adventurer Sophia(health: 5.0) has moved from Room 3 to Room 2
+Adventurer rolled a 3
+Creature rolled a 5
+Adventurer Harper(health: 4.5) fought Ghoul(health: 2.5)
+Adventurer Harper(health: 2.5) lost to Ghoul(health: 2.5)
+Adventurer rolled a 4
+Creature rolled a 3
+Adventurer Aiden(health: 4.5) fought Satan(health: 11.5)
+Adventurer Aiden(health: 4.5) beat Satan(health: 10.5)
+Adventurer rolled a 4
+Creature rolled a 2
+Adventurer Sophia(health: 4.5) fought Demon(health: 14.5)
+Adventurer Sophia(health: 4.5) beat Demon(health: 12.5)
+
+
+ARCANE Maze: turn 1
+Room 1:
+	Adventurers:
+		Sir Gawain(health: 5.5)
+	Creatures:
+		Wraith(health: 2.5)
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sophia(health: 4.5)
+	Creatures:
+		Demon(health: 12.5)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+		Harper(health: 2.5)
+	Creatures:
+		Ogre(health: 3.0), Ghoul(health: 2.5)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Sir Lancelot(health: 7.5), Aiden(health: 4.5), Gluttonous Gilbert(health: 0.5)
+	Creatures:
+		Satan(health: 10.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 1
+Creature rolled a 2
+Adventurer Sir Lancelot(health: 7.0) fought Satan(health: 10.0)
+Adventurer Sir Lancelot(health: 6.0) lost to Satan(health: 10.0)
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Sir Gawain(health: 5.0) fought Wraith(health: 2.0)
+Adventurer Sir Gawain(health: 5.0) drew against Wraith(health: 2.0)
+Adventurer Gluttonous Gilbert(health: 0.0) DEAD was killed.
+Adventurer rolled a 5
+Creature rolled a 6
+Adventurer Aiden(health: 4.0) fought Satan(health: 9.0)
+Adventurer Aiden(health: 3.0) lost to Satan(health: 9.0)
+Adventurer rolled a 4
+Creature rolled a 5
+Adventurer Sophia(health: 4.0) fought Demon(health: 12.0)
+Adventurer Sophia(health: 3.0) lost to Demon(health: 12.0)
+Adventurer rolled a 2
+Creature rolled a 6
+Adventurer Harper(health: 2.0) fought Ogre(health: 2.5)
+Adventurer Harper(health: 0.0) lost to Ogre(health: 2.5)
+
+
+ARCANE Maze: turn 2
+Room 1:
+	Adventurers:
+		Sir Gawain(health: 5.0)
+	Creatures:
+		Wraith(health: 2.0)
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sophia(health: 3.0)
+	Creatures:
+		Demon(health: 12.0)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ogre(health: 2.5), Ghoul(health: 2.5)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Sir Lancelot(health: 6.0), Aiden(health: 3.0)
+	Creatures:
+		Satan(health: 9.0)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 1
+Creature rolled a 3
+Adventurer Sir Lancelot(health: 5.5) fought Satan(health: 8.5)
+Adventurer Sir Lancelot(health: 3.5) lost to Satan(health: 8.5)
+Adventurer rolled a 4
+Creature rolled a 2
+Adventurer Sir Gawain(health: 4.5) fought Wraith(health: 1.5)
+Adventurer Sir Gawain(health: 4.5) beat Wraith(health: 0.0)
+Adventurer rolled a 4
+Creature rolled a 5
+Adventurer Aiden(health: 2.5) fought Satan(health: 8.0)
+Adventurer Aiden(health: 1.5) lost to Satan(health: 8.0)
+Adventurer rolled a 6
+Creature rolled a 6
+Adventurer Sophia(health: 2.5) fought Demon(health: 11.5)
+Adventurer Sophia(health: 2.5) drew against Demon(health: 11.5)
+Adventurer Harper(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 3
+Room 1:
+	Adventurers:
+		Sir Gawain(health: 4.5)
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sophia(health: 2.5)
+	Creatures:
+		Demon(health: 11.5)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.5), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Sir Lancelot(health: 3.5), Aiden(health: 1.5)
+	Creatures:
+		Satan(health: 8.0)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sir Gawain(health: 4.0) has defeated Wraith
+Adventurer Sir Gawain(health: 4.0) has moved from Room 1 to Room 2
+Adventurer rolled a 1
+Creature rolled a 4
+Adventurer Sir Lancelot(health: 3.0) fought Satan(health: 7.5)
+Adventurer Sir Lancelot(health: 0.0) lost to Satan(health: 7.5)
+Adventurer rolled a 2
+Creature rolled a 2
+Adventurer Sophia(health: 2.0) fought Demon(health: 11.0)
+Adventurer Sophia(health: 2.0) drew against Demon(health: 11.0)
+Adventurer rolled a 6
+Creature rolled a 5
+Adventurer Aiden(health: 1.0) fought Satan(health: 7.0)
+Adventurer Aiden(health: 1.0) beat Satan(health: 6.0)
+
+
+ARCANE Maze: turn 4
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sir Gawain(health: 4.0), Sophia(health: 2.0)
+	Creatures:
+		Demon(health: 11.0)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.5), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Aiden(health: 1.0)
+	Creatures:
+		Satan(health: 6.0)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 6
+Creature rolled a 3
+Adventurer Sir Gawain(health: 3.5) fought Demon(health: 10.5)
+Adventurer Sir Gawain(health: 3.5) beat Demon(health: 7.5)
+Adventurer Sir Lancelot(health: 0.0) DEAD was killed.
+Adventurer rolled a 6
+Creature rolled a 4
+Adventurer Sophia(health: 1.5) fought Demon(health: 7.0)
+Adventurer Sophia(health: 1.5) beat Demon(health: 5.0)
+Adventurer rolled a 5
+Creature rolled a 4
+Adventurer Aiden(health: 0.5) fought Satan(health: 5.0)
+Adventurer Aiden(health: 0.5) beat Satan(health: 4.0)
+
+
+ARCANE Maze: turn 5
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sir Gawain(health: 3.5), Sophia(health: 1.5)
+	Creatures:
+		Demon(health: 5.0)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.5), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+		Aiden(health: 0.5)
+	Creatures:
+		Satan(health: 4.0)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 6
+Creature rolled a 4
+Adventurer Sir Gawain(health: 3.0) fought Demon(health: 4.5)
+Adventurer Sir Gawain(health: 3.0) beat Demon(health: 2.5)
+Adventurer rolled a 3
+Creature rolled a 2
+Adventurer Sophia(health: 1.0) fought Demon(health: 2.0)
+Adventurer Sophia(health: 1.0) beat Demon(health: 1.0)
+Adventurer Aiden(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 6
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sir Gawain(health: 3.0), Sophia(health: 1.0)
+	Creatures:
+		Demon(health: 1.0)
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.5), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer rolled a 3
+Creature rolled a 3
+Adventurer Sir Gawain(health: 2.5) fought Demon(health: 0.5)
+Adventurer Sir Gawain(health: 2.5) drew against Demon(health: 0.5)
+Adventurer Sophia(health: 0.5) has defeated Demon
+Adventurer Sophia(health: 0.5) has moved from Room 2 to Room 3
+
+
+ARCANE Maze: turn 7
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sir Gawain(health: 2.5)
+	Creatures:
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+		Sophia(health: 0.5)
+	Creatures:
+		Ghoul(health: 2.5), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sir Gawain(health: 2.0) has defeated Demon
+Adventurer Sir Gawain(health: 2.0) has moved from Room 2 to Room 1
+Adventurer Harper(health: 0.0) has moved from Room 3 to Room 5
+Adventurer Sophia(health: 0.0) DEAD was killed.
+
+
+ARCANE Maze: turn 8
+Room 1:
+	Adventurers:
+		Sir Gawain(health: 2.0)
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.0), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sir Gawain(health: 1.5) has defeated Wraith
+Adventurer Sir Gawain(health: 1.5) has moved from Room 1 to Room 2
+
+
+ARCANE Maze: turn 9
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+		Sir Gawain(health: 1.5)
+	Creatures:
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+	Creatures:
+		Ghoul(health: 2.0), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sir Gawain(health: 1.0) has defeated Demon
+Adventurer Sir Gawain(health: 1.0) has moved from Room 2 to Room 3
+
+
+ARCANE Maze: turn 10
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+		Sir Gawain(health: 1.0)
+	Creatures:
+		Ghoul(health: 2.0), Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sophia(health: 0.0) has moved from Room 3 to Room 1
+Adventurer rolled a 5
+Creature rolled a 3
+Adventurer Sir Gawain(health: 0.5) fought Ghoul(health: 1.5)
+Adventurer Sir Gawain(health: 0.5) beat Ghoul(health: 0.0)
+
+
+ARCANE Maze: turn 11
+Room 1:
+	Adventurers:
+	Creatures:
+	Food:
+		Ice Cream, Banana, Egg
+Room 2:
+	Adventurers:
+	Creatures:
+	Food:
+		Salad
+Room 3:
+	Adventurers:
+		Sir Gawain(health: 0.5)
+	Creatures:
+		Ogre(health: 2.0)
+	Food:
+		Chocolate, Tomato, Cookie, Coffee
+Room 4:
+	Adventurers:
+	Creatures:
+		Satan(health: 3.5)
+	Food:
+		Pancake, Apple, Pasta
+Room 5:
+	Adventurers:
+	Creatures:
+	Food:
+		Cake, Steak, Chicken, Fries
+Actions:
+Adventurer Sir Gawain(health: 0.0) DEAD was killed.
+Boo, the creatures won.
+> Task :test
+4 actionable tasks: 1 executed, 3 up-to-date
+4:26:42 PM: Execution finished ':test --tests "arcane.ArcaneTest.testPlayFullyConnectedGrid"'.
