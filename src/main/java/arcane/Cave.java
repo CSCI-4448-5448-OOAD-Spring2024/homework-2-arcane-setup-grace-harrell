@@ -173,73 +173,129 @@ public class Cave {
 
         // methods to create creatures of different types
         public Builder createAndAddCreatures(int numCreatures){
-            for(int i = 0; i < numCreatures; i++){
+            List<String> lstNamesCreatures = new ArrayList<>();
+            int numCreaturesCreated = 0;
+            while (numCreaturesCreated < numCreatures){
                 Creature newlyCreatedCreature = creatureFactory.createCreature();
-                creatures.add(newlyCreatedCreature);
-                Room room = getRandomRoom();
-                room.addCreaturePresence(newlyCreatedCreature);
+                if (!lstNamesCreatures.contains(newlyCreatedCreature.getName())){
+                    creatures.add(newlyCreatedCreature);
+
+                    Room room = getRandomRoom();
+                    room.addCreaturePresence(newlyCreatedCreature);
+
+                    lstNamesCreatures.add(newlyCreatedCreature.getName());
+                    numCreaturesCreated += 1;
+                }
             }
             return this;
         }
 
         public Builder createAndAddDemons(int numDemons){
-            for(int i = 0; i < numDemons; i++){
+            List<String> lstNamesDemons = new ArrayList<>();
+            int numDemonsCreated = 0;
+            while (numDemonsCreated < numDemons){
                 Demon newlyCreatedDemon = creatureFactory.createDemon();
-                creatures.add(newlyCreatedDemon);
-                Room room = getRandomRoom();
-                room.addCreaturePresence(newlyCreatedDemon);
+                if (!lstNamesDemons.contains(newlyCreatedDemon.getName())){
+                    creatures.add(newlyCreatedDemon);
+
+                    Room room = getRandomRoom();
+                    room.addCreaturePresence(newlyCreatedDemon);
+
+                    lstNamesDemons.add(newlyCreatedDemon.getName());
+                    numDemonsCreated += 1;
+                }
             }
             return this;
         }
         // Methods to create adventurers of different types
 
         public Builder createAndAddAdventurers(int numAdventurers){
-            for(int i = 0; i < numAdventurers; i++){
+            List<String> lstNamesAdventurers = new ArrayList<>();
+            int numAdventurersCreated = 0;
+            while (numAdventurersCreated < numAdventurers){
                 Adventurer newlyCreatedAdventurer = adventurerFactory.createAdventurer();
-                adventurers.add(newlyCreatedAdventurer);
-                Room room = getRandomRoom();
-                room.addAdventurerPresence(newlyCreatedAdventurer);
+                if (!lstNamesAdventurers.contains(newlyCreatedAdventurer.getName())){
+                    adventurers.add(newlyCreatedAdventurer);
+
+                    Room room = getRandomRoom();
+                    room.addAdventurerPresence(newlyCreatedAdventurer);
+
+                    lstNamesAdventurers.add(newlyCreatedAdventurer.getName());
+                    numAdventurersCreated += 1;
+                }
             }
-            logger.info("adventurers: " + adventurers);
             return this;
         }
 
         public Builder createAndAddKnights(int numKnights){
-            for(int i = 0; i < numKnights; i++){
+            List<String> lstNamesKnights = new ArrayList<>();
+            int numKnightsCreated = 0;
+            while (numKnightsCreated < numKnights){
                 Knight newlyCreatedKnight = adventurerFactory.createKnight();
-                adventurers.add(newlyCreatedKnight);
-                Room room = getRandomRoom();
-                room.addAdventurerPresence(newlyCreatedKnight);
+                if (!lstNamesKnights.contains(newlyCreatedKnight.getName())){
+                    adventurers.add(newlyCreatedKnight);
+
+                    Room room = getRandomRoom();
+                    room.addAdventurerPresence(newlyCreatedKnight);
+
+                    lstNamesKnights.add(newlyCreatedKnight.getName());
+                    numKnightsCreated += 1;
+                }
             }
             return this;
         }
 
         public Builder createAndAddCowards(int numCowards){
-            for(int i = 0; i < numCowards; i++){
+            List<String> lstNamesCowards = new ArrayList<>();
+            int numCowardsCreated = 0;
+            while (numCowardsCreated < numCowards){
                 Coward newlyCreatedCoward = adventurerFactory.createCoward();
-                adventurers.add(newlyCreatedCoward);
-                Room room = getRandomRoom();
-                room.addAdventurerPresence(newlyCreatedCoward);
+                if (!lstNamesCowards.contains(newlyCreatedCoward.getName())){
+
+                    adventurers.add(newlyCreatedCoward);
+
+                    Room room = getRandomRoom();
+                    room.addAdventurerPresence(newlyCreatedCoward);
+
+                    lstNamesCowards.add(newlyCreatedCoward.getName());
+                    numCowardsCreated += 1;
+                }
             }
             return this;
         }
 
         public Builder createAndAddGluttons(int numGluttons){
-            for(int i = 0; i < numGluttons; i++){
+            List<String> lstNamesGlutton = new ArrayList<>();
+            int numGluttonCreated = 0;
+            while (numGluttonCreated < numGluttons){
                 Glutton newlyCreatedGlutton = adventurerFactory.createGlutton();
-                adventurers.add(newlyCreatedGlutton);
-                Room room = getRandomRoom();
-                room.addAdventurerPresence(newlyCreatedGlutton);
+                if (!lstNamesGlutton.contains(newlyCreatedGlutton.getName())){
+                    adventurers.add(newlyCreatedGlutton);
+
+                    Room room = getRandomRoom();
+                    room.addAdventurerPresence(newlyCreatedGlutton);
+
+                    lstNamesGlutton.add(newlyCreatedGlutton.getName());
+                    numGluttonCreated += 1;
+                }
             }
             return this;
         }
 
         public Builder createAndAddFood(int numFoods){
-            for(int i = 0; i < numFoods; i++) {
-                Food newlyCreatedFood =  foodFactory.createFood();
-                foods.add(newlyCreatedFood);
-                Room room = getRandomRoom();
-                room.addFoodPresent(newlyCreatedFood);
+            List<String> lstNamesFoods = new ArrayList<>();
+            int numFoodsCreated = 0;
+            while (numFoodsCreated < numFoods){
+                Food newlyCreatedFood = foodFactory.createFood();
+                if (!lstNamesFoods.contains(newlyCreatedFood.getName())){
+                    foods.add(newlyCreatedFood);
+
+                    Room room = getRandomRoom();
+                    room.addFoodPresent(newlyCreatedFood);
+
+                    lstNamesFoods.add(newlyCreatedFood.getName());
+                    numFoodsCreated += 1;
+                }
             }
             return this;
         }
@@ -283,7 +339,6 @@ public class Cave {
         }
 
         public Cave build(){
-            logger.info("build: " + adventurers);
             return new Cave(creatures,adventurers,caveRooms);
         }
 
@@ -315,18 +370,26 @@ public class Cave {
             if (!caveRoom.noAdventurersHere()) {
                 String nameAdventurers = "";
                 for (Adventurer adventurers: caveRoom.getAdventurersPresent()){
-                    nameAdventurers += adventurers.getName() +  "(health: " + adventurers.getHealth() + "), ";
+                    if (adventurers.isAlive()) {
+                        nameAdventurers += adventurers.getName() + "(health: " + adventurers.getHealth() + "), ";
+                    }
                 }
-                logger.info("\t\t" + nameAdventurers.substring(0,(nameAdventurers.length() - 2)));
+                if (!nameAdventurers.isEmpty()){
+                    logger.info("\t\t" + nameAdventurers.substring(0,(nameAdventurers.length() - 2)));
+                }
             }
             // prints if creature is present in this room
             logger.info("\tCreatures:  ");
             if (!caveRoom.noCreaturesHere()) {
                 String nameCreatures = "";
                 for (Creature creatures: caveRoom.getCreaturesPresent()){
-                    nameCreatures += creatures.getName() +  "(health: " + creatures.getHealth() + "), ";
+                    if (creatures.isAlive()) {
+                        nameCreatures += creatures.getName() + "(health: " + creatures.getHealth() + "), ";
+                    }
                 }
-                logger.info("\t\t" + nameCreatures.substring(0,(nameCreatures.length() - 2)));
+                if (!nameCreatures.isEmpty()){
+                    logger.info("\t\t" + nameCreatures.substring(0,(nameCreatures.length() - 2)));
+                }
             }
             logger.info("\tFood:  ");
             if (!caveRoom.noFoodsHere()){
@@ -374,10 +437,62 @@ public class Cave {
     }
 
     public List<Adventurer> getAllAdventurers(){
-        return adventurers;
+        List<Adventurer> regularAdventurers = new ArrayList<>();
+        for (Adventurer currAdventurer: adventurers){
+            if (!(currAdventurer instanceof Knight) && !(currAdventurer instanceof Coward) && !(currAdventurer instanceof Glutton)){
+                regularAdventurers.add(currAdventurer);
+            }
+        }
+        return regularAdventurers;
     }
+
+    public List<Adventurer> getAllKnights(){
+        List<Adventurer> knights = new ArrayList<>();
+        for (Adventurer currAdventurer: adventurers){
+            if (currAdventurer instanceof Knight){
+                knights.add(currAdventurer);
+            }
+        }
+        return knights;
+    }
+
+    public List<Adventurer> getAllGluttons(){
+        List<Adventurer> gluttons = new ArrayList<>();
+        for (Adventurer currAdventurer: adventurers){
+            if (currAdventurer instanceof Glutton){
+                gluttons.add(currAdventurer);
+            }
+        }
+        return gluttons;
+    }
+
+    public List<Adventurer> getAllCowards(){
+        List<Adventurer> cowards = new ArrayList<>();
+        for (Adventurer currAdventurer: adventurers){
+            if (currAdventurer instanceof Coward){
+                cowards.add(currAdventurer);
+            }
+        }
+        return cowards;
+    }
+
     public List<Creature> getAllCreatures(){
-        return creatures;
+        List<Creature> regularCreatures = new ArrayList<>();
+        for (Creature currCreature: creatures){
+            if (!(currCreature instanceof Demon)){
+                regularCreatures.add(currCreature);
+            }
+        }
+        return regularCreatures;
+    }
+    public List<Creature> getAllDemons(){
+        List<Creature> demons = new ArrayList<>();
+        for (Creature currCreature: creatures){
+            if (currCreature instanceof Demon){
+                demons.add(currCreature);
+            }
+        }
+        return demons;
     }
     public void removeDefeatedAdventurer(Adventurer adventurer){
         adventurers.remove(adventurer);
@@ -394,5 +509,25 @@ public class Cave {
         return creatures.isEmpty();
     }
 
+    public boolean isDemonPresentInRoom(Room roomCurrent){
+        List<Creature> creaturesInRoom = roomCurrent.getCreaturesPresent();
+        for (Creature creature: creaturesInRoom){
+            if (creature instanceof Demon){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Creature> getDemonBasedOnRoom(Room roomCurrent){
+        List<Creature> demonsInThisRoom = new ArrayList<>();
+        List<Creature> creaturesInRoom = roomCurrent.getCreaturesPresent();
+        for (Creature creature: creaturesInRoom){
+            if (creature instanceof Demon){
+                demonsInThisRoom.add(creature);
+            }
+        }
+        return demonsInThisRoom;
+    }
 
 }

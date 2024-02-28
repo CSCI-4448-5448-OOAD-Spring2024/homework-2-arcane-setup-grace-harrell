@@ -6,9 +6,7 @@ public class AdventurerFactory{
     private List<Adventurer> adventurers = new ArrayList<>();
 
 
-    public AdventurerFactory(){
-        adventurers = new ArrayList<>();
-    }
+    public AdventurerFactory(){}
     public AdventurerFactory(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
         for (int i = 0; i < numAdventurers; i++) {
             adventurers.add(createAdventurer());

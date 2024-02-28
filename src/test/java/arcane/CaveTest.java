@@ -16,13 +16,14 @@ class CaveTest {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     @Test
     public void testBuilderObject(){
-        Cave cave = new Cave.Builder().create2x2Grid()
-                .createAndAddAdventurers(2)
-                .createAndAddCowards(2)
-                .createAndAddCreatures(2)
-                .createAndAddDemons(2)
+        Cave cave = new Cave.Builder().createFullyConnectedRooms(6)
+                .createAndAddAdventurers(1)
+                .createAndAddCowards(1)
+                .createAndAddCreatures(1)
+                .createAndAddDemons(1)
                 .createAndAddFood(10)
                 .build();
+        logger.info("Cave Adventurer size: " + cave.getAllAdventurers().size());
         cave.printCaveStatus(0);
     }
 
