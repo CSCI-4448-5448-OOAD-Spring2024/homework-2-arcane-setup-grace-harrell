@@ -17,13 +17,6 @@ public class Cave {
 
         caveRooms = lstRooms;
 
-        // randomly choosing a room to put the creature and adventurer into
-        for (Adventurer adventurersIndividual: lstAdventurers){
-            getRandomRoom().addAdventurerPresence(adventurersIndividual);
-        }
-        for (Creature creaturesIndividual: lstCreatures){
-            getRandomRoom().addCreaturePresence(creaturesIndividual);
-        }
         // creates creature in the cave
         creatures = lstCreatures;
 
@@ -207,6 +200,7 @@ public class Cave {
                 Room room = getRandomRoom();
                 room.addAdventurerPresence(newlyCreatedAdventurer);
             }
+            logger.info("adventurers: " + adventurers);
             return this;
         }
 
@@ -289,6 +283,7 @@ public class Cave {
         }
 
         public Cave build(){
+            logger.info("build: " + adventurers);
             return new Cave(creatures,adventurers,caveRooms);
         }
 
