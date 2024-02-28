@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import org.slf4j.Logger;
@@ -39,14 +40,10 @@ public List<Adventurer> createAdventurers(int num_adventurers){
         Room se = new Room("Southeast");
 
         // adding in the two neighbors of each room
-        nw.addNeighbor(ne);
-        nw.addNeighbor(sw);
-        ne.addNeighbor(nw);
-        ne.addNeighbor(se);
-        sw.addNeighbor(nw);
-        sw.addNeighbor(se);
-        se.addNeighbor(ne);
-        se.addNeighbor(sw);
+        nw.addNeighbor(Arrays.asList(ne,sw));
+        ne.addNeighbor(Arrays.asList(se,nw));
+        sw.addNeighbor(Arrays.asList(nw,se));
+        se.addNeighbor(Arrays.asList(sw,ne));
 
         lst_rooms.add(nw);
         lst_rooms.add(ne);
@@ -77,30 +74,16 @@ public List<Adventurer> createAdventurers(int num_adventurers){
         Room e = new Room("East");
         Room c = new Room("Center");
         // adding in the two neighbors of each room
-        nw.addNeighbor(n);
-        nw.addNeighbor(w);
-        n.addNeighbor(nw);
-        n.addNeighbor(ne);
-        n.addNeighbor(c);
-        ne.addNeighbor(n);
-        ne.addNeighbor(e);
-        e.addNeighbor(ne);
-        e.addNeighbor(c);
-        e.addNeighbor(se);
-        se.addNeighbor(e);
-        se.addNeighbor(s);
-        s.addNeighbor(c);
-        s.addNeighbor(sw);
-        s.addNeighbor(se);
-        sw.addNeighbor(s);
-        sw.addNeighbor(w);
-        w.addNeighbor(nw);
-        w.addNeighbor(sw);
-        w.addNeighbor(c);
-        c.addNeighbor(n);
-        c.addNeighbor(e);
-        c.addNeighbor(s);
-        c.addNeighbor(w);
+        nw.addNeighbor(Arrays.asList(n,w));
+        n.addNeighbor(Arrays.asList(nw,ne,c));
+        ne.addNeighbor(Arrays.asList(n,e));
+        e.addNeighbor(Arrays.asList(se,c,ne));
+        se.addNeighbor(Arrays.asList(s,e));
+        s.addNeighbor(Arrays.asList(sw,c,se));
+        sw.addNeighbor(Arrays.asList(w,s));
+        w.addNeighbor(Arrays.asList(nw,sw,c));
+        c.addNeighbor(Arrays.asList(n,e,s,w));
+
 
         lst_rooms.add(nw);
         lst_rooms.add(n);
@@ -113,6 +96,7 @@ public List<Adventurer> createAdventurers(int num_adventurers){
         lst_rooms.add(sw);
         lst_rooms.add(s);
         lst_rooms.add(se);
+
 
         for (int i = 0; i < 10; i++){
             Food addFood = new Food();
@@ -137,14 +121,14 @@ public List<Adventurer> createAdventurers(int num_adventurers){
 
     @Test
     public void testCaveThree(){
-        List<Room> lstRooms = createRoomsTwo();
+        List<Room> lstRooms = createRoomsThree();
         List<Adventurer> lstAdventurers = createAdventurers(1);
         List<Creature> lstCreatures = createCreatures(1);
         Cave cave = createCave(lstAdventurers,lstCreatures,lstRooms);
 
         List<Room> cave_rooms = cave.getCaveRooms();
 
-        assert(cave_rooms.size() == 4);
+        assert(cave_rooms.size() == 9);
     }
 
     @Test
@@ -162,7 +146,7 @@ public List<Adventurer> createAdventurers(int num_adventurers){
     public void testPrintCaveStatus(){
         // gives an input string to the System for the adventurer name
 
-        List<Room> lstRooms = createRoomsTwo();
+        List<Room> lstRooms = createRoomsThree();
         List<Adventurer> lstAdventurers = createAdventurers(1);
         List<Creature> lstCreatures = createCreatures(1);
         Cave cave = createCave(lstAdventurers,lstCreatures,lstRooms);
