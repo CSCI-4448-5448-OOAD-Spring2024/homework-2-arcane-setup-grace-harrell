@@ -3,23 +3,13 @@ import java.util.*;
 import java.util.logging.Logger;
 public class AdventurerFactory{
 
-    private List<Adventurer> adventurers = new ArrayList<>();
+    private static List<Adventurer> adventurers = new ArrayList<>();
 
-
-    public AdventurerFactory(){}
-    public AdventurerFactory(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
-        for (int i = 0; i < numAdventurers; i++) {
-            adventurers.add(createAdventurer());
-        }
-        for (int i = 0; i < numKnights; i++) {
-            adventurers.add(createKnight());
-        }
-        for (int i = 0; i < numGluttons; i++) {
-            adventurers.add(createGlutton());
-        }
-        for (int i = 0; i < numCowards; i++) {
-            adventurers.add(createCoward());
-        }
+    //default constructor --> No Args
+    public AdventurerFactory(){};
+   // Constructor with arguments
+    public AdventurerFactory(int numAdventurers){
+        for(int i = 0; i < numAdventurers; i++) adventurers.add(createAdventurer());
     }
     public Adventurer createAdventurer() {
         Adventurer adventurer = new Adventurer();
@@ -69,7 +59,11 @@ public class AdventurerFactory{
         Random random = new Random();
         return nameList.get(random.nextInt(nameList.size()));
     }
-    public List<Adventurer> getAdventurers(){
+
+    public void addAdventurers(Adventurer adventurer){
+        adventurers.add(adventurer);
+    }
+    public List<Adventurer> getListOfAdventurers(){
         return adventurers;
     }
 }
