@@ -35,20 +35,16 @@ public class Cave {
         //private boolean sequentiallyDistributed = false;
         // required variables
         public List<Room> caveRooms = new ArrayList<>();;
-        public List<Adventurer> adventurers;
-        public List<Creature> creatures;
-        public List<Food> foods;
+
+        public List<Adventurer> adventurers= new ArrayList<>();;
+        public List<Creature> creatures= new ArrayList<>();;
+        public List<Food> foods= new ArrayList<>();;
 
         AdventurerFactory adventurerFactory;
         CreatureFactory creatureFactory;
         FoodFactory foodFactory;
 
         public Builder(){
-            adventurers = new ArrayList<>();
-            creatures = new ArrayList<>();
-            foods = new ArrayList<>();
-
-
             adventurerFactory = new AdventurerFactory();
             creatureFactory = new CreatureFactory();
             foodFactory = new FoodFactory();
@@ -211,6 +207,7 @@ public class Cave {
             int numAdventurersCreated = 0;
             while (numAdventurersCreated < numAdventurers){
                 Adventurer newlyCreatedAdventurer = adventurerFactory.createAdventurer();
+
                 if (!lstNamesAdventurers.contains(newlyCreatedAdventurer.getName())){
                     adventurers.add(newlyCreatedAdventurer);
 
@@ -322,11 +319,6 @@ public class Cave {
             return this;
         }
 
-//        public Builder sequentiallyDistributeAllEntities(){
-//            sequentiallyDistributed = true;
-//            return this;
-//        }
-
         public Builder addToRoom(String roomName, Food foodToAdd){
             Room roomToAddFoodTo = getRoomGivenName(roomName);
             if (roomToAddFoodTo != null){
@@ -335,6 +327,42 @@ public class Cave {
             return this;
         }
 
+        public Builder randomlyDistribute(){
+            for(Adventurer adventurer: adventurers){
+                Room room = getRandomRoom();
+                room.addAdventurerPresence(adventurer);
+            }
+            for(Creature creature: creatures){
+                Room room = getRandomRoom();
+                room.addCreaturePresence(creature);
+            }
+            for(Food food: foods){
+                Room room = getRandomRoom();
+                room.addFoodPresent(food);
+            }
+            return this;
+        }
+
+        public Builder sequentiallyDistributeAllEntities(){
+            int numRooms = caveRooms.size();
+            int i  = 0;
+            for(Adventurer adventurer: adventurers){
+                caveRooms.get(i % numRooms).addAdventurerPresence(adventurer);
+                i++;
+            }
+            i = 0;
+            for(Creature creature: creatures){
+                caveRooms.get(i % numRooms).addCreaturePresence(creature);
+                i++;
+            }
+            i = 0;
+            for(Food food: foods){
+                caveRooms.get(i % numRooms).addFoodPresent(food);
+                i++;
+            }
+
+            return this;
+        }
         public Cave build(){
             return new Cave(creatures,adventurers,caveRooms);
         }

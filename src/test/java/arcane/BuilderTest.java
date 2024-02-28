@@ -19,11 +19,51 @@ public class BuilderTest {
         Adventurer c = af.createCoward();
         af.addAdventurers(c);
         assert(af.getListOfAdventurers().size() == 11);
+
         logger.info(af.getListOfAdventurers().get(10).getName()); // should be a coward name
+
         Adventurer k = af.createKnight();
         af.addAdventurers(k);
         Adventurer g = af.createGlutton();
         af.addAdventurers(g);
         assert(af.getListOfAdventurers().size() == 13);
-    }}
+    }
+
+
+    @Test public void testRoomsConnected(){
+        AdventurerFactory af = new AdventurerFactory(2);
+        CreatureFactory cf = new CreatureFactory(7);
+        FoodFactory ff = new FoodFactory(10);
+        Cave cave = new Cave.Builder(af, cf, ff).createFullyConnectedRooms(10)
+                .randomlyDistribute()
+                .build();
+        assert(cave.getCaveRooms().size() == 10);
+        cave.printCaveStatus(0);
+        Room room  = cave.getRandomRoom();
+        logger.info(room.getNeighbor().toString());
+        assert(room.getNeighbor().size() == 9);
+        //assert(room.getNeighbor().equals(cave.getCaveRooms().remove(room)));
+
+    }
+
+    @Test
+    public void testSequentialDistibution(){
+        AdventurerFactory af = new AdventurerFactory(2);
+        CreatureFactory cf = new CreatureFactory(7);
+        FoodFactory ff = new FoodFactory(10);
+        Cave cave = new Cave.Builder(af, cf, ff).createFullyConnectedRooms(10)
+                .sequentiallyDistributeAllEntities()
+                .build();
+        cave.printCaveStatus(0);
+
+
+        Cave cave2 = new Cave.Builder(af, cf, ff).createFullyConnectedRooms(3)
+                .sequentiallyDistributeAllEntities()
+                .build();
+        cave2.printCaveStatus(0);
+    }
+
+
+
+}
 

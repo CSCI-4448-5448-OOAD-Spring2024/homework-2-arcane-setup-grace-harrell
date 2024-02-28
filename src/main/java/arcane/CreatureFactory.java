@@ -7,13 +7,15 @@ public class CreatureFactory{
     private List<Creature> creatures = new ArrayList<>();
     //private List<String> creatureNames = new ArrayList<>();
 
-    public CreatureFactory(){}
-    // returns a list of creatures
+    // default constructor
+    public CreatureFactory(){};
+
+    // Constructor with arguments
     public CreatureFactory(int numCreatures){
-        for (int i = 0; i < numCreatures; i++){
-            creatures.add(createCreature());
-        }
+        for(int i = 0; i < numCreatures; i++) creatures.add(createCreature());
     }
+
+
     public Creature createCreature() {
         Creature creature = new Creature();
 //        String randomName = "";
@@ -45,8 +47,10 @@ public class CreatureFactory{
         Random random = new Random();
         return nameList.get(random.nextInt(nameList.size()));
     }
-
-    public List<Creature> getCreatures(){
+    public void addCreature(Creature creature){
+        creatures.add(creature);
+    }
+    public List<Creature> getListOfCreatures(){
         return creatures;
     }
 }

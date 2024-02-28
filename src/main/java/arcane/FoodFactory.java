@@ -1,16 +1,14 @@
 package arcane;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class FoodFactory{
     private List<Food> foods = new ArrayList<>();
 
-    public FoodFactory(){
-        foods = new ArrayList<>();
-    }
+   // default constructor
+    public FoodFactory(){};
+
+    // Constructor with args
     public FoodFactory(int numFood){
         for (int i = 0; i < numFood; i++){
             foods.add(createFood());
@@ -32,7 +30,10 @@ public class FoodFactory{
         return nameList.get(random.nextInt(nameList.size()));
     }
 
-    public List<Food> getFoods() {
+    public void addFood(Food food){
+        foods.add(food);
+    }
+    public List<Food> getListOfFoods() {
         return foods;
     }
 }
