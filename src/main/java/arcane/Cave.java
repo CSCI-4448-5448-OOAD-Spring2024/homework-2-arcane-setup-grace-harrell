@@ -34,7 +34,7 @@ public class Cave {
 
         //private boolean sequentiallyDistributed = false;
         // required variables
-        public List<Room> caveRooms;
+        public List<Room> caveRooms = new ArrayList<>();;
         public List<Adventurer> adventurers;
         public List<Creature> creatures;
         public List<Food> foods;
@@ -47,7 +47,7 @@ public class Cave {
             adventurers = new ArrayList<>();
             creatures = new ArrayList<>();
             foods = new ArrayList<>();
-            caveRooms = new ArrayList<>();
+
 
             adventurerFactory = new AdventurerFactory();
             creatureFactory = new CreatureFactory();
@@ -58,13 +58,10 @@ public class Cave {
             creatureFactory = cf;
             foodFactory = ff;
 
-            adventurers = adventurerFactory.getListOfAdventurers();
-            creatures = creatureFactory.getCreatures();
-            foods = foodFactory.getFoods();
-        }
 
-        public static Builder newBuilder() {
-            return new Builder();
+            adventurers = af.getListOfAdventurers();
+            creatures = cf.getCreatures();
+            foods = ff.getFoods();
         }
 
 
@@ -343,20 +340,6 @@ public class Cave {
         }
 
     }
-    public void addRoomToCave(Room roomToAdd){
-        caveRooms.add(roomToAdd);
-    }
-
-    public Room getRandomRoom(){
-
-        // if the rooms haven't been created, throw an error
-        if (caveRooms.isEmpty()){
-            throw new IllegalStateException("Cave is empty");
-        }
-        // find a random value by getting a random index
-        Random rand = new Random();
-        return caveRooms.get(rand.nextInt(caveRooms.size()));
-    }
 
     // prints the current status of the cave, including locations of characters.
     // returns a bool that is true when the characters are in the same room
@@ -406,27 +389,11 @@ public class Cave {
     }
 
     // returns the room in the cave with the adventurer in it
-    public Room getAdventurerRoom(){
-        for(Room caveRoom : caveRooms){
-            if (!caveRoom.noAdventurersHere()){
-                return caveRoom;
-            }
-        }
-        return null;
-    }
     public Room getAdventurerRoom(Adventurer adventurer){
         for (Room room: getCaveRooms()){
             List<Adventurer> lstAdventurers = room.getAdventurersPresent();
             if (lstAdventurers.contains(adventurer)){
                 return room;
-            }
-        }
-        return null;
-    }
-    public Room getCreatureRoom(){
-        for(Room caveRoom : caveRooms){
-            if (!caveRoom.noCreaturesHere()){
-                return caveRoom;
             }
         }
         return null;
@@ -443,6 +410,7 @@ public class Cave {
                 regularAdventurers.add(currAdventurer);
             }
         }
+        regularAdventurers.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
         return regularAdventurers;
     }
 
@@ -453,6 +421,7 @@ public class Cave {
                 knights.add(currAdventurer);
             }
         }
+        knights.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
         return knights;
     }
 
@@ -463,6 +432,7 @@ public class Cave {
                 gluttons.add(currAdventurer);
             }
         }
+        gluttons.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
         return gluttons;
     }
 
@@ -473,6 +443,7 @@ public class Cave {
                 cowards.add(currAdventurer);
             }
         }
+        cowards.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
         return cowards;
     }
 
@@ -483,17 +454,10 @@ public class Cave {
                 regularCreatures.add(currCreature);
             }
         }
+        regularCreatures.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
         return regularCreatures;
     }
-    public List<Creature> getAllDemons(){
-        List<Creature> demons = new ArrayList<>();
-        for (Creature currCreature: creatures){
-            if (currCreature instanceof Demon){
-                demons.add(currCreature);
-            }
-        }
-        return demons;
-    }
+
     public void removeDefeatedAdventurer(Adventurer adventurer){
         adventurers.remove(adventurer);
     }

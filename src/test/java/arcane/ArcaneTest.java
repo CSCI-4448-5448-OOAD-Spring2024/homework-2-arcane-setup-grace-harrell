@@ -16,9 +16,9 @@ public class ArcaneTest {
         return new Dice();
     }
     @Test
-    public void testPlayTwo(){
+    public void testPlayConnected_6(){
         // provideInput("Testy");
-        Cave cave = new Cave.Builder().create2x2Grid()
+        Cave cave = new Cave.Builder().createFullyConnectedRooms(6)
                 .createAndAddAdventurers(1)
                 .createAndAddCowards(1)
                 .createAndAddCreatures(2)
@@ -30,9 +30,9 @@ public class ArcaneTest {
         assertNotNull(arcane.play());
     }
     @Test
-    public void testPlayThree(){
+    public void testPlayConnected_10(){
         // provideInput("Testy");
-        Cave cave = new Cave.Builder().create3x3Grid()
+        Cave cave = new Cave.Builder().createFullyConnectedRooms(10)
                 .createAndAddAdventurers(2)
                 .createAndAddCowards(2)
                 .createAndAddKnights(2)
@@ -44,6 +44,35 @@ public class ArcaneTest {
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
 
+    }
+
+    @Test
+    public void testPlay2x2Grid(){
+        Cave cave = new Cave.Builder().create2x2Grid()
+                .createAndAddAdventurers(3)
+                .createAndAddCreatures(2)
+                .createAndAddDemons(1)
+                .createAndAddFood(7)
+                .build();
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        assertNotNull(arcane.play());
+    }
+
+    @Test
+    public void testPlay3x3Grid(){
+        Cave cave = new Cave.Builder().create3x3Grid()
+                .createAndAddAdventurers(3)
+                .createAndAddCowards(2)
+                .createAndAddKnights(1)
+                .createAndAddGluttons(1)
+                .createAndAddCreatures(4)
+                .createAndAddDemons(1)
+                .createAndAddFood(15)
+                .build();
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        assertNotNull(arcane.play());
     }
 
 //    @Test

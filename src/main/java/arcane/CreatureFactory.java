@@ -5,21 +5,23 @@ import org.slf4j.LoggerFactory;
 public class CreatureFactory{
 
     private List<Creature> creatures = new ArrayList<>();
+    //private List<String> creatureNames = new ArrayList<>();
 
-    public CreatureFactory(){
-        creatures = new ArrayList<>();
-    }
+    public CreatureFactory(){}
     // returns a list of creatures
-    public CreatureFactory(int numCreatures, int numDemons){
+    public CreatureFactory(int numCreatures){
         for (int i = 0; i < numCreatures; i++){
-            creatures.add(createCreature());
-        }
-        for (int i = 0; i < numDemons; i++){
             creatures.add(createCreature());
         }
     }
     public Creature createCreature() {
         Creature creature = new Creature();
+//        String randomName = "";
+//        while (creatureNames.contains(randomName)){
+//            randomName = getRandomCreatureName();
+//        }
+//        creature.setName(randomName);
+//        creatureNames.add(randomName);
         creature.setName(getRandomCreatureName());
         return creature;
     }
