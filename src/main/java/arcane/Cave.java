@@ -37,9 +37,9 @@ public class Cave {
 //        this.caveRooms = builder.caveRooms;
 //    }
 
-    private static class Builder {
+    public static class Builder {
 
-
+        //private boolean sequentiallyDistributed = false;
         // required variables
         public List<Room> caveRooms;
         public List<Adventurer> adventurers;
@@ -50,6 +50,16 @@ public class Cave {
         CreatureFactory creatureFactory;
         FoodFactory foodFactory;
 
+        public Builder(){
+            adventurers = new ArrayList<>();
+            creatures = new ArrayList<>();
+            foods = new ArrayList<>();
+            caveRooms = new ArrayList<>();
+
+            adventurerFactory = new AdventurerFactory();
+            creatureFactory = new CreatureFactory();
+            foodFactory = new FoodFactory();
+        }
         public Builder(AdventurerFactory af, CreatureFactory cf, FoodFactory ff) {
             adventurerFactory = af;
             creatureFactory = cf;
@@ -59,6 +69,12 @@ public class Cave {
             creatures = creatureFactory.getCreatures();
             foods = foodFactory.getFoods();
         }
+
+        public static Builder newBuilder() {
+            return new Builder();
+        }
+
+
         public Room getRandomRoom(){
             if (caveRooms.isEmpty()){
                 throw new IllegalStateException("Cave is empty");
@@ -148,7 +164,7 @@ public class Cave {
         }
 
         public Builder createFullyConnectedRooms(int numRooms){
-            for (int i = 0; i < numRooms; i++){
+            for (int i = 1; i < numRooms+1; i++){
                 Room roomCreated = new Room("Room " + i);
                 caveRooms.add(roomCreated);
             }
@@ -224,7 +240,7 @@ public class Cave {
             return this;
         }
 
-        public Builder createAndPlaceFood(int numFoods){
+        public Builder createAndAddFood(int numFoods){
             for(int i = 0; i < numFoods; i++) {
                 Food newlyCreatedFood =  foodFactory.createFood();
                 foods.add(newlyCreatedFood);
@@ -258,6 +274,11 @@ public class Cave {
             }
             return this;
         }
+
+//        public Builder sequentiallyDistributeAllEntities(){
+//            sequentiallyDistributed = true;
+//            return this;
+//        }
 
         public Builder addToRoom(String roomName, Food foodToAdd){
             Room roomToAddFoodTo = getRoomGivenName(roomName);

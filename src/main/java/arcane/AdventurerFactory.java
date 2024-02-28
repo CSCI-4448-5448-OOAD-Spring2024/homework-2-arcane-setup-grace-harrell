@@ -1,12 +1,14 @@
 package arcane;
 import java.util.*;
 import java.util.logging.Logger;
-public abstract class AdventurerFactory{
+public class AdventurerFactory{
 
     private List<Adventurer> adventurers = new ArrayList<>();
 
 
-    // returns a list of creatures
+    public AdventurerFactory(){
+        adventurers = new ArrayList<>();
+    }
     public AdventurerFactory(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
         for (int i = 0; i < numAdventurers; i++) {
             adventurers.add(createAdventurer());
