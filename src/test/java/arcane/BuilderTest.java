@@ -19,7 +19,8 @@ public class BuilderTest {
         Adventurer c = af.createCoward();
         af.addAdventurers(c);
         assert(af.getListOfAdventurers().size() == 11);
-        logger.info(af.getListOfAdventurers().getLast().getName()); // should be a coward name
+
+        logger.info(af.getListOfAdventurers().get(10).getName()); // should be a coward name
 
         Adventurer k = af.createKnight();
         af.addAdventurers(k);

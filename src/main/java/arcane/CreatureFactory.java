@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 public class CreatureFactory{
 
     private List<Creature> creatures = new ArrayList<>();
+    //private List<String> creatureNames = new ArrayList<>();
 
     // default constructor
     public CreatureFactory(){};
@@ -17,6 +18,12 @@ public class CreatureFactory{
 
     public Creature createCreature() {
         Creature creature = new Creature();
+//        String randomName = "";
+//        while (creatureNames.contains(randomName)){
+//            randomName = getRandomCreatureName();
+//        }
+//        creature.setName(randomName);
+//        creatureNames.add(randomName);
         creature.setName(getRandomCreatureName());
         return creature;
     }
