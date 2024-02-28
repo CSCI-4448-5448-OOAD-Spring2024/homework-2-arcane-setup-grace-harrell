@@ -3,9 +3,8 @@ import java.util.*;
 import java.util.logging.Logger;
 public class AdventurerFactory{
 
-    // returns a list of creatures
+    private static List<Adventurer> adventurers = new ArrayList<>();
     public static List <Adventurer> listOfAdventurers(int numAdventurers, int numKnights, int numGluttons, int numCowards) {
-        List<Adventurer> adventurers = new ArrayList<>();
         for (int i = 0; i < numAdventurers; i++) {
             adventurers.add(createAdventurer());
         }
@@ -68,5 +67,8 @@ public class AdventurerFactory{
     public static String getRandomName(List<String> nameList) {
         Random random = new Random();
         return nameList.get(random.nextInt(nameList.size()));
+    }
+    public List<Adventurer> getAdventurers(){
+        return adventurers;
     }
 }

@@ -60,18 +60,10 @@ public class Cave {
         private Cave cave = new Cave(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
 
 
-        public Builder(AdventurerFactory af, CreatureFactory cf, FoodFactory ff, int _numCreatures, int _numDemons, int _numAdventurers, int _numKnights, int _numGluttons, int _numCowards) {
+        public Builder(AdventurerFactory af, CreatureFactory cf, FoodFactory ff) {
             adventurerFactory = af;
             creatureFactory = cf;
             foodFactory = ff;
-
-            numCreatures = _numCreatures;
-            numDemons = _numDemons;
-            numAdventurers = _numAdventurers;
-            numKnights = _numKnights;
-            numGluttons = _numGluttons;
-            numCowards = _numCowards;
-
         }
         public Room getRandomRoom(){
             if (cave.getCaveRooms().isEmpty()){
@@ -174,7 +166,7 @@ public class Cave {
         // Methods to create adventurers of different types
 
         public Builder createAdventurers(){
-            adventurers = adventurerFactory.getAdventurers();
+            adventurers = adventurerFactory.listOfAdventurers(1,1, 1, 1);
             return this;
         }
         public Builder createKnights(){
