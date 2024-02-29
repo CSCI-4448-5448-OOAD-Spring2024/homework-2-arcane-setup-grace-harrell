@@ -28,5 +28,7 @@ https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-
 https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/exampleOutput_3.txt
 
 **UML**  
+![UMLimage](https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/89498239/da836cec-6d4e-439f-8f62-ecf294aff39a)
+https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/umlFile.drawio
 
 
