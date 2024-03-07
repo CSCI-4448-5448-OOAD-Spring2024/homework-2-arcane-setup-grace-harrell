@@ -1,4 +1,4 @@
-# Homework2 ARCANE-SetUp
+# Homework3 ARCANE-SetUp
 
 Team Members:
 
@@ -26,5 +26,15 @@ Comments / Descriptions: The game ARCANE is a self playing game with adventurers
    
    
 4. Inheritance: The Food, Creature, and Adventurer classes are subclasses of Entity, and inherit its methods and variables.
-   
 
+
+**Code Coverage**  
+<img width="539" alt="Screenshot 2024-02-14 at 4 32 31 PM" src="https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/9e46bbc6-e4e7-4055-be57-53d79ab73c0d">
+
+   
+****EXAMPLE OUTPUTS (made by testPlayThree in ArcaneTest)****
+https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_3/exampleOutput3x3.txt 
+
+https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_3/exampleOuput3x3_2.txt  
+
+https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_3/exampleOutput3x3_3.txt

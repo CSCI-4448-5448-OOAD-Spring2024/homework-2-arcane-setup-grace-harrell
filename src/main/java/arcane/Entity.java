@@ -1,19 +1,19 @@
 package arcane;
 
-public class Character {
+public class Entity {
 
     private boolean isAlivePrivate = true;
-    private int health = 5;
+    private double health = 5;
     private String name;
 
     public void setIsAlive(boolean alive){
         isAlivePrivate = alive;
     }
-    public void setName(String _name){
-        this.name = _name;
+    public void setName(String name){
+        this.name = name;
     }
 
-    public void decreaseHealth(int decreaseBy){
+    public void decreaseHealth(double decreaseBy){
         health -= decreaseBy;
         if (health <= 0){
             health = 0;
@@ -21,15 +21,22 @@ public class Character {
         }
     }
 
+    public void setHealth(double setHealthTo){
+        health = setHealthTo;
+    }
+
 
 // GETTER FUNCTIONS
     public String getName(){
         return name;
     }
-    public int getHealth(){
+    public double getHealth(){
         return health;
     }
     public boolean isAlive(){
-        return isAlivePrivate;
+        return (health > 0);
+    }
+    public void eatFood(Food food){
+        health += food.getHealth();
     }
 }

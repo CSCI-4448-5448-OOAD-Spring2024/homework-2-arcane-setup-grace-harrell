@@ -1,23 +1,28 @@
 package arcane;
 import java.util.*;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
 
 
 public class Room {
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private List<Room> neighbors = new ArrayList<>();
-    private String room_name;
-    private boolean creature = false;
-    private boolean adventurer = false;
+    private String roomName;
+    private List<Creature> creaturesPresent = new ArrayList<>();
+    private List<Adventurer> adventurersPresent = new ArrayList<>();
+    private List<Food> foodsPresent = new ArrayList<>();
 
     public Room(String name) {
-        room_name = name;
+        roomName = name;
     }
 
     public String getRoomName() {
-        return room_name;
+        return roomName;
     }
 
-    public void setRoomName(String new_room_name) {
-        room_name = new_room_name;
+    public void setRoomName(String newRoomName) {
+        roomName = newRoomName;
     }
 
     public List<Room> getNeighbor() {
@@ -33,23 +38,70 @@ public class Room {
         return neighbors.get(rand.nextInt(neighbors.size()));
     };
 
-    public void addNeighbor(Room new_neighbor) {
-        neighbors.add(new_neighbor);
+    public void addNeighbor(Room newNeighbor) {
+        neighbors.add(newNeighbor);
     }
 
-    public boolean creatureHere() {
-        return creature;
+    public List<Creature> getCreaturesPresent() {
+        creaturesPresent.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
+        return creaturesPresent;
     }
 
-    public void setCreaturePresence(Boolean creature_presence) {
-        creature = creature_presence;
+    public void addCreaturePresence(Creature creature ) {
+        creaturesPresent.add(creature);
+        //creaturesPresent.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
     }
 
-    public boolean adventurerHere() {
-        return adventurer;
+    public void removeCreaturePresence(Creature creature ) {
+        creaturesPresent.remove(creature);
     }
 
-    public void setAdventurerPresence(Boolean adventurer_presence) {
-        adventurer = adventurer_presence;
+    public boolean noCreaturesHere(){
+        return creaturesPresent.isEmpty();
+    }
+
+    public List<Adventurer> getAdventurersPresent() {
+        adventurersPresent.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
+        return adventurersPresent;
+    }
+
+    public void addAdventurerPresence(Adventurer adventurer) {
+        adventurersPresent.add(adventurer);
+        //adventurersPresent.sort(Comparator.comparingDouble(Adventurer::getHealth).reversed());
+    }
+
+    public void removeAdventurerPresence(Adventurer adventurer) {
+        adventurersPresent.remove(adventurer);
+    }
+
+    public boolean noAdventurersHere(){
+        return adventurersPresent.isEmpty();
+    }
+
+    public List<Food> getFoodsPresent(){
+        return foodsPresent;
+    }
+
+    public void addFoodPresent(Food newFood) {
+        foodsPresent.add(newFood);
+    }
+    public boolean noFoodsHere(){
+        return foodsPresent.isEmpty();
+    }
+    public void removeFoodPresence(Food food){
+        foodsPresent.remove(food);
+    }
+
+    public void moveExtraAdventurers(Adventurer adventurer){
+        if (!creaturesPresent.isEmpty() && adventurersPresent.size() > 1){
+            List<Adventurer> extraAdventurers = new ArrayList<>(adventurersPresent.stream().toList());
+            extraAdventurers.remove(adventurer);
+            for (Adventurer extra: extraAdventurers){
+                Room room = getRandomNeighbor();
+                removeAdventurerPresence(extra);
+                room.addAdventurerPresence(extra);
+                logger.info("Adventurer " + extra.getName() + "(health: " + extra.getHealth() + ") has moved from " + getRoomName() + " to " + room.getRoomName());
+            }
+        }
     }
 }

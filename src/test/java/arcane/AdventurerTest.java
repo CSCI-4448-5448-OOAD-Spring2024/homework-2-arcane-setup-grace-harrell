@@ -3,21 +3,19 @@ package arcane;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.util.*;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class AdventurerTest {
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     @Test
     public void testAdventurerName() {
 
-        // gives an input string to the System
-        String testName = "Test Name";
-        ByteArrayInputStream testInput = new ByteArrayInputStream(testName.getBytes());
-        System.setIn(testInput);
-
         // creates a new adventurer
         Adventurer adventurer = new Adventurer();
-        System.out.println("\nHello " + adventurer.getName());
-        assert adventurer.getName().equals("Test Name");
-
+        logger.info("\nHello " + adventurer.getName());
+        assert adventurer.getHealth() == 5;
     }
-
 }
