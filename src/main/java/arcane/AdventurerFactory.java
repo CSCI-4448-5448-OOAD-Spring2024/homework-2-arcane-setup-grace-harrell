@@ -7,6 +7,15 @@ public class AdventurerFactory{
     private static final Logger logger = (Logger) LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private static List<Adventurer> adventurers = new ArrayList<>();
 
+    private List<String> adventurerNames = new ArrayList<>(Arrays.asList("Ethan", "Olivia", "Liam","Emma","Jackson","Sophia","Aiden","Ava","Lucas","Isabella","Noah","Benjamin","Harper","James","Alex"));
+    private List<String> knightNames = new ArrayList<>(Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival"));
+    private List<String> gluttonNames = new ArrayList<>(Arrays.asList("Greedy Gus","Chubs", "Devouring Dave", "Snacking Sam", "Gluttonous Gilbert"));
+    private List<String> cowardNames = new ArrayList<>(Arrays.asList("Trembling Tim","Shivering Sheila", "Cowering Carl", "Anxious Andy", "Frightened Freddy"));
+
+
+
+
+
 
     //default constructor --> No Args
     public AdventurerFactory(){};
@@ -39,23 +48,40 @@ public class AdventurerFactory{
     }
 
     private String getRandomAdventurerName() {
-        List<String> adventurerNames = Arrays.asList("Ethan", "Olivia", "Liam","Emma","Jackson","Sophia","Aiden","Ava","Lucas","Isabella","Noah","Benjamin","Harper","James","Alex");
-        return getRandomName(adventurerNames);
+        if (adventurerNames.isEmpty()){
+            adventurerNames = Arrays.asList("Ethan", "Olivia", "Liam","Emma","Jackson","Sophia","Aiden","Ava","Lucas","Isabella","Noah","Benjamin","Harper","James","Alex");
+        }
+        String name = getRandomName(adventurerNames);
+        adventurerNames.remove(name);
+        return name;
+
     }
 
     private String getRandomKnightName() {
-        List<String> knightNames = Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival");
-        return getRandomName(knightNames);
+        if (knightNames.isEmpty()){
+            knightNames = Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival");
+        }
+        String name = getRandomName(knightNames);
+        knightNames.remove(name);
+        return name;
     }
 
     private String getRandomGluttonName() {
-        List<String> gluttonNames = Arrays.asList("Greedy Gus","Chubs", "Devouring Dave", "Snacking Sam", "Gluttonous Gilbert");
-        return getRandomName(gluttonNames);
+        if (gluttonNames.isEmpty()){
+            gluttonNames = Arrays.asList("Greedy Gus","Chubs", "Devouring Dave", "Snacking Sam", "Gluttonous Gilbert");
+        }
+        String name = getRandomName(gluttonNames);
+        gluttonNames.remove(name);
+        return name;
     }
 
     private String getRandomCowardName() {
-        List<String> cowardNames = Arrays.asList("Trembling Tim","Shivering Sheila", "Cowering Carl", "Anxious Andy", "Frightened Freddy");
-        return getRandomName(cowardNames);
+        if (cowardNames.isEmpty()){
+            cowardNames = Arrays.asList("Trembling Tim","Shivering Sheila", "Cowering Carl", "Anxious Andy", "Frightened Freddy");
+        }
+        String name = getRandomName(cowardNames);
+        cowardNames.remove(name);
+        return name;
     }
 
     public String getRandomName(List<String> nameList) {
