@@ -1,4 +1,4 @@
-# Homework 4 ARCANE
+# Homework 5 ARCANE
 
 Team Members:
 
@@ -15,20 +15,5 @@ We choose the adventurer that fights using the highest health which is done by s
 **Extra Credit Implementations**
 - We implemented sequential distribution, it is part of our testPlayFullyConnectedGrid test.
 - We also did fully connected rooms which are also part of that test.
-
-
-**Code Coverage**   
-<img width="642" alt="Screenshot 2024-02-28 at 4 08 13 PM" src="https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/622ae409-2a35-4d97-8541-7795a77af42d">
-
-****EXAMPLE OUTPUTS (made by testPlayFullyConnectedGrid and TestPlayGrid in ArcaneTest)****   
-https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/exampleOutput_1.txt  
-
-https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/exampleOuput_2.txt  
-
-https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/exampleOutput_3.txt
-
-**UML**  
-![UMLimage](https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/89498239/da836cec-6d4e-439f-8f62-ecf294aff39a)
-https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/blob/Homework_4/umlFile.drawio
 
 
