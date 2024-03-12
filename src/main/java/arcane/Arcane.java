@@ -7,23 +7,40 @@ import java.util.*;
 import org.slf4j.Logger;
 import java.util.stream.Collectors;
 
-public class Arcane {
+public class Arcane implements IObservable {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private Cave cave;
     private Dice dice;
+
+    private List<IObserver> observers = new ArrayList<>();
+
     public Arcane(Cave cavePlay, Dice dicePlay){
         cave = cavePlay;
         dice = dicePlay;
     }
-//    public Cave getCave(){
-//        return cave;
-//    }
+    public void registerObserver(IObserver observer){
+        Objects.requireNonNull(observer, "Observer can't be null");
+        observers.add(observer);
+    }
+    public void removeObserver(IObserver observer){
+        observers.remove(observer);
+    }
+    public void notifyObservers(String eventDescription){
+        for (IObserver observer : observers){
+            observer.update(eventDescription);
+        }
+    }
+    private void notifyGameEvent(String eventDescription){
+        notifyObservers(eventDescription);
+    }
     public void gameOver(Boolean over) {
         if (over){
             logger.info("Yay, the Adventurers won.");
+            notifyGameEvent("Adventurers won!");
         }
         else{
             logger.info("Boo, the creatures won.");
+            notifyGameEvent("Creatures won!");
         }
     }
     public void takeTurnPlay(int turnId, Creature creature, Adventurer adventurer, Dice dice){
