@@ -28,6 +28,11 @@ public class EventBusTest {
         // Simulate an adventurer eating food
         eventBus.postMessage(EventType.AteSomething, "Adventurer ate food");
         assertEquals("Adventurer ate food", observer.getEventDescription());
+=======
+        eventBus.attach(observer,EventType.GameStart);
+        eventBus.postMessage(EventType.GameStart, "ARCANE has started");
+
+        assert(observer.events.size() == 1);
     }
 
 
