@@ -1,10 +1,8 @@
 package arcane;
-
-import jdk.jfr.Event;
 import java.util.*;
 
 public class EventBus {
-    private static final EventBus instance = new EventBus();
+    private static EventBus instance = null;
     private final Map<EventType, List<IObserver>> observers;
 
     private EventBus(){
@@ -16,6 +14,9 @@ public class EventBus {
 
     // eager instantiation
     public static EventBus getInstance() {
+        if (instance == null){
+            instance = new EventBus();
+        }
         return instance;
     }
 

@@ -359,10 +359,10 @@ public class Cave {
     public void printCaveStatus(int turnId) {
         logger.info("ARCANE Maze: turn " + turnId);
         for (Room caveRoom : caveRooms) {
-            logger.info(caveRoom.getRoomName() + ":");
+            logger.info("\n" + caveRoom.getRoomName() + ":");
 
             // prints if adventurer is present in this room
-            logger.info("\tAdventurers: ");
+            logger.info("\n\tAdventurers: ");
             if (!caveRoom.noAdventurersHere()) {
                 String nameAdventurers = "";
                 for (Adventurer adventurers: caveRoom.getAdventurersPresent()){
@@ -371,11 +371,11 @@ public class Cave {
                     }
                 }
                 if (!nameAdventurers.isEmpty()){
-                    logger.info("\t\t" + nameAdventurers.substring(0,(nameAdventurers.length() - 2)));
+                    logger.info(nameAdventurers.substring(0,(nameAdventurers.length() - 2)));
                 }
             }
             // prints if creature is present in this room
-            logger.info("\tCreatures:  ");
+            logger.info("\n\tCreatures:  ");
             if (!caveRoom.noCreaturesHere()) {
                 String nameCreatures = "";
                 for (Creature creatures: caveRoom.getCreaturesPresent()){
@@ -384,21 +384,21 @@ public class Cave {
                     }
                 }
                 if (!nameCreatures.isEmpty()){
-                    logger.info("\t\t" + nameCreatures.substring(0,(nameCreatures.length() - 2)));
+                    logger.info(nameCreatures.substring(0,(nameCreatures.length() - 2)) );
                 }
             }
-            logger.info("\tFood:  ");
+            logger.info("\n\tFood:  ");
             if (!caveRoom.noFoodsHere()){
                 List<Food> lstFoods = caveRoom.getFoodsPresent();
                 String nameFoods = "";
                 for (Food food: lstFoods){
                     nameFoods += food.getName() + ", ";
                 }
-                logger.info("\t\t" + nameFoods.substring(0,(nameFoods.length() - 2)));
+                logger.info(nameFoods.substring(0,(nameFoods.length() - 2)));
             }
         }
 
-        logger.info("Actions: ");
+        logger.info("\nActions: " + "\n");
     }
 
     public Room getRandomRoom(){
@@ -478,6 +478,16 @@ public class Cave {
         return regularCreatures;
     }
 
+    public List<Creature> getAllDemons(){
+        List<Creature> demons = new ArrayList<>();
+        for (Creature currCreature: creatures){
+            if (currCreature instanceof Demon){
+                demons.add(currCreature);
+            }
+        }
+        demons.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
+        return demons;
+    }
     public void removeDefeatedAdventurer(Adventurer adventurer){
         adventurers.remove(adventurer);
     }

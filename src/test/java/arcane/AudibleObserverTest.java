@@ -13,13 +13,15 @@ class AudibleObserverTest {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     @Test
     public void testAudibleObserver(){
-        MockObservable mockObservable = new MockObservable();
-        AudibleObserver audibleObserver = new AudibleObserver(mockObservable, List.of(EventType.Death), 1);
+        EventBus eventBus = EventBus.getInstance();
+        MockObserver observer = new MockObserver();
+        AudibleObserver audibleObserver = new AudibleObserver(3);
 
-        mockObservable.registerObserver(audibleObserver);
+        eventBus.attach(observer, EventType.TurnEnded);
+        eventBus.attach(audibleObserver, EventType.TurnEnded);
 
-        mockObservable.notifyObservers(EventType.Death.name());
-
-        assertTrue(audibleObserver.isSayEventCalled());
+        // Simulate an adventurer eating food
+        eventBus.postMessage(EventType.TurnEnded, "Turn 1 has ended");
+        assertEquals("Turn 1 has ended", observer.getEventDescription());
     }
 }

@@ -1,6 +1,8 @@
 package arcane;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
@@ -8,10 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ArcaneTest {
+    private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     public Dice createDice(int numSides){
         return new Dice();
     }
@@ -26,8 +28,21 @@ public class ArcaneTest {
                 .build();
 
         Dice dice = createDice(6);
+        MockObserver observer = new MockObserver();
+        AudibleObserver audibleObserver = new AudibleObserver(3);
+
         Arcane arcane = new Arcane(cave, dice);
-        assertNotNull(arcane.play());
+        EventBus eventBus = arcane.getEventBus();
+
+        eventBus.attach(observer, EventType.AteSomething);
+        eventBus.attach(observer, EventType.Death);
+        eventBus.attach(observer, EventType.FightingOutcome);
+
+        arcane.play();
+
+        arcane.removeObserver(observer);
+//        assertNotNull(((MockObserver) observer).getEventDescription());
+//        logger.info("Received event in testPlayConnected_6: " + ((MockObserver) observer).getEventDescription());
     }
     @Test
     public void testPlayConnected_10(){
@@ -41,6 +56,7 @@ public class ArcaneTest {
                 .createAndAddFood(10)
                 .build();
         Dice dice = createDice(6);
+
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
 
@@ -55,6 +71,7 @@ public class ArcaneTest {
                 .createAndAddFood(7)
                 .build();
         Dice dice = createDice(6);
+
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
     }
@@ -72,6 +89,7 @@ public class ArcaneTest {
                 .createAndAddFood(15)
                 .build();
         Dice dice = createDice(6);
+
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
     }
@@ -92,6 +110,7 @@ public class ArcaneTest {
                 .createAndAddFood(15)
                 .build();
         Dice dice = createDice(6);
+
         Arcane arcane = new Arcane(cave, dice);
         assertNotNull(arcane.play());
     }
@@ -110,24 +129,4 @@ public class ArcaneTest {
         Arcane arcane = new Arcane(cave, dice);
         arcane.play();
     }
-//    @Test
-//    public void testMoveAdventurers(){
-//        List<Room> lst_rooms = createRoomsThree();
-//        List<Adventurer> lst_adventurers = createAdventurers(8);
-//        List<Creature> lst_creatures = createCreatures(6);
-//        int healthCreatures = 4;
-//        for (Creature creature: lst_creatures){
-//            creature.setHealth(healthCreatures);
-//            healthCreatures -= 1;
-//        }
-//        int healthAdventurers = 10;
-//        for (Adventurer adventurer: lst_adventurers){
-//            adventurer.setHealth(healthAdventurers);
-//            healthAdventurers -= 1;
-//        }
-//        Cave cave = createCave(lst_adventurers,lst_creatures,lst_rooms);
-//        Dice dice = createDice(6);
-//        Arcane arcane = new Arcane(cave, dice);
-//        arcane.play();
-//    }
 }

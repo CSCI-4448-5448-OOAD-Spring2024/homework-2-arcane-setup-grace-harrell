@@ -3,27 +3,23 @@ import java.io.IOException;
 import java.util.*;
 
 public class AudibleObserver implements IObserver {
-    private final IObservable subject;
-    private final List<EventType> eventsOfInterest;
+
     private final Integer delayInSeconds;
     private boolean isSayEventCalled = false;
 
-    public AudibleObserver(IObservable subject, List<EventType> eventsOfInterest, Integer delay){
-        this.subject = subject;
-        this.eventsOfInterest = eventsOfInterest;
+    public AudibleObserver(Integer delay){
+//        this.subject = subject;
+//        this.eventsOfInterest = eventsOfInterest;
         this.delayInSeconds = delay;
-        subject.registerObserver(this);
+//        subject.registerObserver(this);
     }
 
     public void update(String eventDescription){
-        EventType eventType = EventType.valueOf(eventDescription);
-        if (eventsOfInterest.contains(eventType)){
-            try{
-                sayEvent(eventDescription);
-                Thread.sleep(delayInSeconds*1000);
-            } catch (InterruptedException | IOException e){
-                e.printStackTrace();
-            }
+        try{
+            sayEvent(eventDescription);
+            Thread.sleep(delayInSeconds*1000);
+        } catch (InterruptedException | IOException e){
+            e.printStackTrace();
         }
     }
 

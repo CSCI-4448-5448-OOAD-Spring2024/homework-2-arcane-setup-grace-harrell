@@ -2,6 +2,7 @@ package arcane;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
 
 public class EventBusTest {
     @Test
@@ -19,11 +20,15 @@ public class EventBusTest {
     void testEatMessageEventBus() {
         EventBus eventBus = EventBus.getInstance();
         MockObserver observer = new MockObserver();
+        AudibleObserver audibleObserver = new AudibleObserver(5);
 
         eventBus.attach(observer, EventType.AteSomething);
+        eventBus.attach(audibleObserver, EventType.AteSomething);
 
         // Simulate an adventurer eating food
         eventBus.postMessage(EventType.AteSomething, "Adventurer ate food");
         assertEquals("Adventurer ate food", observer.getEventDescription());
     }
+
+
 }

@@ -9,14 +9,18 @@ import java.util.stream.Collectors;
 
 public class Arcane implements IObservable {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
-    private Cave cave;
-    private Dice dice;
-
+    private final Cave cave;
+    private final Dice dice;
+    private final EventBus eventBus;
     private List<IObserver> observers = new ArrayList<>();
 
     public Arcane(Cave cavePlay, Dice dicePlay){
-        cave = cavePlay;
-        dice = dicePlay;
+        this.cave = cavePlay;
+        this.dice = dicePlay;
+        this.eventBus = EventBus.getInstance();
+    }
+    public EventBus getEventBus(){
+        return eventBus;
     }
     public void registerObserver(IObserver observer){
         Objects.requireNonNull(observer, "Observer can't be null");
@@ -33,13 +37,37 @@ public class Arcane implements IObservable {
     private void notifyGameEvent(String eventDescription){
         notifyObservers(eventDescription);
     }
+
+    private void appendAdventurerNames(StringBuilder builder, List<Adventurer> adventurers) {
+        for (Adventurer adventurer : adventurers) {
+            builder.append(adventurer.getName()).append(", ");
+        }
+    }
+
+    private void appendCreatureNames(StringBuilder builder, List<Creature> creatures) {
+        for (Creature creature : creatures) {
+            builder.append(creature.getName()).append(", ");
+        }
+    }
+
     public void gameOver(Boolean over) {
         if (over){
+            StringBuilder aliveAdventurers = new StringBuilder();
+            appendAdventurerNames(aliveAdventurers, cave.getAllAdventurers());
+            appendAdventurerNames(aliveAdventurers, cave.getAllKnights());
+            appendAdventurerNames(aliveAdventurers, cave.getAllCowards());
+            appendAdventurerNames(aliveAdventurers, cave.getAllGluttons());
+
             logger.info("Yay, the Adventurers won.");
+            eventBus.postMessage(EventType.GameOver, "The game is over. The Adventurers left alive were: " + aliveAdventurers + ".");
             notifyGameEvent("Adventurers won!");
         }
         else{
+            StringBuilder aliveCreatures = new StringBuilder();
+            appendCreatureNames(aliveCreatures, cave.getAllDemons());
+            appendCreatureNames(aliveCreatures, cave.getAllCreatures());
             logger.info("Boo, the creatures won.");
+            eventBus.postMessage(EventType.GameOver, "The game is over. The Creatures left alive were: " + aliveCreatures + ".");
             notifyGameEvent("Creatures won!");
         }
     }
@@ -94,9 +122,8 @@ public class Arcane implements IObservable {
                 takeTurnPlay(turnId, null, currentAdventurer,dice);
             }
 
-
+            notifyObservers("Turn number " + turnId + " just ended");
             turnId += 1;
-            //logger.info(String.valueOf("idk"+cave.getAllAdventurers().isEmpty()));
         }
         adventurerWon = !cave.allAdventurersDefeated();
         gameOver(adventurerWon);

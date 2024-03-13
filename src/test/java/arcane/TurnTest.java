@@ -24,6 +24,7 @@ class TurnTest {
                 .createAndAddFood(10)
                 .build();
         Dice dice = new Dice();
+        EventBus eventBus = EventBus.getInstance();
 
         int turnId = 1;
         Turn turn  = new Turn(turnId, cave,cave.getAllCreatures().get(0), cave.getAllAdventurers().get(0), dice);
