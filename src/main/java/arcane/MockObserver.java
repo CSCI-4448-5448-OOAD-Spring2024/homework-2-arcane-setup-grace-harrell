@@ -15,4 +15,8 @@ public class MockObserver implements IObserver{
         events.add(eventDescription);
         logger.info(eventDescription);
     }
+
+    public String getEventDescription(){
+        return events.isEmpty() ? null : events.get(events.size() - 1);
+    }
 }
