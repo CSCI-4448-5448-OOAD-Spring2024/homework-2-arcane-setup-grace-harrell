@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import java.util.*;
 import org.slf4j.Logger;
 
+import java.lang.Object;
 
 
-public class Turn {
+
+public class Turn extends Observable {
 
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     public int turnID;
@@ -64,6 +66,8 @@ public class Turn {
             cave.removeDefeatedCreature(creature);
             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has defeated " + creature.getName());
             moveAdventurer();
+            setChanged();
+            notifyObservers();
         }
         if (!adventurer.isAlive()){
             cave.removeDefeatedAdventurer(adventurer);
