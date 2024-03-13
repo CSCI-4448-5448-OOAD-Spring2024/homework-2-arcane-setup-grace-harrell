@@ -3,6 +3,7 @@ package arcane;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.*;
 
 import org.slf4j.Logger;
@@ -16,5 +17,14 @@ class AdventurerTest {
         // creates a new adventurer
         Adventurer adventurer = new Adventurer();
         assert adventurer.getHealth() == 5;
+    }
+    @Test
+    public void testCmd(){
+        String[] cmd = {"say", "hi"};
+        try {
+            Runtime.getRuntime().exec(cmd);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

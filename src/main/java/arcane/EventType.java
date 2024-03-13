@@ -5,7 +5,5 @@ public enum EventType {
     AteSomething,
     TurnEnded,
     GameOver,
-    GameStart,
-    Death,
-    All
+    Death
 }
