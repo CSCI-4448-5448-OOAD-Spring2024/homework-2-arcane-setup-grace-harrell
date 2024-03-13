@@ -26,29 +26,10 @@ public class EventBus {
     public void attach(IObserver observer, EventType eventType){
         observers.get(eventType).add(observer);
     }
-    public void postMessage(EventType eventType, String eventDescription){
+    public void postMessage(EventType eventType, String eventDescription) {
         List<IObserver> eventObservers = observers.get(eventType);
         for (IObserver observer : eventObservers) {
             observer.update(eventDescription);
-        observer.update(eventType.toString());
+        }
     }
-//     public void postMessage(EventType eventType, String eventDescription){
-//         switch (eventType) {
-//             case FightingOutcome -> {
-//             }
-//             case AteSomething -> {
-//             }
-//             case TurnEnded -> {
-//             }
-//             case GameOver -> {
-//             }
-//             case GameStart -> {
-//                 logger.info(eventDescription);
-//             }
-//             case Death -> {
-//             }
-//             case All -> {
-//             }
-//         }
-//     }
 }

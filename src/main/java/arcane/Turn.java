@@ -53,16 +53,16 @@ public class Turn extends Observable {
             if (creatureRoll > adventurerRoll){
                 adventurer.decreaseHealth(creatureRoll - adventurerRoll);
                 logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
-                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " lost to " + creature.getName() + "\n");
             }
             else if (adventurerRoll > creatureRoll) {
                 creature.decreaseHealth(adventurerRoll - creatureRoll);
                 logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
-                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " beat " + creature.getName() + "\n");
             }
             else{
                 logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") drew against " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
-                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") drew against " + creature.getName() + "(health: " + creature.getHealth() + ")");
+                eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " drew against " + creature.getName() + "\n");
             }
             return;
         }
@@ -77,7 +77,7 @@ public class Turn extends Observable {
         if (!adventurer.isAlive()){
             cave.removeDefeatedAdventurer(adventurer);
             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
-            eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + " has been killed");
+            eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + " has been killed\n");
         }
     }
     // implement method to see if characters are in the same room

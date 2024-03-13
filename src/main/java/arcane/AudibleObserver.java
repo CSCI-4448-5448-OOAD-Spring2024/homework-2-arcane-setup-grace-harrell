@@ -24,7 +24,6 @@ public class AudibleObserver implements IObserver {
     }
 
     public void sayEvent(String eventDescription) throws IOException {
-         isSayEventCalled = true;
 //        if (isMac()){
 //            cmd = new String[]{"say", eventDescription};
 //        }
@@ -38,7 +37,5 @@ public class AudibleObserver implements IObserver {
 //        String os = System.getProperty("os.name").toLowerCase();
 //        return os.contains("mac");
 //    }
-    public boolean isSayEventCalled(){
-        return isSayEventCalled;
-    }
+
 }

@@ -18,31 +18,29 @@ public class ArcaneTest {
         return new Dice();
     }
     @Test
-    public void testPlayConnected_6(){
+    public void testPlayConnected_8(){
         // provideInput("Testy");
-        Cave cave = new Cave.Builder().createFullyConnectedRooms(6)
-                .createAndAddAdventurers(1)
-                .createAndAddCowards(1)
-                .createAndAddCreatures(2)
+        Cave cave = new Cave.Builder().createFullyConnectedRooms(8)
+                .createAndAddAdventurers(3)
+                .createAndAddCowards(2)
+                .createAndAddCreatures(4)
+                .createAndAddDemons(2)
                 .createAndAddFood(10)
                 .build();
 
         Dice dice = createDice(6);
         MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(3);
+        AudibleObserver audibleObserver = new AudibleObserver(6);
 
         Arcane arcane = new Arcane(cave, dice);
-        EventBus eventBus = arcane.getEventBus();
 
-        eventBus.attach(observer, EventType.AteSomething);
-        eventBus.attach(observer, EventType.Death);
-        eventBus.attach(observer, EventType.FightingOutcome);
+        arcane.attachObservers(observer);
+        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.FightingOutcome, EventType.Death, EventType.GameOver));
 
         arcane.play();
 
         arcane.removeObserver(observer);
-//        assertNotNull(((MockObserver) observer).getEventDescription());
-//        logger.info("Received event in testPlayConnected_6: " + ((MockObserver) observer).getEventDescription());
+        arcane.removeObserver(audibleObserver);
     }
     @Test
     public void testPlayConnected_10(){

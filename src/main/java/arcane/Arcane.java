@@ -37,6 +37,19 @@ public class Arcane implements IObservable {
     private void notifyGameEvent(String eventDescription){
         notifyObservers(eventDescription);
     }
+    public void attachObservers(IObserver observer){
+        eventBus.attach(observer, EventType.AteSomething);
+        eventBus.attach(observer, EventType.Death);
+        eventBus.attach(observer, EventType.FightingOutcome);
+        eventBus.attach(observer, EventType.GameOver);
+        eventBus.attach(observer, EventType.TurnEnded);
+    }
+
+    public void attachAudibleObserver(AudibleObserver audibleObserver, List<EventType> eventTypes){
+        for (EventType eventType : eventTypes){
+            eventBus.attach(audibleObserver, eventType);
+        }
+    }
 
     private void appendAdventurerNames(StringBuilder builder, List<Adventurer> adventurers) {
         for (Adventurer adventurer : adventurers) {
@@ -58,7 +71,7 @@ public class Arcane implements IObservable {
             appendAdventurerNames(aliveAdventurers, cave.getAllCowards());
             appendAdventurerNames(aliveAdventurers, cave.getAllGluttons());
 
-            logger.info("Yay, the Adventurers won.");
+            logger.info("Yay, the Adventurers won.\n");
             eventBus.postMessage(EventType.GameOver, "The game is over. The Adventurers left alive were: " + aliveAdventurers + ".");
             notifyGameEvent("Adventurers won!");
         }
@@ -66,7 +79,7 @@ public class Arcane implements IObservable {
             StringBuilder aliveCreatures = new StringBuilder();
             appendCreatureNames(aliveCreatures, cave.getAllDemons());
             appendCreatureNames(aliveCreatures, cave.getAllCreatures());
-            logger.info("Boo, the creatures won.");
+            logger.info("Boo, the creatures won.\n");
             eventBus.postMessage(EventType.GameOver, "The game is over. The Creatures left alive were: " + aliveCreatures + ".");
             notifyGameEvent("Creatures won!");
         }

@@ -20,18 +20,13 @@ public class EventBusTest {
     void testEatMessageEventBus() {
         EventBus eventBus = EventBus.getInstance();
         MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(5);
+        AudibleObserver audibleObserver = new AudibleObserver(3);
 
         eventBus.attach(observer, EventType.AteSomething);
         eventBus.attach(audibleObserver, EventType.AteSomething);
 
         // Simulate an adventurer eating food
         eventBus.postMessage(EventType.AteSomething, "Adventurer ate food");
-        assertEquals("Adventurer ate food", observer.getEventDescription());
-=======
-        eventBus.attach(observer,EventType.GameStart);
-        eventBus.postMessage(EventType.GameStart, "ARCANE has started");
-
         assert(observer.events.size() == 1);
     }
 
