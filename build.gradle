@@ -1,10 +1,10 @@
 plugins {
    id 'java'
+   id 'groovy'
 }
 
 
 java {
-   sourceCompatibility = '17'
 }
 
 
@@ -23,6 +23,30 @@ dependencies {
    implementation 'ch.qos.logback:logback-classic:1.4.14'
    implementation 'commons-cli:commons-cli:1.6.0'
    implementation files('libs/csci4448.gameLayout-1.3.0.jar')
+   testImplementation 'io.cucumber:cucumber-java:6.10.4'
+   testImplementation 'io.cucumber:cucumber-groovy:6.10.4'
+   testImplementation 'org.apache.groovy:groovy:4.0.3'
+}
+
+configurations {
+   cucumberRuntime {
+      extendsFrom testImplementation
+   }
+}
+
+task cucumberCli(){
+   dependsOn assemble, testClasses
+   doLast {
+      javaexec {
+         main = "io.cucumber.core.cli.Main"
+         classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+         args = [
+                 '--plugin', 'pretty',
+                 '--plugin', 'html:target/cucumber-report.html',
+                 '--glue', 'arcane.stepdefs',
+                 'src/test/resources/features']
+      }
+   }
 }
 
 

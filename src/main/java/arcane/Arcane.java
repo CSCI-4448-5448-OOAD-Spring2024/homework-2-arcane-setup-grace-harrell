@@ -72,7 +72,7 @@ public class Arcane implements IObservable {
             appendAdventurerNames(aliveAdventurers, cave.getAllGluttons());
 
             logger.info("Yay, the Adventurers won.\n");
-            eventBus.postMessage(EventType.GameOver, "The game is over. The Adventurers left alive were: " + aliveAdventurers + ".");
+            eventBus.postMessage(EventType.GameOver, "The game is over. The Adventurers left alive were: " + aliveAdventurers + ". Adventurers won!");
             notifyGameEvent("Adventurers won!");
         }
         else{
@@ -80,7 +80,7 @@ public class Arcane implements IObservable {
             appendCreatureNames(aliveCreatures, cave.getAllDemons());
             appendCreatureNames(aliveCreatures, cave.getAllCreatures());
             logger.info("Boo, the creatures won.\n");
-            eventBus.postMessage(EventType.GameOver, "The game is over. The Creatures left alive were: " + aliveCreatures + ".");
+            eventBus.postMessage(EventType.GameOver, "The game is over. The Creatures left alive were: " + aliveCreatures + ". Creatures won!");
             notifyGameEvent("Creatures won!");
         }
     }
@@ -134,7 +134,7 @@ public class Arcane implements IObservable {
                 }
                 takeTurnPlay(turnId, null, currentAdventurer,dice);
             }
-
+            eventBus.postMessage(EventType.TurnEnded, "Turn number " + turnId + " just ended");
             notifyObservers("Turn number " + turnId + " just ended");
             turnId += 1;
         }

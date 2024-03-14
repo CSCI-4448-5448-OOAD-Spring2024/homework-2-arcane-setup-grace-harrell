@@ -491,8 +491,9 @@ public class Cave {
     public void removeDefeatedAdventurer(Adventurer adventurer){
         adventurers.remove(adventurer);
     }
-    public void removeDefeatedCreature(Creature creature){
+    public void removeDefeatedCreature(Creature creature, Room room){
         creatures.remove(creature);
+        room.removeCreaturePresence(creature);
     }
 
     public boolean allAdventurersDefeated(){

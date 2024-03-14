@@ -28,12 +28,13 @@ public class Turn extends Observable {
         eventBus = EventBus.getInstance();
     }
 
-    public void decreaseHealthStartFight(){
+    public void decreaseHealthStartFight() {
         creature.decreaseHealth(0.5);
         adventurer.decreaseHealth(0.5);
 
     }
-    public void moveAdventurer(){
+
+    public void moveAdventurer() {
         Room adventurerRoom = cave.getAdventurerRoom(adventurer);
         Room newRoom = adventurerRoom.getRandomNeighbor();
         adventurerRoom.removeAdventurerPresence(adventurer);
@@ -41,100 +42,107 @@ public class Turn extends Observable {
         logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has moved from " + adventurerRoom.getRoomName() + " to " + newRoom.getRoomName() + "\n");
     }
 
-    public void fight(){
+    public void removeDefeatedCreature() {
+        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+        cave.removeDefeatedCreature(creature, adventurerRoom);
+        logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has defeated " + creature.getName() + "\n");
+        eventBus.postMessage(EventType.Death, "Creature " + creature.getName() + " has been killed" + "\n");
+        setChanged();
+    }
+
+    public void removeDefeatedAdventurer() {
+        cave.removeDefeatedAdventurer(adventurer);
+        logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
+        eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + " has been killed\n");
+    }
+
+    public void fight() {
         // decrease both healths by 0.5
         decreaseHealthStartFight();
-        if(creature.isAlive() && adventurer.isAlive()){
+        if (creature.isAlive() && adventurer.isAlive()) {
             int creatureRoll = dice.rollDie();
             int adventurerRoll = dice.rollDie();
             logger.info("Adventurer rolled a " + adventurerRoll + "\n");
             logger.info("Creature rolled a " + creatureRoll + "\n");
             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") fought " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
-            if (creatureRoll > adventurerRoll){
+            if (creatureRoll > adventurerRoll) {
                 adventurer.decreaseHealth(creatureRoll - adventurerRoll);
-                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
+                //logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
                 eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " lost to " + creature.getName() + "\n");
-            }
-            else if (adventurerRoll > creatureRoll) {
+                if (!adventurer.isAlive()) {
+                    removeDefeatedAdventurer();
+                }
+            } else if (adventurerRoll > creatureRoll) {
                 creature.decreaseHealth(adventurerRoll - creatureRoll);
-                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
+                //logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
                 eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " beat " + creature.getName() + "\n");
-            }
-            else{
+                if (!creature.isAlive()) {
+                    removeDefeatedCreature();
+                }
+            } else {
                 logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") drew against " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
                 eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " drew against " + creature.getName() + "\n");
             }
             return;
         }
-        if (!creature.isAlive()){
-            cave.removeDefeatedCreature(creature);
-            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") has defeated " + creature.getName() + "\n");
-            eventBus.postMessage(EventType.Death, "Creature " + creature.getName() + " has been killed" + "\n");
-            moveAdventurer();
-            setChanged();
-            notifyObservers();
+        if (!creature.isAlive()) {
+            removeDefeatedCreature();
         }
-        if (!adventurer.isAlive()){
-            cave.removeDefeatedAdventurer(adventurer);
-            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
-            eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + " has been killed\n");
+        if (!adventurer.isAlive()) {
+            removeDefeatedAdventurer();
         }
     }
-    // implement method to see if characters are in the same room
-    public List<Creature> inSameRoomAs(){
-        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
-        return adventurerRoom.getCreaturesPresent();
-    }
-    // implement method to see if characters should fight or move
-    public void takeTurn(){
-        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+        // implement method to see if characters are in the same room
+        public List<Creature> inSameRoomAs() {
+            Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+            return adventurerRoom.getCreaturesPresent();
+        }
+        // implement method to see if characters should fight or move
+        public void takeTurn() {
+            Room adventurerRoom = cave.getAdventurerRoom(adventurer);
 
-        if (cave.isDemonPresentInRoom(adventurerRoom)){
-            List<Creature> demonsInThisRoom = cave.getDemonBasedOnRoom(adventurerRoom);
-            creature = demonsInThisRoom.get(0);
-            fight();
-        }
-        else{
-            List<Creature> creaturesInRoom = inSameRoomAs();
-            if (!creaturesInRoom.isEmpty()){
-                if (adventurer instanceof Coward){
-                    adventurer.decreaseHealth(0.5);
-                    moveAdventurer();
-                    if (!adventurer.isAlive()){
-                        cave.removeDefeatedAdventurer(adventurer);
-                        logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
-                    }
-                }
-                else if (adventurer instanceof Glutton){
-                    if (adventurerRoom.noFoodsHere()){
+            if (cave.isDemonPresentInRoom(adventurerRoom)) {
+                List<Creature> demonsInThisRoom = cave.getDemonBasedOnRoom(adventurerRoom);
+                creature = demonsInThisRoom.get(0);
+                fight();
+            } else {
+                List<Creature> creaturesInRoom = inSameRoomAs();
+                if (!creaturesInRoom.isEmpty()) {
+                    if (adventurer instanceof Coward) {
+                        adventurer.decreaseHealth(0.5);
+                        moveAdventurer();
+                        if (!adventurer.isAlive()) {
+                            cave.removeDefeatedAdventurer(adventurer);
+                            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
+                        }
+                    } else if (adventurer instanceof Glutton) {
+                        if (adventurerRoom.noFoodsHere()) {
+                            creature = creaturesInRoom.get(0);
+                            fight();
+                        } else {
+                            List<Food> foodsPresent = adventurerRoom.getFoodsPresent();
+                            Food eatenFood = foodsPresent.get(0);
+                            adventurer.eatFood(eatenFood);
+                            adventurerRoom.removeFoodPresence(eatenFood);
+                            logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") just ate " + eatenFood.getName() + "\n");
+                        }
+                    } else {
                         creature = creaturesInRoom.get(0);
                         fight();
                     }
-                    else{
+                } else {
+                    if (!adventurerRoom.noFoodsHere()) {
                         List<Food> foodsPresent = adventurerRoom.getFoodsPresent();
                         Food eatenFood = foodsPresent.get(0);
                         adventurer.eatFood(eatenFood);
                         adventurerRoom.removeFoodPresence(eatenFood);
                         logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") just ate " + eatenFood.getName() + "\n");
+                        eventBus.postMessage(EventType.AteSomething, "Adventurer " + adventurer.getName() + " just ate " + eatenFood.getName() + "\n");
+                    } else {
+                        moveAdventurer();
                     }
-                }
-                else{
-                    creature = creaturesInRoom.get(0);
-                    fight();
-                }
-            }
-            else{
-                if (!adventurerRoom.noFoodsHere()){
-                    List<Food> foodsPresent = adventurerRoom.getFoodsPresent();
-                    Food eatenFood = foodsPresent.get(0);
-                    adventurer.eatFood(eatenFood);
-                    adventurerRoom.removeFoodPresence(eatenFood);
-                    logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") just ate " + eatenFood.getName() + "\n");
-                }
-                else{
-                    moveAdventurer();
                 }
             }
         }
     }
-}
+
