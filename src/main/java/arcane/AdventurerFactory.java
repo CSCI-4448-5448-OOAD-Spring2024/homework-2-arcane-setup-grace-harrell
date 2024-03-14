@@ -8,7 +8,7 @@ public class AdventurerFactory{
     private static List<Adventurer> adventurers = new ArrayList<>();
 
     private List<String> adventurerNames = new ArrayList<>(Arrays.asList("Ethan", "Olivia", "Liam","Emma","Jackson","Sophia","Aiden","Ava","Lucas","Isabella","Noah","Benjamin","Harper","James","Alex"));
-    private List<String> knightNames = new ArrayList<>(Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival"));
+    private List<String> knightNames = new ArrayList<>(Arrays.asList("Sir Lancelot","Sir Galahad", "Sir Arthur", "Sir Gawain", "Sir Percival", "Sir Tristan", "Sir Gareth"));
     private List<String> gluttonNames = new ArrayList<>(Arrays.asList("Greedy Gus","Chubs", "Devouring Dave", "Snacking Sam", "Gluttonous Gilbert"));
     private List<String> cowardNames = new ArrayList<>(Arrays.asList("Trembling Tim","Shivering Sheila", "Cowering Carl", "Anxious Andy", "Frightened Freddy"));
 

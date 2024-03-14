@@ -28,12 +28,12 @@ public class CreatureFactory{
     }
 
     private String getRandomCreatureName() {
-        List<String> creatureNames = Arrays.asList("Goblin", "Ogre", "Ghoul", "Wraith");
+        List<String> creatureNames = Arrays.asList("Goblin", "Ogre", "Ghoul", "Wraith", "Troll", "Banshee", "Specter", "Skeleton", "Zombie", "Minotaur", "Cyclops", "Harpy");
         return getRandomName(creatureNames);
     }
 
     private String getRandomDemonName() {
-        List<String> demonNames = Arrays.asList("Satan", "Demon");
+        List<String> demonNames = Arrays.asList("Satan", "Demon", "Lucifer", "Beelzebub", "Azazel", "Belial", "Mammon", "Abaddon");
         return getRandomName(demonNames);
     }
 

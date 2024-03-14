@@ -5,13 +5,9 @@ import java.util.*;
 public class AudibleObserver implements IObserver {
 
     private final Integer delayInSeconds;
-    private boolean isSayEventCalled = false;
 
     public AudibleObserver(Integer delay){
-//        this.subject = subject;
-//        this.eventsOfInterest = eventsOfInterest;
         this.delayInSeconds = delay;
-//        subject.registerObserver(this);
     }
 
     public void update(String eventDescription){
