@@ -51,7 +51,8 @@ public class Turn extends Observable {
     }
 
     public void removeDefeatedAdventurer() {
-        cave.removeDefeatedAdventurer(adventurer);
+        Room adventurerRoom = cave.getAdventurerRoom(adventurer);
+        cave.removeDefeatedAdventurer(adventurer, adventurerRoom);
         logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
         eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + " has been killed\n");
     }
@@ -67,14 +68,14 @@ public class Turn extends Observable {
             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") fought " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
             if (creatureRoll > adventurerRoll) {
                 adventurer.decreaseHealth(creatureRoll - adventurerRoll);
-                //logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
+                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") lost to " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
                 eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " lost to " + creature.getName() + "\n");
                 if (!adventurer.isAlive()) {
                     removeDefeatedAdventurer();
                 }
             } else if (adventurerRoll > creatureRoll) {
                 creature.decreaseHealth(adventurerRoll - creatureRoll);
-                //logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
+                logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") beat " + creature.getName() + "(health: " + creature.getHealth() + ")" + "\n");
                 eventBus.postMessage(EventType.FightingOutcome, "Adventurer " + adventurer.getName() + " beat " + creature.getName() + "\n");
                 if (!creature.isAlive()) {
                     removeDefeatedCreature();
@@ -112,8 +113,9 @@ public class Turn extends Observable {
                         adventurer.decreaseHealth(0.5);
                         moveAdventurer();
                         if (!adventurer.isAlive()) {
-                            cave.removeDefeatedAdventurer(adventurer);
+                            cave.removeDefeatedAdventurer(adventurer, adventurerRoom);
                             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") DEAD was killed." + "\n");
+                            eventBus.postMessage(EventType.Death, "Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") was killed." + "\n");
                         }
                     } else if (adventurer instanceof Glutton) {
                         if (adventurerRoom.noFoodsHere()) {
@@ -125,6 +127,7 @@ public class Turn extends Observable {
                             adventurer.eatFood(eatenFood);
                             adventurerRoom.removeFoodPresence(eatenFood);
                             logger.info("Adventurer " + adventurer.getName() + "(health: " + adventurer.getHealth() + ") just ate " + eatenFood.getName() + "\n");
+                            eventBus.postMessage(EventType.AteSomething, "Adventurer " + adventurer.getName() + " just ate " + eatenFood.getName() + "\n");
                         }
                     } else {
                         creature = creaturesInRoom.get(0);

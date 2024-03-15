@@ -1,5 +1,7 @@
 package arcane;
 
+import csci.ooad.layout.IMazeObserver;
+import csci.ooad.layout.MazeObserver;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,18 +31,10 @@ public class ArcaneTest {
                 .build();
 
         Dice dice = createDice(6);
-        MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(6);
 
         Arcane arcane = new Arcane(cave, dice);
 
-        arcane.attachObservers(observer);
-        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.FightingOutcome, EventType.Death, EventType.GameOver));
-
         arcane.play();
-
-        arcane.removeObserver(observer);
-        arcane.removeObserver(audibleObserver);
     }
     @Test
     public void testPlayConnected_10(){
@@ -54,18 +48,9 @@ public class ArcaneTest {
                 .build();
 
         Dice dice = createDice(6);
-        MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(4);
-
         Arcane arcane = new Arcane(cave, dice);
 
-        arcane.attachObservers(observer);
-        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver));
-
         arcane.play();
-
-        arcane.removeObserver(observer);
-        arcane.removeObserver(audibleObserver);
     }
 
     @Test
@@ -78,18 +63,8 @@ public class ArcaneTest {
                 .build();
 
         Dice dice = createDice(6);
-        MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(4);
-
         Arcane arcane = new Arcane(cave, dice);
-
-        arcane.attachObservers(observer);
-        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.AteSomething, EventType.GameOver));
-
         arcane.play();
-
-        arcane.removeObserver(observer);
-        arcane.removeObserver(audibleObserver);
     }
 
     @Test
@@ -103,18 +78,18 @@ public class ArcaneTest {
                 .build();
 
         Dice dice = createDice(6);
-        MockObserver observer = new MockObserver();
-        AudibleObserver audibleObserver = new AudibleObserver(3);
-
+//        IMazeObserver observer = MazeObserver.getNewBuilder("3x3 grid").build();
+//        AudibleObserver audibleObserver = new AudibleObserver(3);
+//
         Arcane arcane = new Arcane(cave, dice);
-
-        arcane.attachObservers(observer);
-        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver, EventType.TurnEnded));
+//
+//        arcane.attachObservers(observer);
+//        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver, EventType.TurnEnded));
 
         arcane.play();
 
-        arcane.removeObserver(observer);
-        arcane.removeObserver(audibleObserver);
+//        arcane.removeObserver(observer);
+//        arcane.removeObserver(audibleObserver);
     }
     @Test
     public void testPlayGrid(){

@@ -20,18 +20,11 @@ public class AudibleObserver implements IObserver {
     }
 
     public void sayEvent(String eventDescription) throws IOException {
-//        if (isMac()){
-//            cmd = new String[]{"say", eventDescription};
-//        }
-//        else{
-//            cmd = new String[]{"path to nircmd.exe", "say text \"" + eventDescription + "\""};
-//        }
         String[] cmd = new String[]{"say", eventDescription};
         Runtime.getRuntime().exec(cmd);
+
+        // Possible windows implementation
+//        Runtime.getRuntime().exec("nircmd.exe speak text \"" + eventDescription + "\"");
     }
-//    private boolean isMac(){
-//        String os = System.getProperty("os.name").toLowerCase();
-//        return os.contains("mac");
-//    }
 
 }

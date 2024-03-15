@@ -2,30 +2,25 @@ package arcane;
 
 import csci.ooad.layout.IMaze;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
-public class CaveAdaptor implements IMaze {
-
+public class CaveAdapter implements IMaze {
     private Cave cave;
-
-    public CaveAdaptor(Cave cave){
+    public CaveAdapter(Cave cave) {
         this.cave = cave;
     }
     @Override
-    public List<String> getRooms() {
-        List<String> result = new ArrayList<>();
-        List<Room> listRooms = cave.getCaveRooms();
-        for (Room room : listRooms){
-            result.add(room.getRoomName());
-        }
-        return result;
+    public List<String> getRooms(){
+         List<Room> lstRooms = cave.getCaveRooms();
+         List<String> nameResults = new ArrayList<>();
+         for (Room room : lstRooms){
+             nameResults.add(room.getRoomName());
+         }
+         return Collections.unmodifiableList(nameResults);
     }
 
     @Override
-    public List<String> getNeighborsOf(String s) {
+    public List<String> getNeighborsOf(String s){
         List<String> result = new ArrayList<>();
         Room room = null;
         // find the room with matching name
@@ -36,9 +31,9 @@ public class CaveAdaptor implements IMaze {
             // throw an error if the room is not found
         }
         for (Room currRoom: room.getNeighbor()){
-            result.add(room.getRoomName());
+            result.add(currRoom.getRoomName());
         }
-        return result;
+        return Collections.unmodifiableList(result);
     }
 
     @Override
@@ -53,17 +48,17 @@ public class CaveAdaptor implements IMaze {
         // throw an error if room is still null
 
         for (Creature creature : room.getCreaturesPresent()) {
-            result.add(creature.getName());
+            result.add(creature.getName() + "(Health: " + creature.getHealth() + ")");
         }
         for (Adventurer adventurer : room.getAdventurersPresent()) {
-            result.add(adventurer.getName());
+            result.add(adventurer.getName() + "(Health: " + adventurer.getHealth() + ")");
         }
         for (Food food : room.getFoodsPresent()) {
             result.add(food.getName());
         }
 
 
-        return result;
+        return Collections.unmodifiableList(result);
     }
-
 }
+
