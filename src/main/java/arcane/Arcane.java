@@ -23,13 +23,6 @@ public class Arcane implements IObservable, IMazeSubject {
         this.dice = dicePlay;
         this.eventBus = EventBus.getInstance();
     }
-    public void registerObserver(IMazeObserver observer){
-        Objects.requireNonNull(observer, "Observer can't be null");
-        observers.add(observer);
-    }
-    public void removeObserver(IMazeObserver observer){
-        observers.remove(observer);
-    }
     @Override
     public void registerObserver(IObserver observer){
         Objects.requireNonNull(observer, "Observer can't be null");

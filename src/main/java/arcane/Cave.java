@@ -488,8 +488,9 @@ public class Cave {
         demons.sort(Comparator.comparingDouble(Creature::getHealth).reversed());
         return demons;
     }
-    public void removeDefeatedAdventurer(Adventurer adventurer){
+    public void removeDefeatedAdventurer(Adventurer adventurer, Room room){
         adventurers.remove(adventurer);
+        room.removeAdventurerPresence(adventurer);
     }
     public void removeDefeatedCreature(Creature creature, Room room){
         creatures.remove(creature);

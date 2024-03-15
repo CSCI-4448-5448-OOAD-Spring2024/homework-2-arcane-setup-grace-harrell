@@ -26,13 +26,33 @@ public class GameDisplayTest {
         Dice dice = createDice(6);
         Arcane arcane = new Arcane(cave, dice);
         AudibleObserver audibleObserver = new AudibleObserver(2);
-        arcane.attachAudibleObserver(audibleObserver, List.of(EventType.Death));
         IMazeObserver mazeObserver = MazeObserver.getNewBuilder("Arcane Game")
                         .useRadialLayoutStrategy()
                                 .setDelayInSecondsAfterUpdate(2)
                                         .build();
         arcane.attach(mazeObserver);
+        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver));
         arcane.play();
+    }
 
+    @Test
+    public void testPlaySmaller(){
+        // provideInput("Testy");
+        Cave cave = new Cave.Builder().create2x2Grid()
+                .createAndAddAdventurers(2)
+                .createAndAddCreatures(3)
+                .createAndAddFood(2)
+                .build();
+
+        Dice dice = createDice(6);
+        Arcane arcane = new Arcane(cave, dice);
+        AudibleObserver audibleObserver = new AudibleObserver(2);
+        IMazeObserver mazeObserver = MazeObserver.getNewBuilder("Arcane Game")
+                .useRadialLayoutStrategy()
+                .setDelayInSecondsAfterUpdate(2)
+                .build();
+        arcane.attach(mazeObserver);
+        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver));
+        arcane.play();
     }
 }

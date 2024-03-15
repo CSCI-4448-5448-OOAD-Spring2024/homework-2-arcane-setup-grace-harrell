@@ -48,10 +48,10 @@ public class CaveAdapter implements IMaze {
         // throw an error if room is still null
 
         for (Creature creature : room.getCreaturesPresent()) {
-            result.add(creature.getName());
+            result.add(creature.getName() + "(Health: " + creature.getHealth() + ")");
         }
         for (Adventurer adventurer : room.getAdventurersPresent()) {
-            result.add(adventurer.getName());
+            result.add(adventurer.getName() + "(Health: " + adventurer.getHealth() + ")");
         }
         for (Food food : room.getFoodsPresent()) {
             result.add(food.getName());
