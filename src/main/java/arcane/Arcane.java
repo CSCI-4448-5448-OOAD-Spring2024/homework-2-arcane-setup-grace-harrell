@@ -1,39 +1,59 @@
 package arcane;
 
 
+import csci.ooad.layout.IMaze;
+import csci.ooad.layout.IMazeObserver;
+import csci.ooad.layout.IMazeSubject;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import org.slf4j.Logger;
 import java.util.stream.Collectors;
 
-public class Arcane implements IObservable {
+public class Arcane implements IObservable, IMazeSubject {
     private static final Logger logger = LoggerFactory.getLogger("csci.ooad.arcane.Arcane");
     private final Cave cave;
     private final Dice dice;
     private final EventBus eventBus;
-    private List<IObserver> observers = new ArrayList<>();
+    private List<IMazeObserver> observers = new ArrayList<>();
+    private List<IObserver> iObservers = new ArrayList<>();
 
     public Arcane(Cave cavePlay, Dice dicePlay){
         this.cave = cavePlay;
         this.dice = dicePlay;
         this.eventBus = EventBus.getInstance();
     }
-    public EventBus getEventBus(){
-        return eventBus;
-    }
-    public void registerObserver(IObserver observer){
+    public void registerObserver(IMazeObserver observer){
         Objects.requireNonNull(observer, "Observer can't be null");
         observers.add(observer);
     }
-    public void removeObserver(IObserver observer){
+    public void removeObserver(IMazeObserver observer){
         observers.remove(observer);
     }
+    @Override
+    public void registerObserver(IObserver observer){
+        Objects.requireNonNull(observer, "Observer can't be null");
+        iObservers.add(observer);
+    }
+    @Override
+    public void removeObserver(IObserver observer){
+        iObservers.remove(observer);
+    }
+
     public void notifyObservers(String eventDescription){
-        for (IObserver observer : observers){
-            observer.update(eventDescription);
+        for (IMazeObserver observer : observers){
+            observer.update(getMaze(), eventDescription);
         }
     }
+    @Override
+    public IMaze getMaze() {
+        return new CaveAdapter(cave);
+    }
+    @Override
+    public void attach(IMazeObserver observer){
+        observers.add(observer);
+    }
+
     private void notifyGameEvent(String eventDescription){
         notifyObservers(eventDescription);
     }
