@@ -21,5 +21,5 @@ Comments / Descriptions: The game ARCANE is a self playing game with adventurers
 
 **Arcane Play Example**  
 
-https://drive.google.com/file/d/1V49UiFQWeelvfwsrZKrmc__VCh9SwIUD/view
+https://drive.google.com/file/d/1QAnKX-433vTAYmWQbdhlxiHBO9JnGYEF/view?usp=sharing
 
