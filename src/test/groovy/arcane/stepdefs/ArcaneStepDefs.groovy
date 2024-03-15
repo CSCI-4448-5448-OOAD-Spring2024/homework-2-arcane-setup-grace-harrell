@@ -50,7 +50,7 @@ class ArcaneStepDefs {
 
         Dice dice = createDice();
         observer = new MockObserver();
-        audibleObserver = new AudibleObserver(5);
+        audibleObserver = new AudibleObserver(0);
 
         arcane = new Arcane(cave, dice)
     }
@@ -58,7 +58,7 @@ class ArcaneStepDefs {
     @When("I play the game")
     void playGame() {
         arcane.attachObservers(observer);
-        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.FightingOutcome, EventType.Death, EventType.GameOver));
+        arcane.attachAudibleObserver(audibleObserver, Arrays.asList(EventType.Death, EventType.GameOver));
         arcane.play();
     }
 

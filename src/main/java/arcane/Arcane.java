@@ -118,12 +118,10 @@ public class Arcane implements IObservable {
             }
 
             for (Adventurer currentCoward: aliveCowards){
-                Room currentRoom = cave.getAdventurerRoom(currentCoward);
                 takeTurnPlay(turnId, null, currentCoward,dice);
             }
 
             for (Adventurer currentGlutton: aliveGluttons){
-                Room currentRoom = cave.getAdventurerRoom(currentGlutton);
                 takeTurnPlay(turnId, null, currentGlutton,dice);
             }
 
