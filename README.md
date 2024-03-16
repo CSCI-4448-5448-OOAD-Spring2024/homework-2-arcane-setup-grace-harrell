@@ -12,7 +12,11 @@ Comments / Descriptions: The game ARCANE is a self playing game with adventurers
 **Extra Credit Implementation**
 - We implemented a Cucumber-JVM scenario and the screenshot of the passing test is below.
   
-<img width="518" alt="Screenshot 2024-03-15 at 9 44 06 AM" src="https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/91cf95fc-2ec4-40c6-a710-d056b27cb47c">    
+<img width="518" alt="Screenshot 2024-03-15 at 9 44 06 AM" src="https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/112991905/91cf95fc-2ec4-40c6-a710-d056b27cb47c">  
+
+**Interaction Diagram**
+![interactionDiagram](https://github.com/CSCI-4448-5448-OOAD-Spring2024/homework-2-arcane-setup-grace-harrell/assets/89498239/6db10349-e6c3-40b2-afd0-634ffe045ff4)
+
 
 
 **Code Coverage Screenshot**  
